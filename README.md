@@ -42,8 +42,8 @@ Things you may want to cover:
 
 ### Association
 
-belongs_to :user
-has_many :comment
+* belongs_to :user
+* has_many :comment
 
 ## commentテーブル
 
@@ -55,8 +55,8 @@ has_many :comment
 
 ### Association
 
-belongs_to :user
-belongs_to :item
+* belongs_to :user
+* belongs_to :item
 
 ## userテーブル
 
@@ -75,5 +75,5 @@ belongs_to :item
 
 ### Association
 
-has_many :comment
-has_many :item
+* has_many :comment
+* has_many :item
