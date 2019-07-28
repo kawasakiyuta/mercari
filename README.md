@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## itemテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -42,10 +42,10 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :user
-* has_many :comment
+* belongs_to :users
+* has_many :comments
 
-## commentテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -55,10 +55,10 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :user
-* belongs_to :item
+* belongs_to :users
+* belongs_to :items
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -75,5 +75,5 @@ Things you may want to cover:
 
 ### Association
 
-* has_many :comment
-* has_many :item
+* has_many :comments
+* has_many :items
