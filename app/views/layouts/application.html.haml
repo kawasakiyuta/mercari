@@ -7,53 +7,59 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
   %body
 
-  %header.pc-header.visible-pc
-    .pc-header-inner
-      .pc-header-top
+  %header.content
+    .content-inner
+      .content__head
         %h1
           %a{:href => "https://www.mercari.com/jp/"}
             %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", :width => "134"}/
-        %form.pc-header-form{:action => "https://www.mercari.com/jp/search/"}
-          %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        %form.content__head--form{:action => "https://www.mercari.com/jp/search/"}
+          %input.content__head--form-search{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
           %i.icon-search
-          %i.fas.fa-search
-      .pc-header-nav-box.clearfix
-        %nav.l-left
-          %ul.pc-header-nav
-            %li
-              %h2
-                %a.pc-header-nav-root.list-parent{:href => "https://www.mercari.com/jp/category/"}
-                  %i.icon-list.pc-header-cat-brand-icon
+            %i.fas.fa-search
+
+      .content__foot
+        .content__foot--left
+          %ul
+            %li.mega-menu
+              .category-list
+                %a.category-list-parent{:href => "https://www.mercari.com/jp/category/"}
+                  %i.fas.fa-list-ul
                   %span カテゴリーから探す
               %ul.pc-header-nav-parent-wrap{"data-mega" => "1", :style => "width: auto;"}
 
-            %li
-              %h2
+            %li.mega-menu
+              .brand-list
                 %a.pc-header-nav-root.list-parent{:href => "https://www.mercari.com/jp/brand/"}
-                  %i.icon-tag.pc-header-cat-brand-icon
+                  %i.fa.fa-tag
                   %span ブランドから探す
               
-        .l-right
-          %ul.pc-header-user-nav
-            %li.liked-items-link
+        .content__foot--right
+          %ul
+            %li.global-nav
               %a.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/like/history/"}
-                %i.icon-like-border
+                %i.far.fa-heart
                 %span いいね！一覧
+
+            %li.global-nav
             %li{"data-id" => "pc-header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
               %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
-                %i.icon-bell
+                %i.far.fa-bell
                 %span お知らせ
                 .pc-header-nav-count
               %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
+            %li.global-nav
               %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
-                %i.icon-check
+                %i.fa.fa-check
                 %span やることリスト
                 %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
                 %li.mypage-item-not-found.bold
 
+            %li.global-nav
               %a.pc-header-user-icon.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/"}
                 %figure
                   %div
