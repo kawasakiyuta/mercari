@@ -27,7 +27,7 @@ Things you may want to cover:
 |Column        |Type      |Options    |
 |--------------|----------|-----------|
 |product_name  |string    |null: false|  <!--商品名-->
-|image         |string    |null: false|       
+|images        |string    |null: false|       
 |state         |integer   |null: false|  <!--商品の状態-->
 |postage       |string    |null: false|  <!--配送料の負担-->
 |region        |string    |null: false|　<!--発送元地域-->
