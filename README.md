@@ -28,7 +28,7 @@ Things you may want to cover:
 |--------------|----------|-----------|
 |product_name  |string    |null: false|  <!--商品名-->
 |image         |string    |null: false|       
-|state         |text      |null: false|  <!--商品の状態-->
+|state         |integer   |null: false|  <!--商品の状態-->
 |postage       |string    |null: false|  <!--配送料の負担-->
 |region        |string    |null: false|　<!--発送元地域-->
 |shipping_date |datetime  |null: false|　<!--発送までの日数-->
@@ -39,8 +39,9 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :users
+* belongs_to :user
 * has_many :comments
+* has_many :likes
 
 ## commentsテーブル
 
@@ -48,25 +49,37 @@ Things you may want to cover:
 |--------|-----------|------------------------------|
 |user_id |references |null: false, foreign_key: true|
 |item_id |references |null: false, foreign_key: true|
-|comment |varchar    |null: false                   |
+|comment |text       |null: false                   |
 
 ### Association
 
-* belongs_to :users
-* belongs_to :items
+* belongs_to :user
+* belongs_to :item
 
 ## usersテーブル
 
 |Column             |Type    |Options                             |
 |-------------------|--------|------------------------------------|
 |email              |string  |                                    | 
-|encrypted_password |varchar |                                    |
+|encrypted_password |string  |                                    |
 |created_at         |datetime|                                    |
 |updated_at         |datetime|                                    |
-|nickname           |varchar |index: true,null: false,unique:true |
+|nickname           |string  |index: true,null: false,unique:true |
 |wallet             |integer |                                    |
 
 ### Association
 
 * has_many :comments
 * has_many :items
+* has_many :likes
+
+## likesテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|user_id |references |null: false, foreign_key: true|
+|item_id |references |null: false, foreign_key: true|
+### Association
+
+* belongs_to :user
+* belongs_to :item
