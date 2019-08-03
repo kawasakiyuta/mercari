@@ -24,46 +24,43 @@
       .content__foot
         .content__foot--left
           %ul
-            %li.mega-menu
+            %li.mega-menu-left
               .category-list
                 %a.category-list-parent{:href => "https://www.mercari.com/jp/category/"}
                   %i.fas.fa-list-ul
                   %span カテゴリーから探す
               %ul.pc-header-nav-parent-wrap{"data-mega" => "1", :style => "width: auto;"}
 
-            %li.mega-menu
+            %li.mega-menu-left
               .brand-list
-                %a.pc-header-nav-root.list-parent{:href => "https://www.mercari.com/jp/brand/"}
+                %a.brand-list-parent{:href => "https://www.mercari.com/jp/brand/"}
                   %i.fa.fa-tag
                   %span ブランドから探す
               
         .content__foot--right
           %ul
-            %li.global-nav
-              %a.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/like/history/"}
+            %li.mega-menu-right
+              %a.mega-menu-right__item{:href => "https://www.mercari.com/jp/mypage/like/history/"}
                 %i.far.fa-heart
                 %span いいね！一覧
 
-            %li.global-nav
-            %li{"data-id" => "pc-header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-              %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
+            %li.mega-menu-right
+              %a.mega-menu-right__item{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
                 %i.far.fa-bell
                 %span お知らせ
-                .pc-header-nav-count
+                .mega-menu-right_count
               %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
-            %li.global-nav
-              %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
+            %li.mega-menu-right
+              %a.mega-menu-right__item{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
                 %i.fa.fa-check
                 %span やることリスト
-                %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
-                %li.mypage-item-not-found.bold
+                -# %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
+                -# %li.mypage-item-not-found.bold
 
-            %li.global-nav
-              %a.pc-header-user-icon.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/"}
-                %figure
-                  %div
-                    %img{:alt => "", :src => "", :width => ""}/
+            %li.mega-menu-right
+              %a.mega-menu-right__item{:href => "https://www.mercari.com/jp/mypage/"}
+                %img{src: ""}
                 %span マイページ
                 
     = yield
