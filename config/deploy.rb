@@ -1,9 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "3.11.0"
 
 set :application, "mercari"
 set :repo_url,  'git@github.com:zukupan/mercari.git'
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 
 # バージョンが変わっても共通で参照するディレクトリを指定
