@@ -14,9 +14,8 @@
     .content-inner
       .content__head
         %h1
-          %a{:href => "https://www.mercari.com/jp/"}
-            %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", :width => "134"}/
-        %form.content__head--form{:action => "https://www.mercari.com/jp/search/"}
+          %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", :width => "134"}/
+        %form.content__head--form
           %input.content__head--form-search{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
           %i.icon-search
             %i.fas.fa-search
@@ -26,42 +25,61 @@
           %ul
             %li.mega-menu-left
               .category-list
-                %a.category-list-parent{:href => "https://www.mercari.com/jp/category/"}
+                %a.category-list-parent
                   %i.fas.fa-list-ul
                   %span カテゴリーから探す
               %ul.pc-header-nav-parent-wrap{"data-mega" => "1", :style => "width: auto;"}
 
             %li.mega-menu-left
               .brand-list
-                %a.brand-list-parent{:href => "https://www.mercari.com/jp/brand/"}
+                %a.brand-list-parent
                   %i.fa.fa-tag
                   %span ブランドから探す
               
         .content__foot--right
           %ul
             %li.mega-menu-right
-              %a.mega-menu-right__item{:href => "https://www.mercari.com/jp/mypage/like/history/"}
+              %a.mega-menu-right__item
                 %i.far.fa-heart
                 %span いいね！一覧
 
             %li.mega-menu-right
-              %a.mega-menu-right__item{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
+              %a.mega-menu-right__item
                 %i.far.fa-bell
                 %span お知らせ
                 .mega-menu-right_count
               %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
             %li.mega-menu-right
-              %a.mega-menu-right__item{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
+              %a.mega-menu-right__item
                 %i.fa.fa-check
                 %span やることリスト
                 -# %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
                 -# %li.mypage-item-not-found.bold
 
             %li.mega-menu-right
-              %a.mega-menu-right__item{:href => "https://www.mercari.com/jp/mypage/"}
+              %a.mega-menu-right__item
                 %img{src: ""}
                 %span マイページ
+
+  .banner-section
+    .banner__inner
+      .banner__inner--left
+        %h2 スマホでかんたんフリマアプリ
+        %p 今すぐ無料ダウンロード！
+        .banner__inner--left-icon
+          %figure
+            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?863303983", :width => "68"}/
+          %ul.app-icon
+            %li
+              %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
+                %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?863303983", :width => "133"}/
+            %li
+              %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
+                %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?863303983", :width => "133"}/
+      .banner__inner--right
+        %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?863303983"}/
+
 
   %footer.footer-section
     .footer-top
@@ -114,7 +132,7 @@
       .footer-bottom__copyright
         %small © 2019 Mercari
 
-      %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
+      %a.footer-sell-btn
         %p 出品
         %i.fas.fa-camera
 
