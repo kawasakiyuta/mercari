@@ -1,17 +1,8 @@
-// @mixin clearfix {
-// 	&::after {
-// 		content: "";
-// 		display: block;
-// 		clear: both;
-// 	}
-// }
-
 .banner-section {
   display: block;
   background-image: url(https://images.pexels.com/photos/2370724/pexels-photo-2370724.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
   background-position: center;
   background-size: cover;
-  // margin-bottom: 393px;
   height: 260px;
 }
 
