@@ -11,31 +11,26 @@
   padding: 0 20px 10px 20px;
   background: #212121;
   bottom: 0;
+  // width: 100%;
 }
 
 .footer-top {
   display: flex;
   justify-content:center;
-  width: 1020px;
+  // width: 1020px;
   margin: 0 auto;
-  &__left {
-    padding: 0 20px 0 0;
-  }
-  &__center {
-    padding: 0 20px 0 0;
-  }
-  &__right {
-    padding: 0 20px 0 0;
+  &__left,
+  &__center,
+  &__right,
+  &__nav-lang {
+    padding-right: 20px;
   }
   &__right-box {
     display: inline-flex;
     &--cell {
-      padding: 0 10px 0 0;
+      padding-right: 15px;
       width: 50%;
     }
-  }
-  &__nav-lang {
-    padding: 0 20px 0 0;
   }
   li {
     margin: 16px 0 0;
