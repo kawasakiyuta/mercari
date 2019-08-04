@@ -42,33 +42,21 @@ Things you may want to cover:
 * belongs_to :brand
 * has_many   :likes
 * belongs_to :delivery
-* belongs_to :category
+* has_many   :thee_paths
 
 
-## categoryテーブル
+## thee_pathsテーブル
 
-|Column           |Type      |Options    |
-|-----------------|----------|-----------|
-|category_name    |string    |null: false|
-|sub_category     |string    |null: false|
-|sub_sub_category |string    |null: false|
-|size_type_id     |references|null: false|
-
-### Association
-
-* has_many   :products
-* belongs_to :user
-
-
-## size_typesテーブル
-
-|Column        |Type      |Options                  |
-|--------------|----------|-------------------------|
-|size          |integer   |null: false              |
+|Column           |Type      |Options                     |
+|-----------------|----------|----------------------------|
+|product_id       |references|null: false,foreign_key:true|
+|category         |integer   |null: false                 |
+|path             |integer   |null: false                 |
 
 ### Association
 
-* has_many   :categories
+* belongs_to :product
+
 
 ## deliveryテーブル
 
