@@ -22,26 +22,80 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## itemsテーブル
+## productsテーブル
 
 |Column        |Type      |Options    |
 |--------------|----------|-----------|
 |product_name  |string    |null: false|  <!--商品名-->
 |images        |string    |null: false|       
-|state         |integer   |null: false|  <!--商品の状態-->
-|postage       |string    |null: false|  <!--配送料の負担-->
-|region        |string    |null: false|　<!--発送元地域-->
-|shipping_date |datetime  |null: false|　<!--発送までの日数-->
-|price         |string    |null: false|　　
-|saler_id      |references|null: false|　<!--出品したuserのid-->
-|buyer_id      |references|null: false|　<!--購入したuserのid-->
+|product_state |integer   |null: false|  <!--商品の状態-->
+|price         |string    |null: false|　
+|sold          |boolean   |null: false|　　
+|saler_id      |references|null: false|　<!--出品したuser_id-->
+|buyer_id      |references|null: false|　<!--購入したuser_id-->
 
 
 ### Association
 
 * belongs_to :user
-* has_many :comments
-* has_many :likes
+* has_many   :comments
+* belongs_to :brand
+* has_many   :likes
+* belongs_to :delivery
+* belongs_to :category
+
+
+## categoryテーブル
+
+|Column           |Type      |Options    |
+|-----------------|----------|-----------|
+|category_name    |string    |null: false|
+|sub_category     |string    |null: false|
+|sub_sub_category |string    |null: false|
+|size_type_id     |references|null: false|
+
+### Association
+
+* has_many   :products
+* belongs_to :user
+
+
+## size_typesテーブル
+
+|Column        |Type      |Options                  |
+|--------------|----------|-------------------------|
+|size          |integer   |null: false              |
+
+### Association
+
+* has_many   :categories
+
+## deliveryテーブル
+
+|Column          |Type      |Options                  |
+|----------------|----------|-------------------------|
+|product_id      |references|null: false              |
+|cost_bearer     |string    |null: false              |
+|delivery_method |string    |null: false              |
+|delivery_souce  |string    |null: false              |
+|day_to_ship     |integer   |null: false              |
+
+### Association
+
+* has_many   :products
+
+
+
+## brandテーブル
+
+|Column        |Type      |Options                  |
+|--------------|----------|-------------------------|
+|name          |string    |null: false              |
+
+### Association
+
+* has_many   :products
+
 
 ## commentsテーブル
 
@@ -54,24 +108,71 @@ Things you may want to cover:
 ### Association
 
 * belongs_to :user
-* belongs_to :item
+* belongs_to :product
+
+
+## messagesテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|user_id |references |null: false, foreign_key: true|
+|message |text       |null: false                   |
+
+### Association
+
+* belongs_to :user
+
 
 ## usersテーブル
 
 |Column             |Type    |Options                             |
 |-------------------|--------|------------------------------------|
-|email              |string  |                                    | 
-|encrypted_password |string  |                                    |
-|created_at         |datetime|                                    |
-|updated_at         |datetime|                                    |
 |nickname           |string  |index: true,null: false,unique:true |
-|wallet             |integer |                                    |
+|email              |string  |null: false                         | 
+|encrypted_password |string  |null: false                         |
+|first_name         |string  |null: false                         |
+|last_name          |string  |null: false                         |
+|first_name_kana    |string  |null: false                         |
+|last_name_kana     |string  |null: false                         |
+|birthday           |date    |null: false                         |
+|phone_number       |integer |null: false                         |
+|created_at         |datetime|null: false                         |
+|updated_at         |datetime|null: false                         |
+|wallet             |integer |null: false                         |
 
 ### Association
 
-* has_many :comments
-* has_many :items
-* has_many :likes
+* has_many   :comments
+* has_many   :messages
+* has_many   :products
+* belongs_to :like
+* belongs_to :profile
+* belongs_to :evaluation
+
+
+## evaluationsテーブル
+
+|Column             |Type       |Options                       |
+|-------------------|-----------|------------------------------|
+|user_id            |references |null: false, foreign_key: true|
+|satisfaction_level |string     |null: false,                  |
+|messages           |text       |null: false,                  |
+### Association
+
+* belongs_to :user
+
+
+## profileテーブル
+
+|Column          |Type       |Options                       |
+|----------------|-----------|------------------------------|
+|user_id         |references |null: false, foreign_key: true|
+|profile_image   |string     |null: false,                  |
+|profile_comment |text       |null: false,                  |
+### Association
+
+* belongs_to :user
+
 
 ## likesテーブル
 
