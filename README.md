@@ -38,10 +38,10 @@ Things you may want to cover:
 ### Association
 
 * belongs_to :user
-* has_many   :comments
+* has_many   :comments,dependent: :destroy
 * belongs_to :brand
-* has_many   :likes
-* belongs_to :delivery
+* has_many   :likes,dependent: :destroy
+* belongs_to :delivery,dependent: :destroy
 * has_many   :thee_paths
 
 
@@ -130,12 +130,12 @@ Things you may want to cover:
 
 ### Association
 
-* has_many   :comments
-* has_many   :messages
-* has_many   :products
+* has_many   :comments,dependent: :destroy
+* has_many   :messages,dependent: :destroy
+* has_many   :products,dependent: :destroy
 * belongs_to :like
-* belongs_to :profile
-* belongs_to :evaluation
+* belongs_to :profile,dependent: :destroy
+* belongs_to :evaluation,dependent: :destroy
 
 
 ## evaluationsテーブル
