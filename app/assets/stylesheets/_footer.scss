@@ -11,13 +11,11 @@
   padding: 0 20px 10px 20px;
   background: #212121;
   bottom: 0;
-  // width: 100%;
 }
 
 .footer-top {
   display: flex;
   justify-content:center;
-  // width: 1020px;
   margin: 0 auto;
   &__left,
   &__center,
@@ -54,7 +52,6 @@ h2.footer-head {
 
 .footer-bottom {
   margin: 30px auto 20px;
-  width: 1020px;
   &__copyright {
     width: 70%;
     display: inline-block;
