@@ -1,9 +1,115 @@
 %main.container
-  .container__content
-    .container__content__head
-    .container__content__icon
-    .container__content__profile-content
-      %text_area.container__content__profile-content__introduction{:placeholder => "例) こんにちは！ご覧いただきありがとうございます！かわいいものや綺麗めオフィスカジュアルを中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"}
-      %button{:type => "submit"} 変更する
-  .container__side__nav
-    .container__side__nav__lists
+  %section.container__content
+    %h2.container__content__head  プロフィール
+    %form{:action => "/", :method => "POST"}
+      %input{:name => "User_Name", :type => "hidden", :value => "http://"}
+      .container__content__icon
+        %figure
+          %img{:height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+        %input.input-default{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", :value => "Ricardo Utino"}/
+      .container__content__profile-content
+        %text_area.container__content__profile-content__introduction{:placeholder => "例) こんにちは！ご覧いただきありがとうございます！かわいいものや綺麗めオフィスカジュアルを中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"}
+        %input{:name => "after_save_callback", :type => "hidden", :value => "https://"}/
+        %button{:type => "submit"} 変更する
+  .container__side
+    .container__side__nav
+      %ul.container__side__nav__lists
+        %li.container__side__nav__lists__child
+          = link_to "#" do
+            マイページ
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            お知らせ
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            やる事リスト
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            いいね！一覧
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            出品する
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            出品した商品 - 出品中
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            出品した商品 - 取引中
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            出品した商品 - 売却済み
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            購入した商品 - 取引中
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            購入した商品 - 過去の取引
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            ニュース一覧
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            評価一覧
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            ガイド
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            お問い合わせ
+            %i.container__side__nav__lists__child__icon-right
+
+      %h3.container__side__nav__head
+        メルペイ
+      %ul.container__side__nav__lists
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            売上・振込申請
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            ポイント
+            %i.container__side__nav__lists__child__icon-right
+      %h3.container__side__nav__head
+        設定
+      %ul.container__side__nav__lists
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            プロフィール
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            発送元・お届け先住所変更
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            支払い方法
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            メール/パスワード
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            本人情報
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            電話番号の確認
+            %i.container__side__nav__lists__child__icon-right
+        %li.container__side__nav__lists__child
+          = link_to "#"do
+            ログアウト
+            %i.container__side__nav__lists__child__icon-right
