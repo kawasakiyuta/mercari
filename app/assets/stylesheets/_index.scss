@@ -12,7 +12,9 @@
     
   }
 }
-
+.main-picup-category{
+  
+}
 .main-top{
   height:390px;
 }
@@ -39,14 +41,16 @@
 }
 .item-box{
  width:940px;
+ height:324px;
  margin:auto;
- display:flex;
 }
 .item-box-content{
- display:flex;
- height:330px;
+ //  display:flex;
+ height:100%;
+ 
 }
 .item-box-new{
+  float:left;
   width:25%;
 }
 .item-box-body{
@@ -56,7 +60,7 @@
 }
 .item-box-photo{
   height:213px;
-  width:100%;
+  width:auto;
   margin:0px;
 }
 
@@ -105,3 +109,68 @@ padding:20px 30px 30px 0px;
 }
 
 
+// @media screen and (max-width: 1067px) { /*ウィンドウ幅が0～479pxの場合にcssを適用*/
+  
+//   .item-box{
+//     width:700px;
+//     margin:auto;
+//     display:flex;
+    
+//    }
+//    .item-box-content{
+//      width:100%;
+//      overflow: hidden;
+//    }
+//    .item-box-new{
+//     width:213px;
+//     padding-left:13px;
+//     position:relative;
+//   }
+//   .item-box-body{
+//     width:90.65%;
+//     margin:auto;
+//     background-color:white;
+//   }
+//   .item-box-detail{
+    
+//   }
+//   .item-box-name{
+//     // width:100%;
+//   }
+//   .item-box-name:after{
+//     content: "";
+//     bottom:0;
+//     position: absolute;
+//     right:0px;
+//     width:50%;
+//     height:24px;
+//     background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+//   }
+//   .view-all{
+//     width:700px;
+//   }
+// }
+
+@media(max-width:750px){
+  *{
+    box-sizing:border-box;
+  }
+  .item-box-body{
+  width:310px;
+  }
+  .item-box-new{
+    width:100%;
+  }
+  .item-box-photo{
+    height:310px;
+    width:50%;
+    margin:0px;
+  }
+  .item-image{
+    
+    height:100%;
+    object-fit:cover;
+    
+  }
+
+}
