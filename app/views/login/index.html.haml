@@ -1,0 +1,49 @@
+.display
+  %header.header-box
+    %h1
+      =link_to "https://www.mercari.com/jp/" do
+        %img{:src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?863303983"}
+  %main.contents
+    %section.contents__panel
+      .login-name
+        %p アカウントをお持ちでない方はこちら
+        .no-account
+          =link_to "https://www.mercari.com/jp/signup/", class: "no-account__btn no-account__btn--registration" do
+            新規会員登録
+      .login-box
+        .login-form
+          =link_to "https://www.facebook.com/login/", class: "login-form__btn login-form__btn--facebook" do
+            =fa_icon 'facebook', class: "login-form__btn--icon"
+            Facebookでログイン
+          =link_to "https://accounts.google.com/signin/", class: "login-form__btn login-form__btn--google" do
+            =fa_icon 'google', class: "login-form__btn--icon"
+            Googleでログイン
+      .form
+        .login-mail
+          =text_field :content, name: 'email', type: 'email', placeholder: 'メールアドレス'
+        .login-pass
+          =text_field :content, name: 'password', type: 'string', placeholder: 'パスワード'
+        .login-captcha
+          reCAPCHA(私はロボットではありません)
+        -# .login-btn
+        -#   = form_for @user do |f|
+        -#     =f.label :name do
+        -#       =f.text_field :name
+        -#   =f.submit "ログイン"
+        .forget-pass
+          =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__name" do
+            パスワードをお忘れの方
+    %footer.footer-box
+      .footer__panel
+        .footer__overview
+          =link_to "https://www.mercari.com/jp/privacy/", class: "footer__overview--1" do
+            プライバシーポリシー
+          =link_to "https://www.mercari.com/jp/tos/", class: "footer__overview--2" do
+            メルカリ利用規約
+          =link_to "https://www.mercari.com/jp/tokutei/", class: "footer__overview--3" do
+            特定商取引に関する表記
+        .footer__box
+          =link_to "https://www.mercari.com/jp/", class: "footer__footser-logo" do
+            %img{:src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983"}
+        .footer__name
+          ©2019 Mercari

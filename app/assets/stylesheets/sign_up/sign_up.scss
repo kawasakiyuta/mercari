@@ -1,0 +1,88 @@
+.display {
+  background-color: #f5f5f5;
+}
+
+
+
+header {
+  padding: 10px 0 20px 0;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.header-box img {
+  height: 100px;
+  width: 200px;
+}
+
+
+
+.contents {
+  text-align: center;
+  &__panel {
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+  }
+}
+.registration-name {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  border-color: #f5f5f5;
+}
+.registration-box {
+  height: 250px;
+  margin: 40px auto;
+}
+.registration-form {
+  text-align: center;
+  padding: 20px;
+  &__btn {
+    display: block;
+    height: 50px;
+    width: 300px;
+    margin: 0 auto 15px;
+    line-height: 50px;
+    border-radius: 10px; 
+    text-align: center;
+    text-decoration: none;
+    &--icon {
+      padding-right:20px;
+      color: #fff;
+    }
+    &--email {
+      background-color: #ea352d;
+      color: #fff;
+    }
+    &--facebook {
+      background-color: #385185; 
+      color: #fff;
+    }
+    &--google {
+      background-color: rgb(221, 210, 210);
+      color: #333;
+    }
+  }
+}
+
+
+
+.footer__panel {
+  text-align: center;
+  a {
+    color: black;
+    font-size: 5px;
+  }
+}
+.footer__overview {
+  padding: 30px;
+}
+.footer__box img {
+  height: 75px;
+  width: 150px;
+}
+.footer__name {
+  font-size: 5px;
+}

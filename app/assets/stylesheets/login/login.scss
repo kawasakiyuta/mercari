@@ -1,0 +1,59 @@
+.display {
+  background-color: #f5f5f5;
+}
+
+
+
+header {
+  padding: 10px 0 20px 0;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.header-box img {
+  height: 100px;
+  width: 200px;
+}
+
+
+
+.contents {
+  text-align: center;
+  &__panel {
+    background-color: white;
+    margin: 0 400px;
+  }
+}
+.login-form {
+  &__name--facebook {
+    text-align: center;
+  }
+  &__name--google {
+    text-align: center;
+  }
+}
+
+.forget-pass {
+  &__name {
+    color: #0099e8;
+  }
+}
+
+
+
+.footer__panel {
+  text-align: center;
+  a {
+    color: black;
+    font-size: 5px;
+  }
+}
+.footer__overview {
+  padding: 30px;
+}
+.footer__box img {
+  height: 75px;
+  width: 150px;
+}
+.footer__name {
+  font-size: 5px;
+}
