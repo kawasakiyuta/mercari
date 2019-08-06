@@ -7,16 +7,16 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
   %body
 
   %header.content
     .content-inner
       .content__head
         %h1
-          %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", :width => "134"}/
+        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808",size: "134x36"
         %form.content__head--form
-          %input.content__head--form-search{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}/
           %i.icon-search
             %i.fas.fa-search
 
@@ -25,40 +25,44 @@
           %ul
             %li.mega-menu-left
               .category-list
-                %a.category-list-parent
+                .category-list-parent
+                  =link_to ""
                   %i.fas.fa-list-ul
                   %span カテゴリーから探す
 
             %li.mega-menu-left
               .brand-list
-                %a.brand-list-parent
+                .brand-list-parent
+                  =link_to ""
                   %i.fa.fa-tag
                   %span ブランドから探す
               
         .content__foot--right
           %ul
             %li.mega-menu-right
-              %a.mega-menu-right__item
+              .mega-menu-right__item
+                =link_to ""
                 %i.far.fa-heart
                 %span いいね！一覧
 
             %li.mega-menu-right
-              %a.mega-menu-right__item
+              .mega-menu-right__item
+                =link_to ""
                 %i.far.fa-bell
                 %span お知らせ
                 .mega-menu-right_count
               %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
             %li.mega-menu-right
-              %a.mega-menu-right__item
+              .mega-menu-right__item
+                =link_to ""
                 %i.fa.fa-check
                 %span やることリスト
-                -# %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
-                -# %li.mypage-item-not-found.bold
 
             %li.mega-menu-right
-              %a.mega-menu-right__item
-                %img{src: ""}
+              .mega-menu-right__item
+                =link_to ""
+                =image_tag ""
                 %span マイページ
 
   .banner-section
@@ -68,16 +72,14 @@
         %p 今すぐ無料ダウンロード！
         .banner__inner--left-icon
           %figure
-            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?863303983", :width => "68"}/
+            =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?863303983",width: "68"
           %ul.app-icon
             %li
-              %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-                %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?863303983", :width => "133"}/
+              =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?863303983", size: "133x40"),"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8",target: "_blank"
             %li
-              %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-                %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?863303983", :width => "133"}/
+              =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?863303983", size: "133x40"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja",target: "_blank"
       .banner__inner--right
-        %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?863303983"}/
+        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?863303983"
 
 
   %footer.footer-section
@@ -131,7 +133,8 @@
       .footer-bottom__copyright
         %small © 2019 Mercari
 
-      %a.footer-sell-btn
+      .footer-sell-btn
+        =link_to ""
         %p 出品
         %i.fas.fa-camera
 
