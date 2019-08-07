@@ -7,7 +7,6 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
   %body
 
   %header.content
@@ -18,7 +17,7 @@
         %form.content__head--form
           %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}/
           %i.icon-search
-            %i.fas.fa-search
+            %i.fa.fa-search
 
       .content__foot
         .content__foot--left
@@ -27,7 +26,7 @@
               .category-list
                 .category-list-parent
                   =link_to ""
-                  %i.fas.fa-list-ul
+                  %i.fa.fa-list-ul
                   %span カテゴリーから探す
 
             %li.mega-menu-left
@@ -42,13 +41,13 @@
             %li.mega-menu-right
               .mega-menu-right__item
                 =link_to ""
-                %i.far.fa-heart
+                %i.fa.fa-heart
                 %span いいね！一覧
 
             %li.mega-menu-right
               .mega-menu-right__item
                 =link_to ""
-                %i.far.fa-bell
+                %i.fa.fa-bell
                 %span お知らせ
                 .mega-menu-right_count
               %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
@@ -93,9 +92,9 @@
           %li 公式ブログ
           %li メルカリロゴ利用ガイドライン
           %li.footer-social-link
-            %i.fab.fa-twitter.fa-2x
+            %i.fa.fa-twitter.fa-2x
           %li.footer-social-link
-            %i.fab.fa-facebook-square.fa-2x
+            %i.fa.fa-facebook-square.fa-2x
       .footer-top__center
         %h2.footer-head ヘルプ＆ガイド
         %ul
@@ -136,6 +135,6 @@
       .footer-sell-btn
         =link_to ""
         %p 出品
-        %i.fas.fa-camera
+        %i.fa.fa-camera
 
     = yield
