@@ -1,9 +1,8 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:content => "width=device-width,initial-scale=1.0,minimum-scale=1.0", :name => "viewport"}/
-    -# width=device-width訪問してきたデバイスの横幅を指定する
+    %meta{content: "text/html; charset=UTF-8", http:{equiv: "Content-Type"}}/
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
     %title Mercari
     = csrf_meta_tags
     = csp_meta_tag
