@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # get 'login' => 'login#new'
   # post 'login' => 'login#create'
   
-  root 'sign_up#index'
+  # root 'sign_up#index'
 end

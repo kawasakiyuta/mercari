@@ -30,8 +30,11 @@
         -#     =f.label :name do
         -#       =f.text_field :name
         -#   =f.submit "ログイン"
+        .login-enter
+          =link_to "https://www.mercari.com/jp/", class: "login-enter__btn" do
+            ログイン
         .forget-pass
-          =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__name" do
+          =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__btn" do
             パスワードをお忘れの方
     %footer.footer-box
       .footer__panel
