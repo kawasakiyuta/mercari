@@ -8,8 +8,7 @@
       .login-name
         %p アカウントをお持ちでない方はこちら
         .no-account
-          =link_to "https://www.mercari.com/jp/signup/", class: "no-account__btn no-account__btn--registration" do
-            新規会員登録
+          -# =link_to "新規会員登録", sign_up_path, class: "no-account__btn no-account__btn--registration"
       .login-box
         .login-form
           =link_to "https://www.facebook.com/login/", class: "login-form__btn login-form__btn--facebook" do
@@ -25,14 +24,8 @@
           =text_field :content, name: 'password', type: 'string', placeholder: 'パスワード'
         .login-captcha
           ☑︎reCAPCHA(私はロボットではありません)
-        -# .login-btn
-        -#   = form_for @user do |f|
-        -#     =f.label :name do
-        -#       =f.text_field :name
-        -#   =f.submit "ログイン"
         .login-enter
-          =link_to "https://www.mercari.com/jp/", class: "login-enter__btn" do
-            ログイン
+          =link_to "ログイン", new_user_session_path, class: "enter-btn"
         .forget-pass
           =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__btn" do
             パスワードをお忘れの方

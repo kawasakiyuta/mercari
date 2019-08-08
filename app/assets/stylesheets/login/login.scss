@@ -81,8 +81,9 @@ header {
 }
 .login-enter {
   text-align: center;
-  padding: 20px;
-  &__btn {
+  padding: 10px;
+}
+.enter-btn {
     display: block;
     height: 50px;
     width: 300px;
@@ -94,7 +95,6 @@ header {
     background-color: #ea352d;
     color: #fff;
   }
-}
 .forget-pass__btn {
   color: #0099e8;
   text-decoration: none;
