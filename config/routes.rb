@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :profile 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'items#index'
+  root 'mypage#identification'
   
 end
