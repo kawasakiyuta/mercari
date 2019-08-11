@@ -7,15 +7,22 @@
     background: #fff;
     border-top: 1px solid #eee;
     .item {
+      // background-color: #b3d4fc;
+      // color: #fff;
+      // text-shadow: none;
       position: relative;
       display: block;
-      // min-height: 48px;
       text-decoration:None;
       padding: 16px;
       background: #fff;
       font-size: 14px;
       color: #333;
-      .fas.fa-angle-right{
+      .fa.fa-angle-right{
+        // -webkit-box-sizing: inherit;
+        // box-sizing: inherit;
+        // text-decoration: inherit;
+        // vertical-align: inherit;
+        background-color: transparent;
         position: absolute;
         top: 50%;
         right: 16px;
@@ -27,4 +34,8 @@
       }
     }
   }
+  &__nav__head{
+    margin: 40px 0 0;
+  }
 }
+
