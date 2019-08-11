@@ -107,8 +107,6 @@ GEM
     excon (0.65.0)
     execjs (2.7.0)
     ffi (1.11.1)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -295,6 +293,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  fog-aws
   font-awesome-rails
   haml-rails
   jbuilder (~> 2.5)
