@@ -1,0 +1,85 @@
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+.footer-section {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  bottom: 0;
+}
+
+.footer-top {
+  display: flex;
+  justify-content:center;
+  margin: 0 auto;
+  &__left,
+  &__center,
+  &__right,
+  &__nav-lang {
+    padding-right: 20px;
+  }
+  &__right-box {
+    display: inline-flex;
+    &--cell {
+      padding-right: 15px;
+      width: 50%;
+    }
+  }
+  li {
+    margin: 16px 0 0;
+    display: block;
+    opacity: .7;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5em;
+    text-decoration: none;
+  } 
+}
+
+h2.footer-head {
+  color: #fff;
+  height: 22px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.4em;
+}
+
+.footer-bottom {
+  margin: 30px auto 20px;
+  width: 1020px;
+  &__copyright {
+    width: 70%;
+    display: inline-block;
+    margin: 8px 0 0;
+    text-align: center;
+    vertical-align: sub;
+    font-size: 12px;
+    color: #fff;
+  }
+}
+
+.footer-sell-btn {
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  position: fixed;
+  border-radius: 50%;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  p {
+    margin-top: 32px;
+  }
+  i {
+    margin-top: 8px;
+    font-size: 54px;
+  }
+}
