@@ -128,6 +128,11 @@ Things you may want to cover:
 |created_at         |datetime|null: false                         |
 |updated_at         |datetime|null: false                         |
 |wallet             |integer |null: false                         |
+|postcode           |string  |null: false                         |
+|prefecture         |string  |null: false                         |
+|city               |string  |null: false                         |
+|block              |string  |null: false                         |
+|building           |string  |null: false                         |
 
 ### Association
 
