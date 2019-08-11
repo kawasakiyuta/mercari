@@ -1,15 +1,13 @@
 %main.container
   .container__content
     %h2.container__content__head  プロフィール
-    %form{:action => "/", :method => "POST"}
-      %input{:name => "User_Name", :type => "hidden", :value => "8093825839f487211e375a5f71d0140ba29c36b580a12b5c5bf8f1cb64ac7d6e4c8dad250d121330efeb1771de4bbdcf070f6ed3027682de7311689b766acb49d"}
-      .container__content__icon
-        %figure.img
-          %img{:height => "52", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "52"}/
-        %input.input-default{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", :value => "Ricardo Utino"}/
-      .container__content__profile-content
-        %textarea.introduction{:placeholder => "例) こんにちは！ご覧いただきありがとうございます！かわいいものや綺麗めオフィスカジュアルを中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"}
-        %input{:name => "after_save_callback", :type => "hidden", :value => "https://"}/
-        %button.btn-red{:type => "submit", :style=>"margin-top: 16px;"} 変更する
+    .container__content__icon
+      %figure.img
+        %img{height: "52", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "52"}/
+      %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "Ricardo Utino"}/
+    .container__content__profile-content
+      %textarea.introduction{placeholder: "例) こんにちは！ご覧いただきありがとうございます！かわいいものや綺麗めオフィスカジュアルを中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"}
+      %input{name: "after_save_callback", type: "hidden", value: "https://"}/
+      %button.btn-red{type: "submit", styl:"margin-top: 16px;"} 変更する
 
   =render 'users/side__nav'
