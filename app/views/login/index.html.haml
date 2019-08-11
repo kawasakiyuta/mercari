@@ -20,14 +20,7 @@
             Googleでログイン
       .form
         %input.login-mail{name: "emial", type: "email", placeholder: "  メールアドレス"}
-          -# =form_action "#", method: "post"
-          -# =input name: 'email', type: 'email', placeholder: 'メールアドレス', class: 'login-mail-text input-default'
-          -# =form_for @user do |f|
-          -#   = f.text_field :name
-          -#   = f.placeholder "メールアドレス"
-          -# name: 'email', type: 'email', placeholder: 'メールアドレス', class: 'login-mail-text input-default'
         %input.login-pass{name: "password", type: " string", placeholder: "  パスワード"}
-          -# =text_field :content, name: 'password', type: 'string', placeholder: 'パスワード'
         .login-captcha
           ☑︎reCAPCHA(私はロボットではありません)
         .login-enter
