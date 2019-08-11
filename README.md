@@ -132,7 +132,7 @@ Things you may want to cover:
 |prefecture         |string  |null: false                         |
 |city               |string  |null: false                         |
 |block              |string  |null: false                         |
-|building           |string  |null: false                         |
+|building           |string  |                                    |
 
 ### Association
 
