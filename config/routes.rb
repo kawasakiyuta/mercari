@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # root 'items#index'
 
   # root 'login#index'
-  root 'login#new'
+  # root 'login#new'
 
   # get 'login' => 'login#new'
   # post 'login' => 'login#create'

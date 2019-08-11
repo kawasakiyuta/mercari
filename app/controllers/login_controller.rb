@@ -9,9 +9,9 @@ class LoginController < ApplicationController
     end
   
     def create
-      @user = User.new(params[:user])
-      @user.save
-      redirect_to new_user_path
+      # @user = User.new(params[:user])
+      # @user.save
+      # redirect_to new_user_path
     end
   
     private
