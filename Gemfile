@@ -73,9 +73,9 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
+
 
 group :production do
+  gem 'fog-aws'
   gem 'unicorn', '5.4.1'
 end
-gem "font-awesome-rails"
