@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 ## productsテーブル
 
 |Column        |Type      |Options    |
@@ -172,3 +173,4 @@ Things you may want to cover:
 
 * belongs_to :user
 * belongs_to :item
+
