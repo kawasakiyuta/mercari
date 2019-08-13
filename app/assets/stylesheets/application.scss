@@ -1,6 +1,13 @@
 @import "./reset";
+@import "config/colors";
+@import "font-awesome";
+@import "users/profile/index.scss";
+@import "modules/side.scss";
+@import "modules/content.scss";
+@import "index.scss";
 @import "font-awesome";
 @import "./header";
 @import "./banner";
 @import "./footer";
 @import "./new";
+@import "modules/identification.scss"
