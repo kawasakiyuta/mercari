@@ -1,0 +1,147 @@
+.main-picup{
+  background-color:#f5f5f5;
+  padding-top:40px;
+  padding-bottom:40px;
+  a {
+    text-decoration: none;    
+  }
+  a:hover{
+    opacity:0.8;
+    text-decoration: underline ;
+    
+  }
+}
+.main-top{
+  height:390px;
+}
+.main-top img{
+  height:100%;
+  object-fit: cover;
+}
+
+
+.main-picup-title{
+  font-size:28px;
+  text-align:center;
+  font-weight:bold;
+}
+.main-picup-name{  
+  margin:26px 11px;
+  font-size:22px;
+  text-align:center;
+  font-weight:bold;
+  
+}
+.main-picup-name a{
+  color:#0099E8;
+}
+.item-box{
+ width:940px;
+ height:324px;
+ margin:auto;
+}
+.item-box-content{
+ height:100%;
+ }
+.item-box-new{
+  float:left;
+  width:25%;
+}
+.item-box-body{
+  width:90.65%;
+  margin:auto;
+  background-color:white;
+}
+.item-box-photo{
+  height:213px;
+  width:auto;
+  margin:0px;
+}
+
+.item-image{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  
+}
+.item-box-name{
+  font-size:15px;
+  font-weight:normal;
+  width:181px;
+  height:48px;
+  overflow: hidden; 
+  position:relative; 
+}
+.item-box-name:after{
+  content: "";
+  bottom:0;
+  position: absolute;
+  right:0;
+  width:50%;
+  height:24px;
+  background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+}
+
+.item-box-price{
+  font-weight:bold;
+  font-size:15px;
+  margin-top:8px;
+}
+.item-box-detail{
+  padding:16px;
+}
+.view-all{
+width:940px;
+margin:auto;
+text-align:right;
+padding:20px 30px 30px 0px;
+
+}
+.view-all a{
+  font-size:14px;
+  color:#0099e8;
+}
+
+
+//:メディアクエリ後に実装予定 @media screen and (max-width: 1067px) {
+  
+//   .item-box{
+//     width:700px;
+//     margin:auto;
+//     display:flex;
+    
+//    }
+//    .item-box-content{
+//      width:100%;
+//      overflow: hidden;
+//    }
+//    .item-box-new{
+//     width:213px;
+//     padding-left:13px;
+//     position:relative;
+//   }
+//   .item-box-body{
+//     width:90.65%;
+//     margin:auto;
+//     background-color:white;
+//   }
+//   .item-box-detail{
+    
+//   }
+//   .item-box-name{
+//     // width:100%;
+//   }
+//   .item-box-name:after{
+//     content: "";
+//     bottom:0;
+//     position: absolute;
+//     right:0px;
+//     width:50%;
+//     height:24px;
+//     background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+//   }
+//   .view-all{
+//     width:700px;
+//   }
+// }
+
