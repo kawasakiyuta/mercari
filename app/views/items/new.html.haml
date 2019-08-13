@@ -13,10 +13,12 @@
           %p 最大10枚までアップロードできます
           .main-section__form-image-box-upload
             .main-section__form-image-box-upload--container
-            %pre.visible-pc
-              :preserve
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+            .main-section__form-image-box-upload--drop_box
+              %input.main-section__form-image-file{multiple: "", name: "", style: "display: none;", type: "file"}/
+              %pre.visible-pc
+                :preserve
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
         .main-section__form-content
           .form
             %h3.form-lavel
@@ -155,6 +157,49 @@
                   %option{:value => "2"} 2~3日で発送
                   %option{:value => "3"} 4~7日で発送
 
-        .main-section__form-select-content
-        
+        .main-section__form-select-content--price
+          %h3.select-content-title 販売価格(300〜9,999,999)
+          .form-question
+            =link_to ""
+            %i.fa.fa-question-circle
+          .select-content__form-box
+            %ul.select-content__form-box-price
+              %li.select-form-price
+                .clearfix
+                  .select-form-lavel__left
+                    価格
+                    %span.require-tag 必須
+                  .input-price__right
+                    ¥
+                    .input-price__right-box
+                      %input.input-price__right-textfield{placeholder: "例）300", value: ""}/
+              %li.clearfix-fee
+                .fee-left
+                  販売手数料(10%)
+                .fee-right
+                  ー
+              %li.clearfix-profit
+                .profit-left
+                  販売利益
+                .profit-right
+                  ー
+
         .main-section__form-select-content--btn-box
+          .announce-text
+            %p
+              =link_to "禁止されている出品"
+              、
+              =link_to "行為"
+              を必ずご確認ください。
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              =link_to "偽ブランドの販売"
+              は犯罪であり処罰される可能性があります。
+            %p
+              また、出品をもちまして
+              =link_to "加盟店規約"
+              に同意したことになります。
+          %button.red-submit-btn{type: "submit"}
+            出品する
+          %button.glay-back-btn{type: "button"}
+            もどる
