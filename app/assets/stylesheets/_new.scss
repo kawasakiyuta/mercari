@@ -1,6 +1,5 @@
 .wrapper {
   position: relative;
-  // height: 100vh;
   min-height: 100%;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   font-size: 14px;
@@ -40,16 +39,30 @@
       }
       &-upload {
         display: block;
-        background-color: #f5f5f5;
-        border: dashed thin #ccc;
         height: 160px;
         width: 620px;
         margin: 16px auto 0;
-        text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 1.5;
         &--container {
+          display: inline;
+        }
+        &--drop_box{
+          display: block;
+          position: relative;
+          min-height: 162px;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          font-size: 0;
+          text-align: center;
+          cursor: pointer;
+        }
+        pre.visible-pc {
+          position: absolute;
+          top: 40%;
+          left: 16px;
+          right: 16px;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 1.5;
         }
       }
     }
@@ -97,6 +110,16 @@
         border-top: 1px solid #eee;
         height:290px;
       }
+      &--price {
+        padding: 40px;
+        border-top: 1px solid #eee;
+        height:218px;
+      }
+      &--btn-box {
+        padding: 40px;
+        border-top: 1px solid #eee;
+        height: 248px;
+      }
     }
     h3.select-content-title {
       float: left;
@@ -122,7 +145,7 @@
       position: relative;
       background: #fff;
     }
-    i {
+    i.fa.fa-chevron-down {
       position: absolute;
       right: 16px;
       top: 40%;
@@ -166,4 +189,134 @@ span.require-tag {
   color: #fff;
   font-size: 12px;
   vertical-align: top;
+}
+
+.form-question {
+  display: inline;
+}
+i.fa.fa-question-circle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  color:#0099e8;
+  line-height: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+li.select-form-price {
+  padding: 0 0 24px;
+  margin: 0;
+  border: 0;
+  height: 48px;
+}
+.clearfix {
+  height: 48px;
+  .select-form-lavel__left {
+    width: 50%;
+    line-height: 48px;
+    font-weight: 600;
+    float: left
+  }
+  .input-price__right {
+    width: 50%;
+    height: 48px;
+    float: right;
+    &-box {
+      // width: 160px;
+      display: inline-block;
+      margin: 0 0 0 5%;
+
+    }
+    &-textfield {
+      display: inline-block;
+      text-align: right;
+      position: relative;
+      padding-right: 8px;
+      z-index: 2;
+      height: 46px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      cursor: pointer;
+      outline: 0;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+li.clearfix-fee {
+  height: 14px;
+  padding: 24px 0;
+  border-top: 1px solid #ccc;
+  .fee-left {
+    float: left;
+  }
+  .fee-right {
+    float: right;
+    font-size: 6px;
+  }
+}
+
+li.clearfix-profit {
+  height: 34px;
+  padding: 24px 0;
+  font-weight: 600;
+  border-top: 1px solid #ccc;
+  .profit-left {
+    font-size: 16px;
+    float: left;
+  }
+  .profit-right {
+    float: right;
+    font-size: 14px;
+  }
+}
+
+.announce-text {
+  p {
+    line-height: 1.5;
+    a {
+    color: #0099e8;
+    text-decoration: none;
+    }
+  }
+}
+button.red-submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  opacity: 0.95;
+  color: #fff;
+}
+button.red-submit-btn:hover {
+  background: #ea352d;
+  opacity: 1;
+}
+button.glay-back-btn {
+  display: block;
+  width: 45%;
+  margin: 24px auto 0;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+}
+button.glay-back-btn:hover {
+  opacity: 0.8;
 }
