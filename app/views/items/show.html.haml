@@ -20,14 +20,14 @@
           .main-image-sub
             %image.sub-image{:src => "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg"}
           .main-image-sub
-            %image.sub-image{:src => "http://cdn-ak.f.st-hatena.com/images/fotolife/h/horitsukiko/20150320/20150320233234.jpg"}
+            %image.sub-image{:src => "https://actresspress.com/wp-content/uploads/2018/09/yui_aragaki-with20180928-718x479.jpg"}
           / --上段
           .main-image-sub
-            %image.sub-image{:src => "https://imgc.eximg.jp/cv/resize?i=%2F%2Fs.eximg.jp%2Fexnews%2Ffeed%2Fcuret%2Fcuret_82797_3990_2.jpg&t=jpeg&q=100&w=600"}
+            %image.sub-image{:src => "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg"}
           .main-image-sub
             %image.sub-image{:src => "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l"}
           .main-image-sub
-            %image.sub-image{:src => "https://s3-ap-northeast-1.amazonaws.com/cdn.ranking-best.net/production/imgs/images/000/230/677/original.?1550399748"}
+            %image.sub-image{:src => "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg"}
           .main-image-sub
             %image.sub-image{:src => "https://cdn.locari.jp/upload/post_element/picture/660543/w621_3491eae9954dc.jpg"}
           .main-image-sub
@@ -91,13 +91,18 @@
       %a.button-report{:href => "#"} 不適切な商品の報告
       %a.button-safe{:href => "#"} あんしん・あんぜんへの取り組み
   .comment-wrappe
-    / --コメント欄
     .comment-message
+      吾輩わがはいは猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。この書生というのは時々我々を捕つかまえて煮にて食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌てのひらに載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始みはじめであろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶やかんだ。その後ご猫にもだいぶ逢あったがこんな片輪かたわには一度も出会でくわした事がない。のみならず顔の真中があまりに突起している。そうしてその穴の中から時々ぷうぷうと煙けむりを吹く。どうも咽むせぽくて実に弱った。これが人間の飲む煙草たばこというものである事はようやくこの頃知った。
+      .comment-message-content
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form_with model: @user do |form|
+          = form.text_area :text
+          = form.submit "コメントする" 
   / --コメント欄
   .item-nav
     / 次のアイテム・前のアイテム
-    %a.item-nav-previous{:href => "#"} previous-item
-    %a.item-nav-next{:href => "#"} next-item
+    %a.item-nav-previous{:href => "#"} < previous-item
+    %a.item-nav-next{:href => "#"} next-item >
   / 次のアイテム・前のアイテム
   .item-sns
     / snsリンク
@@ -157,7 +162,7 @@
           .item-box-new
             .item-box-body
               %figure.item-box-photo
-                %img.item-image{:src => "https://imgc.eximg.jp/cv/resize?i=%2F%2Fs.eximg.jp%2Fexnews%2Ffeed%2Fcuret%2Fcuret_82797_3990_2.jpg&t=jpeg&q=100&w=600"}/
+                %img.item-image{:src => "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg"}/
               .item-box-detail
                 %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
                 .item-box-price
@@ -185,7 +190,7 @@
           .item-box-new
             .item-box-body
               %figure.item-box-photo
-                %img.item-image{:src => "https://s3-ap-northeast-1.amazonaws.com/cdn.ranking-best.net/production/imgs/images/000/230/677/original.?1550399748"}/
+                %img.item-image{:src => "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg"}/
               .item-box-detail
                 %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
                 .item-box-price
