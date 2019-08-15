@@ -1,0 +1,87 @@
+.contents-name {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  border-color: #f5f5f5;
+  font-family: monospace;
+}
+.contents-box {
+  height: 250px;
+  margin: 40px auto;
+}
+
+.contents-form {
+  text-align: center;
+  padding: 20px;
+}
+.form-group {
+  margin: 20px 120px 0;
+  text-align: left;
+}
+.form-group span {
+  margin-left: 5px;
+  padding: 1px 3px;
+  background-color: #ea352d;
+  color: #fff;
+}
+.input-default {
+  width: 315px;
+  padding: 10px;
+  margin: 5px 0;
+}
+.input-default.half {
+  width: calc(40%);
+}
+.contents-form__birthday {
+  font-size: 13px;
+}
+.birthday-select {
+  display: inline-block;
+}
+.contents-form__birthday span {
+  color: #000;
+  background-color: #fff;
+}
+.select-default {
+  height: 40px;
+  width: 60px;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+.contents-form__confirmation-text {
+  margin-right: 40px;
+  font-size: 13px;
+  text-align: left;
+  color: #888;
+}
+.confirmation-text {
+  font-size: 13px;
+  text-align: center;
+}
+.next-enter a{
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 10px; 
+  text-align: center;
+  text-decoration: none;
+  background-color: #ea352d;
+  color: #fff;
+}
+.description {
+  text-align: right;
+  padding: 0 30px;
+}
+
+.blue-link{
+  color:#0099e8;
+  text-decoration: none;
+  }
+  .blue-link:hover{
+  color: #80c8f3;
+  text-decoration: underline;
+  }

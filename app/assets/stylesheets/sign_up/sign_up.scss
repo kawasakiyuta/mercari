@@ -1,24 +1,22 @@
+@import "sign_up/_main.sign_up";
+//メイン部分
+
 .display {
   background-color: #f5f5f5;
 }
 
-
-
-header {
-  padding: 10px 0 20px 0;
+.header-box {
   background-color: #f5f5f5;
   text-align: center;
+}
+.header-box a {
+  height: 100px;
+  width: 200px;
 }
 .header-box img {
   height: 100px;
   width: 200px;
 }
-
-
-
-@import "sign_up/_main";
-//メイン部分
-
 
 .footer__panel {
   text-align: center;
