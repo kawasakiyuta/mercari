@@ -1,20 +1,20 @@
-.container
-  .container__head
+.box
+  .header
     = link_to image_tag("logo.svg", width: '185')
   .main
     .title
       %h2 商品は既に売り切れています
     .messages
       = link_to "商品画面へ戻る"
-  .footer
-    .footer__top
-      %ul
-        %li 
-          = link_to "プライバシーポリシー"
-        %li 
-          = link_to "メルカリ利用規約"
-        %li 
-          = link_to "特定商取引に関する表記"
+.footer
+  .footer__top
+    %ul
+      %li 
+        = link_to "プライバシーポリシー"
+      %li 
+        = link_to "メルカリ利用規約"
+      %li 
+        = link_to "特定商取引に関する表記"
 
-      = link_to image_tag("logo-gray.svg", width: '80')
-      %p © 2019 Mercari
+    = link_to image_tag("logo-gray.svg", width: '80')
+    %p © 2019 Mercari
