@@ -1,14 +1,15 @@
 @import "./reset";
 @import "config/colors";
 @import "font-awesome";
-@import "users/profile/index.scss";
+@import "users/profile/index";
 @import "modules/side.scss";
-@import "modules/content.scss";
+@import "modules/content";
 @import "index.scss";
 @import "./mypage";
 @import "font-awesome";
 @import "./header";
 @import "./banner";
 @import "./footer";
+@import "modules/purchase_confirmation";
 @import "./new";
 @import "modules/identification.scss";
