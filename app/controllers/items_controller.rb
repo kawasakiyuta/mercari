@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def new
     @addresses = Address.all
   end
@@ -6,4 +7,5 @@ class ItemsController < ApplicationController
   def index
     
   end
+
 end
