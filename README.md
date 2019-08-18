@@ -28,10 +28,10 @@ Things you may want to cover:
 |Column        |Type      |Options    |
 |--------------|----------|-----------|
 |product_name  |string    |null: false|  <!--商品名-->
-|images        |string    |null: false|       
+|images        |string    |null: false|
 |product_state |integer   |null: false|  <!--商品の状態-->
 |price         |string    |null: false|　
-|sold          |boolean   |null: false|　　
+|sold          |boolean   |null: false|　<!--売れたかどうか-->　
 |saler_id      |references|null: false|　<!--出品したuser_id-->
 |buyer_id      |references|null: false|　<!--購入したuser_id-->
 
@@ -60,7 +60,7 @@ Things you may want to cover:
 * belongs_to :product
 
 
-## deliveryテーブル
+## deliveriesテーブル
 
 |Column          |Type      |Options                  |
 |----------------|----------|-------------------------|
@@ -76,7 +76,7 @@ Things you may want to cover:
 
 
 
-## brandテーブル
+## brandsテーブル
 
 |Column        |Type      |Options                  |
 |--------------|----------|-------------------------|
@@ -181,7 +181,7 @@ Things you may want to cover:
 * belongs_to :item
 
 
-## salerテーブル
+## salersテーブル
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
@@ -190,7 +190,7 @@ Things you may want to cover:
 
 * belongs_to :product
 
-## buyerテーブル
+## buyersテーブル
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
