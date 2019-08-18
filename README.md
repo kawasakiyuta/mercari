@@ -39,12 +39,13 @@ Things you may want to cover:
 ### Association
 
 * belongs_to :user
-* has_many   :comments,dependent: :destroy
+* has_many   :comments   ,dependent: :destroy
 * belongs_to :brand
-* has_many   :likes,dependent: :destroy
-* belongs_to :delivery,dependent: :destroy
+* has_many   :likes      ,dependent: :destroy
+* belongs_to :delivery   ,dependent: :destroy
 * has_many   :thee_paths
-
+* belongs_to :saler      ,dependent: :destroy
+* belongs_to :buyer      ,dependent: :destroy
 
 ## thee_pathsテーブル
 
@@ -179,3 +180,21 @@ Things you may want to cover:
 * belongs_to :user
 * belongs_to :item
 
+
+## salerテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|user_id |references |null: false, foreign_key: true|
+### Association
+
+* belongs_to :product
+
+## buyerテーブル
+
+|Column  |Type       |Options                       |
+|--------|-----------|------------------------------|
+|user_id |references |null: false, foreign_key: true|
+### Association
+
+* belongs_to :product
