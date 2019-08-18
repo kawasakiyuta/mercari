@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
-  resources :item
+  resources :items
   resources :mypage
 
   get 'mypage/indetification', to: 'mypage#identification'
