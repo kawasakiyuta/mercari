@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :logout ,only: [:index]
   resources :item
   resources :mypage
+
   get 'mypage/indetification', to: 'mypage#identification'
 
 end
