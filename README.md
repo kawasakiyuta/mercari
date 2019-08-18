@@ -162,8 +162,8 @@ Things you may want to cover:
 |Column          |Type       |Options                       |
 |----------------|-----------|------------------------------|
 |user_id         |references |null: false, foreign_key: true|
-|profile_image   |string     |null: false,                  |
-|profile_comment |text       |null: false,                  |
+|profile_image   |string     |                              |
+|profile_comment |text       |                              |
 ### Association
 
 * belongs_to :user
