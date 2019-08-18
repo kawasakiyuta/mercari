@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :profile 
+
+  root 'items#index'
+  resources :mypages, only: :index
+  resources :profile ,only: [:index]
+  resources :logout ,only: [:index]
   resources :purchase_confirmation
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'purchase_confirmation#index'
-  
+  resources :items
+  get 'mypage/indetification', to: 'mypage#identification'
+
 end
