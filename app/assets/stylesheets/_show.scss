@@ -297,3 +297,27 @@ color:#333333;
    padding:16px;
  }
  /* その他のアイテム*/
+  .item-bottom{
+    height:48px;
+    width:100%;
+    
+    border-top:1px solid #eee ;
+
+    
+  }
+.item-bottom{
+  margin-top:30px;
+}
+.item-bottom-nav {
+  margin:0px 210px ;
+  width:1020px;
+  display:flex;
+  font-size:14px;
+  padding:16px 0px;
+  a{
+    color:#333;
+  }
+  span{
+
+  }
+}
