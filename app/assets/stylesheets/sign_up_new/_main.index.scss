@@ -8,8 +8,7 @@
   font-family: monospace;
 }
 .contents-box {
-  height: 250px;
-  margin: 40px auto;
+  height: 1150px;
 }
 
 .contents-form {
@@ -27,12 +26,13 @@
   color: #fff;
 }
 .input-default {
-  width: 315px;
+  width: 295px;
   padding: 10px;
   margin: 5px 0;
 }
 .input-default.half {
   width: calc(40%);
+  margin: 0 2px;
 }
 .contents-form__birthday {
   font-size: 13px;
@@ -63,8 +63,7 @@
 }
 .next-enter a{
   display: block;
-  width: 300px;
-  margin: 0 auto;
+  width: 320px;
   line-height: 50px;
   border-radius: 10px; 
   text-align: center;
@@ -74,7 +73,7 @@
 }
 .description {
   text-align: right;
-  padding: 0 30px;
+  padding: 20px 0;
 }
 
 .blue-link{

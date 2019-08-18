@@ -1,0 +1,126 @@
+.display
+  %header.header-box-registration
+    %h1
+      =link_to "https://www.mercari.com/jp/" do
+        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?863303983"
+    %nav
+      .side-header
+        .progress-bar.sign-up-bar
+          %ol.clearfix
+            %li.bar-name
+              会員情報
+              %div.progress-line
+                ●
+                -# %li 電話番号認証
+                -#   %li お届け先住所入力
+                -#     %li 支払い方法
+                -#       %li 完了
+  %main.contents
+    %section.contents__panel
+      %h2.contents-name 住所入力
+      .contents-box.address
+        .contents-form
+          .form-group
+            %div
+              %label お名前
+              %span.form-require 必須
+            %input.input-default.half{name: "family_name_kanji", type: "string", placeholder: "例) 山田"}
+            %input.input-default.half{name: "first_name_kanji", type: "string", placeholder: "例) 彩"}
+          .form-group
+            %div
+              %label お名前カナ(全角)
+              %span.form-require 必須
+            %input.input-default.half{name: "family_name_kana", type: "string", placeholder: "例) ヤマダ"}
+            %input.input-default.half{name: "first_name_kana", type: "string", placeholder: "例) アヤ"}
+          .form-group
+            %label 郵便番号
+            %span.form-require 必須
+            %input.input-default.address{name: "address", type: "string", placeholder: "例) 〒123-4567"}
+          .form-group
+            %label 都道府県
+            %span.form-require 必須
+            .contents-form__prefectures
+              =fa_icon 'icon-arrow-bottom'
+              %select.select-default{name: "prefectures"}
+                %option{:value => ""}--
+                %option{:value => "1"}北海道
+                %option{:value => "2"}青森県
+                %option{:value => "3"}岩手県
+                %option{:value => "4"}宮城県
+                %option{:value => "5"}秋田県
+                %option{:value => "6"}山形県
+                %option{:value => "7"}福島県
+                %option{:value => "8"}茨城県
+                %option{:value => "9"}栃木県
+                %option{:value => "10"}群馬県
+                %option{:value => "11"}埼玉県
+                %option{:value => "12"}千葉県
+                %option{:value => "13"}東京都
+                %option{:value => "14"}神奈川県
+                %option{:value => "15"}新潟県
+                %option{:value => "16"}富山県
+                %option{:value => "17"}石川県
+                %option{:value => "18"}福井県
+                %option{:value => "19"}山梨県
+                %option{:value => "20"}長野県
+                %option{:value => "21"}岐阜県
+                %option{:value => "22"}静岡県
+                %option{:value => "23"}愛知県
+                %option{:value => "24"}三重県
+                %option{:value => "25"}滋賀県
+                %option{:value => "26"}京都府
+                %option{:value => "27"}大阪府
+                %option{:value => "28"}兵庫県
+                %option{:value => "29"}奈良県
+                %option{:value => "30"}和歌山県
+                %option{:value => "31"}鳥取県
+                %option{:value => "32"}島根県
+                %option{:value => "33"}岡山県
+                %option{:value => "34"}広島県
+                %option{:value => "35"}山口県
+                %option{:value => "36"}徳島県
+                %option{:value => "37"}香川県
+                %option{:value => "38"}愛媛県
+                %option{:value => "39"}高知県
+                %option{:value => "40"}福岡県
+                %option{:value => "41"}佐賀県
+                %option{:value => "42"}長崎県
+                %option{:value => "43"}熊本県
+                %option{:value => "44"}大分県
+                %option{:value => "45"}宮崎県
+                %option{:value => "46"}鹿児島県
+                %option{:value => "47"}沖縄県
+          .form-group
+            %label 市区町村
+            %span.form-require 必須
+            %input.input-default.address{name: "city", type: "string", placeholder: "例) 大阪市中央区"}
+          .form-group
+            %label 番地
+            %span.form-require 必須
+            %input.input-default.address{name: "address-number", type: "string", placeholder: "例) 心斎橋1-1-1"}
+          .form-group
+            %label 建物名
+            %span.form-require.any 任意
+            %input.input-default.address{name: "building", type: "string", placeholder: "例) shinsaibashiビル301"}
+          .form-group
+            %label 電話番号
+            %span.form-require.any 任意
+            %input.input-default.address{name: "telephone", type: "string", placeholder: "例) 090-1234-5678"}
+          .form
+            .next-enter
+              =link_to "次へ進む", class: "next-enter-btn"
+  %footer.footer-box
+    .footer__panel
+      .footer-overview
+        =link_to "https://www.mercari.com/jp/privacy/", class: "footer-overview__1" do
+          プライバシーポリシー
+        =link_to "https://www.mercari.com/jp/tos/", class: "footer-overview__2" do
+          メルカリ利用規約
+        =link_to "https://www.mercari.com/jp/tokutei/", class: "footer-overview__3" do
+          特定商取引に関する表記
+      .footer__box
+        =link_to "https://www.mercari.com/jp/", class: "footer__footer-logo" do
+          =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983"
+      .footer__name
+        ©︎2019 Mercari
+

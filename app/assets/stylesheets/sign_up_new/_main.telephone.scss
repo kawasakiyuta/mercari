@@ -1,0 +1,29 @@
+.contents-box.telephone {
+  height: 400px;
+}
+
+.confirmation-text {
+  &__telephone {
+  font-size: 13px;
+  text-align: center;
+  padding: 0 10px;
+  }
+}
+
+.form {
+  text-align: center;
+  margin: 20px 120px 0;
+  &__telephone {
+    text-align: center;
+    margin: 20px 140px 0;
+  }
+}
+
+.text-message {
+  font-size: 15px;
+}
+
+.description-telephone{
+  text-align: right;
+  margin-top: 20px;
+}
