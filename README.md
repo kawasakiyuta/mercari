@@ -25,14 +25,14 @@ Things you may want to cover:
 
 ## productsテーブル
 
-|Column        |Type      |Options    |
-|--------------|----------|-----------|
-|product_name  |string    |null: false|  <!--商品名-->
-|product_state |integer   |null: false|  <!--商品の状態-->
-|price         |string    |null: false|　
-|sold          |boolean   |null: false|　<!--売れたかどうか-->　
-|saler_id      |references|null: false|　<!--出品したuser_id-->
-|buyer_id      |references|null: false|　<!--購入したuser_id-->
+|Column          |Type      |Options                  |
+|----------------|----------|-------------------------|
+|product_name    |string    |null: false              |  <!--商品名-->
+|product_state   |integer   |null:                    |  <!--商品の状態-->
+|price           |string    |null: false              |　
+|sold            |boolean   |null: false              |　<!--売れたかどうか-->　
+|user_id         |references|null: false              |　<!--出品したuser_id-->
+|buyer_id        |integer   |null: false              |　<!--購入したuser_id-->
 |cost_bearer     |string    |null: false              |
 |delivery_method |string    |null: false              |
 |delivery_souce  |string    |null: false              |
@@ -113,7 +113,7 @@ Things you may want to cover:
 
 * belongs_to :buyer_id
 * belongs_to :saler_id
-* belongs_to :product_id, dependent: :destroy
+* belongs_to :product_id
 
 
 ## usersテーブル
@@ -137,6 +137,8 @@ Things you may want to cover:
 |city               |string  |null: false                         |
 |block              |string  |null: false                         |
 |building           |string  |                                    |
+|profile_image      |string  |                                    |
+|profile_comment    |text    |                                    |
 
 ### Association
 
@@ -149,15 +151,14 @@ Things you may want to cover:
 
 |Column             |Type       |Options                       |
 |-------------------|-----------|------------------------------|
-|evaluated_user_id            |references |null: false, foreign_key: true|<!--評価された人-->　
-|evaluater_user_id            |references |null: false, foreign_key: true|<!--評価した人-->　
+|user_id            |references |null: false, foreign_key: true|
+|evaluator_ id      |integer    |null: false, foreign_key: true|<!--評価された人 -->　
+|comment            |text       |null: false,                  |<!--評価した人-->　
 |satisfaction_level |string     |null: false,                  |
-|messages           |text       |null: false,                  |
-|product_id |references |null: false, foreign_key: true|
+|seller_bit         |boolean    |null: false,                  |
 ### Association
 
-* has_many :products
-
+* belongs_to: :user
 
 
 ## likesテーブル
