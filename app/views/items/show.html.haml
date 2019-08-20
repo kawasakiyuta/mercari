@@ -49,13 +49,13 @@
         %tr
           %th.category カテゴリー
           %td
-            %a{:href => "#"}
+            =link_to "#" do
               %div  fashion
-            %a{:href => "#"}
+            =link_to "#" do
               %div  
                 %i.fa.fa-angle-right
                 genre
-            %a{:href => "#"}
+            =link_to "#" do
               %div 
                 %i.fa.fa-angle-right
                 item
@@ -83,7 +83,7 @@
           %th 発送日の目安
           %td １〜２日で発送
     .item-price-box
-      %apan.item-price ¥ 15,000
+      %span.item-price ¥ 15,000
       %span.item-price-tax
         (税込)
         %span.item-price-postage
