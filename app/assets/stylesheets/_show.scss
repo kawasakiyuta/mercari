@@ -58,23 +58,47 @@ height:300px;
 margin-left:15px;
 font-size:14px;
 color:#333333;
-
+border-collapse: collapse;
+ .user-name{
+  height:47px;
 }
-
-.item-detail-table a{
+.category{
+  height:50px;
+}
+  a{
   color:#0099e8;
+  }
+ th,td{
+   border:solid 1px #f5f5f5;
+ }
 }
+
+
 
 .item-detail-table th{
   width:115px;
+  height:24px;
   padding:8px;
-  background-color:#f5f5f5;
+  background-color:#fafafa;
   font-weight: normal;
   
 }
 .item-detail-table td{
   width:180px;
   padding:8px;
+  font-size:16px;
+  .fa-grin{
+    color:rgb(239, 81, 133);
+  }
+  .fa-meh{
+    color:  rgb(251, 169, 51);
+  }
+  .fa-frown-open{
+    color:rgb(106, 181, 216)
+  }
+  span{
+    font-size:10px;
+  }
 }
 .user-status{
   height:25px;
@@ -82,6 +106,7 @@ color:#333333;
 }
 .item-user-ratings{
   margin:auto;
+  
 }
 
 .item-price-box{
@@ -205,19 +230,33 @@ color:#333333;
       outline:0px;
     }
 
-
 .item-nav{   /* 次のアイテム・前のアイテム */
   margin:0px 370px ;
   width:700px;
-  
+  .item-nav-next{
+    float:right;
+    font-size:14px;
+  }
+  .item-nav-previous{
+    font-size:14px;
+  }
+}
+.item-nav-previous::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f053";
+  font-weight: 900;
+  margin-right:5px;
+}
+.item-nav-next::after{
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  font-weight: 900;
+  margin-left:5px;
 }
 .item-nav a{
   color:#0099e8;
 }
-.item-nav-next{
-  float:right;
-}
-/* 次のアイテム・前のアイテム */
+
 .item-sns{   /* snsリンク*/
   background-color:white;
   margin:auto;
@@ -307,6 +346,7 @@ color:#333333;
   }
 .item-bottom{
   margin-top:30px;
+  
 }
 .item-bottom-nav {
   margin:0px 210px ;
@@ -314,10 +354,22 @@ color:#333333;
   display:flex;
   font-size:14px;
   padding:16px 0px;
+  .product-details{
+    font-weight:bold;
+  }
+  li{
+    height:16px;
+    display:table;
+
+  }
   a{
     color:#333;
   }
-  span{
-
+  a::after{
+  font-family: "Font Awesome 5 Free";
+  content:"\f054";
+  font-weight:900;
+  margin-right:5px;
   }
 }
+
