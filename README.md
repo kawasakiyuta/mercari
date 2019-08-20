@@ -27,16 +27,17 @@ Things you may want to cover:
 
 |Column          |Type      |Options                  |
 |----------------|----------|-------------------------|
-|product_name    |string    |null: false              |  <!--商品名-->
-|product_state   |integer   |null:                    |  <!--商品の状態-->
+|name    |string    |null: false              |  <!--商品名-->
+|state   |integer   |null:                    |  <!--商品の状態-->
 |price           |string    |null: false              |　
 |sold            |boolean   |null: false              |　<!--売れたかどうか-->　
-|user_id         |references|null: false              |　<!--出品したuser_id-->
+|user_id         |references|null: false,foreign_key:true|　<!--出品したuser_id-->
 |buyer_id        |integer   |null: false              |　<!--購入したuser_id-->
 |cost_bearer     |string    |null: false              |
 |delivery_method |string    |null: false              |
 |delivery_souce  |string    |null: false              |
 |day_to_ship     |integer   |null: false              |
+|category_id     |references|null: false,foreign_key:true|
 
 ### Association
 
@@ -45,12 +46,11 @@ Things you may want to cover:
 * belongs_to :brand
 * has_many   :likes      ,dependent: :destroy
 * has_many   :thee_paths
-* belongs_to :saler      ,dependent: :destroy
-* belongs_to :buyer      ,dependent: :destroy
 * has_many   :images   ,dependent: :destroy
-
+* belongs_to :category
 
 ## imagesテーブル
+
 |Column           |Type      |Options                     |
 |-----------------|----------|----------------------------|
 |product_id       |references|null: false,foreign_key:true|
@@ -62,17 +62,16 @@ Things you may want to cover:
 
 
 
-## thee_pathsテーブル
+## categoriesテーブル
 
 |Column           |Type      |Options                     |
 |-----------------|----------|----------------------------|
-|product_id       |references|null: false,foreign_key:true|
-|category         |integer   |null: false                 |
-|path             |integer   |null: false                 |
+|name             |string    |null: false|
+|ancestry         |string    |                 |
 
 ### Association
 
-* belongs_to :product
+* has_many :products
 
 
 ## brandsテーブル
@@ -86,7 +85,7 @@ Things you may want to cover:
 * has_many   :products
 
 
-## commentsテーブル
+## commentsテーブル//値下げのやりとり
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
@@ -100,20 +99,19 @@ Things you may want to cover:
 * belongs_to :product
 
 
-## messagesテーブル
+## messagesテーブル//購入後のやりとり
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
-|buyer_id |references |null: false, foreign_key: true|
-|saler_id |references |null: false, foreign_key: true|
+|user_id |references |null: false, foreign_key: true|
 |product_id |references |null: false, foreign_key: true|
 |message |text       |null: false                   |
 
 ### Association
+* belongs_to :user
+* belongs_to :product
 
-* belongs_to :buyer_id
-* belongs_to :saler_id
-* belongs_to :product_id
+
 
 
 ## usersテーブル
@@ -147,7 +145,7 @@ Things you may want to cover:
 * has_many :likes
 
 
-## evaluationsテーブル
+## evaluationsテーブル//購入後の評価
 
 |Column             |Type       |Options                       |
 |-------------------|-----------|------------------------------|
@@ -156,6 +154,7 @@ Things you may want to cover:
 |comment            |text       |null: false,                  |<!--評価した人-->　
 |satisfaction_level |string     |null: false,                  |
 |seller_bit         |boolean    |null: false,                  |
+
 ### Association
 
 * belongs_to: :user
@@ -167,28 +166,8 @@ Things you may want to cover:
 |--------|-----------|------------------------------|
 |user_id |references |null: false, foreign_key: true|
 |product_id |references |null: false, foreign_key: true|
+
 ### Association
 
 * belongs_to :user
 * belongs_to :product
-
-
-## salersテーブル
-
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|user_id |references |null: false, foreign_key: true|
-### Association
-
-* belongs_to :product
-* has_many :massages
-
-## buyersテーブル
-
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|user_id |references |null: false, foreign_key: true|
-### Association
-
-* belongs_to :product
-* has_many :massages
