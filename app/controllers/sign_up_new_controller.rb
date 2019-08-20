@@ -8,6 +8,7 @@ class SignUpNewController < ApplicationController
   end
   
   def address
+    @addresses = Address.all
   end
 
   def pay
