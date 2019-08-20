@@ -45,7 +45,7 @@ Things you may want to cover:
 * belongs_to :user
 * has_many   :comments   ,dependent: :destroy
 * belongs_to :brand
-* has_many   :likes      ,dependent: :destroy
+* has_many   :likes,dependent: :destroy
 * has_many   :images   ,dependent: :destroy
 * belongs_to :category
 
