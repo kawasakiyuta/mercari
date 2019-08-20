@@ -27,17 +27,18 @@ Things you may want to cover:
 
 |Column          |Type      |Options                  |
 |----------------|----------|-------------------------|
-|name    |string    |null: false              |  <!--商品名-->
-|state   |integer   |null:                    |  <!--商品の状態-->
-|price           |string    |null: false              |　
-|sold            |boolean   |null: false              |　<!--売れたかどうか-->　
-|user_id         |references|null: false,foreign_key:true|　<!--出品したuser_id-->
-|buyer_id        |integer   |null: false              |　<!--購入したuser_id-->
-|cost_bearer     |string    |null: false              |
+|name            |string    |null: false              |  <!--商品名-->
+|state           |integer   |null: false              |  <!--商品の状態-->
+|price           |string    |null: false              |
+|sold            |boolean   |null: false              | <!--売れたかどうか-->　
+|user_id         |references|null: false,foreign_key:true| <!--出品したuser_id-->
+|buyer_id        |integer   |null: false              | <!--購入したuser_id-->
+|cost_bearer     |string    |null: false              | <!--送料をどっちが払うか-->
 |delivery_method |string    |null: false              |
 |delivery_souce  |string    |null: false              |
 |day_to_ship     |integer   |null: false              |
 |category_id     |references|null: false,foreign_key:true|
+|brand_id        |references|null: false,foreign_key:true|
 
 ### Association
 
@@ -45,7 +46,6 @@ Things you may want to cover:
 * has_many   :comments   ,dependent: :destroy
 * belongs_to :brand
 * has_many   :likes      ,dependent: :destroy
-* has_many   :thee_paths
 * has_many   :images   ,dependent: :destroy
 * belongs_to :category
 
@@ -82,7 +82,7 @@ Things you may want to cover:
 
 ### Association
 
-* has_many   :products
+* has_many :products
 
 
 ## commentsテーブル//値下げのやりとり
