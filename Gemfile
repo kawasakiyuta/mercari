@@ -76,3 +76,6 @@ group :production do
   gem 'fog-aws'
   gem 'unicorn', '5.4.1'
 end
+
+
+gem 'ancestry'
