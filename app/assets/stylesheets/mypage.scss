@@ -78,11 +78,11 @@
           line-height: 72px;
           font-weight: bold;
           text-decoration: none;
-          }
         }
       }
-    }  
+    }
   }  
+  
   .mypage-content{
     margin: 0;
     background: #fff;
@@ -98,11 +98,10 @@
       text-align: center;
       font-size: 16px;
       color: #ccc;
-        p{
+      p{
           padding: 150px;
-        }
-    
-  }
+      }   
+    }
   .mypage-purchased-product {
     margin: 40px 0 0;
     background: #fafafa;
@@ -113,7 +112,7 @@
       font-size: 16px;
       font-weight: bold;
     }
-  }  
+  }
   .mypage-purchased-product__tabs{
     margin: 0;
     background: #fafafa;
@@ -132,7 +131,7 @@
           line-height: 72px;
           font-weight: bold;
           text-decoration: none;
-        }      
+        }
       }
     }
   }
@@ -150,8 +149,9 @@
       font-size: 16px;
       color: #ccc;
       padding: top 40px;
-        p{
+      p{
           padding: 150px;
-        }
+      }
+    }
   }
 }
