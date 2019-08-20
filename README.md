@@ -141,7 +141,9 @@ Things you may want to cover:
 ### Association
 
 * has_many   :comments,dependent: :destroy
+* has_many   :messages,dependent: :destroy
 * has_many   :products,dependent: :destroy
+* has_many   :evaluations,dependent: :destroy
 * has_many :likes
 
 
