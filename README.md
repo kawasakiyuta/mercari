@@ -31,8 +31,8 @@ Things you may want to cover:
 |product_state |integer   |null: false|  <!--商品の状態-->
 |price         |string    |null: false|　
 |sold          |boolean   |null: false|　<!--売れたかどうか-->　
-|saler_id      |references|null: false|　<!--出品したuser_id-->
-|buyer_id      |references|null: false|　<!--購入したuser_id-->
+|seller_id      |integer|null: false|　<!--出品したuser_id-->
+|buyer_id      |integer|null: false|　<!--購入したuser_id-->
 |cost_bearer     |string    |null: false              |
 |delivery_method |string    |null: false              |
 |delivery_souce  |string    |null: false              |
