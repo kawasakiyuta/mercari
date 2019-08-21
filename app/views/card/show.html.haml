@@ -1,0 +1,20 @@
+%main.container
+  =render '/layouts/side__nav'
+  .content-credit
+    %section.content-credit
+      %h2.content-credit-title 支払い方法
+      .content__inner
+        .content__inner-head
+          .content__inner-head--name
+            %h3.head-name クレジットカード一覧
+          %ul.credit-cards__list
+            %li
+              %form.credit-cards
+                %figure.credit-cards
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?615905397",alt: "visa", size: "49x15"
+                .credit-card-num ************0000
+                .credit-card-num 01 / 01
+                %button.credit-card__remove{type: "submit"}削除する
+        .content__inner-foot
+          =link_to "支払い方法について", "#", target: "_blank", class: "foot-name"
+          %i.fa.fa-angle-right
