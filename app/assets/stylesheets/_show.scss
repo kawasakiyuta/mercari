@@ -1,0 +1,375 @@
+a {
+  text-decoration: none;
+}
+*{  
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+}
+.main-wrapper{
+  color: rgb(51, 51, 51);
+  background-color:#f5f5f5;
+  padding-top:40px;
+}
+.main-top-wrapper{
+  background-color:white;
+  width:620px;
+  margin:auto;
+  padding: 24px 40px 40px 40px;
+  
+}
+.main-title{
+  text-align:center;
+  height:33px;
+  h2{
+    font-size:24px;
+    font-weight: bold;
+  }
+}
+
+.main-top{
+  display:flex;
+  width:620px;
+  margin-top:16px;
+}
+.main-image-box{
+width:300px;
+height:300px;
+}
+.item-main {
+  width:300px;
+  height:300px;
+  margin:auto;
+  object-fit: contain;
+}
+.main-images-sub{
+  width:300px;
+  height:120px;
+}
+.main-image-sub{
+  width:20%;
+  height:50%;
+  float:left;
+  object-fit: contain;
+}
+.sub-image{
+  width:100%;
+  height:100%;
+}
+.item-detail-table{
+margin-left:15px;
+font-size:14px;
+color:#333333;
+border-collapse: collapse;
+ .user-name{
+  height:47px;
+}
+.category{
+  height:50px;
+}
+  a{
+  color:#0099e8;
+  }
+ th,td{
+   border:solid 1px #f5f5f5;
+ }
+}
+
+
+
+.item-detail-table th{
+  width:115px;
+  height:24px;
+  padding:8px;
+  background-color:#fafafa;
+  font-weight: normal;
+  
+}
+.item-detail-table td{
+  width:180px;
+  padding:8px;
+  font-size:16px;
+  .fa-grin{
+    color:rgb(239, 81, 133);
+  }
+  .fa-meh{
+    color:  rgb(251, 169, 51);
+  }
+  .fa-frown-open{
+    color:rgb(106, 181, 216)
+  }
+  span{
+    font-size:10px;
+  }
+}
+.user-status{
+  height:25px;
+  display:flex; 
+}
+.item-user-ratings{
+  margin:auto;
+  
+}
+
+.item-price-box{
+  text-align: center;
+  margin-top:24px;
+
+}
+
+.item-price{
+  font-weight:bold;
+  font-size:50px;
+  margin-right:16px;
+}
+.item-price-tax{
+  font-size:10px;
+}
+.item-price-postage{
+  font-size:16px;
+}
+
+.item-buy-box{
+  background-color:red;
+  width: 620px;
+  height:60px;
+  margin-top:16px;
+  color:white;
+  line-height: 60px;
+  text-align:center;
+  display: block;
+  font-weight: 600;
+  font-size:24px;
+}
+
+.item-description{
+  font-size:18px;
+  padding-top:32px;
+  width:620px;
+}
+
+.item-button-container{
+  display:flex;
+  margin-top:16px;
+  font-size:13px;
+}
+.button-likes{
+  /* font-family: inherit; */
+  border:none;
+  border-radius:15px;
+  padding:8px 16px;
+  background-color:#f5f5f5;
+  width:125px;
+  height:33px;
+}
+.button-report{
+  color:black;
+  border-radius:15px;
+  padding:8px 16px;
+  height:15px;
+  width:145px;
+  margin-left:16px;
+  background-color:#f5f5f5;
+  text-align: center;
+}
+.button-safe{
+  color:#0099e8;
+  text-align: center;
+  margin:6.5px 0px 6.5px 100px;
+}
+
+
+.comment-wrappe{ /* コメント */
+  width:700px;
+  margin:auto;
+  padding:24px;
+  display:flex;
+  
+}
+
+.comment-message{
+  width:100%;
+  height:100%;
+  margin-top:8px;
+  background-color:white;
+  padding:24px;
+  
+  }
+  .comment-message-content{
+    width:652px;
+    p{
+      background-color:#fff6de;
+      font-size:14px;
+      padding:8px;
+      line-height:14px;
+      margin-top:24px;
+    }
+    textarea { /* コメント欄*/
+      resize:vertical;
+      width:630px;
+      height:82px;
+      margin-top:8px;
+      padding:10px;
+      border: 1px solid #ccc;
+      
+    }
+    input{
+      width:100%;
+      background-color:#aaa;
+      margin-top:5px;
+      line-height: 48px;
+      color:white;
+      border: 1px solid #ccc;
+      font-size:14px;
+    }
+}/* コメント */
+    textarea:focus{
+      border: 1px solid #00bfff;
+      outline:0px;
+    }
+    input:active{
+      background-color:#808080;
+      outline:0px;
+    }
+
+.item-nav{   /* 次のアイテム・前のアイテム */
+  margin:0px 370px ;
+  width:700px;
+  .item-nav-next{
+    float:right;
+    font-size:14px;
+  }
+  .item-nav-previous{
+    font-size:14px;
+  }
+}
+.item-nav-previous::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f053";
+  font-weight: 900;
+  margin-right:5px;
+}
+.item-nav-next::after{
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  font-weight: 900;
+  margin-left:5px;
+}
+.item-nav a{
+  color:#0099e8;
+}
+
+.item-sns{   /* snsリンク*/
+  background-color:white;
+  margin:auto;
+  width:700px;
+  height:138px;
+  text-align: center;
+  margin-top:24px
+}  /* snsリンク*/
+
+ .item-other{/* その他のアイテム*/
+  margin:auto;
+  width:700px;
+}
+.item-other-user{
+  margin-top:24px;
+  margin-bottom:0px;
+  font-size:22px;
+  font-weight: bold;
+}
+.item-other-user a{
+  color:#0099e8;
+}
+
+.item-box{
+  width:100%;
+  margin:auto;
+  display:flex;
+ }
+ .item-box-content{
+  display:flex;
+  height:330px;
+ }
+ .item-box-new{
+   width:33%;
+ }
+ .item-box-body{
+   width:90.65%;
+   margin-right:30px;
+   background-color:white;
+ }
+ .item-box-photo{
+   height:213px;
+   width:100%;
+   margin:0px;
+ }
+ 
+ .item-image{
+   width:100%;
+   height:100%;
+   object-fit: contain;
+   
+ }
+ .item-box-name{
+   font-size:15px;
+   font-weight:normal;
+   width:181px;
+   height:43px;
+   overflow: hidden; 
+   position:relative; 
+ }
+ .item-box-name:after{
+   content: "";
+   bottom:0;
+   position: absolute;
+   right:0;
+   width:50%;
+   height:24px;
+   background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+ }
+ 
+ .item-box-price{
+   font-weight:bold;
+   font-size:15px;
+   margin-top:8px;
+ }
+ .item-box-detail{
+   padding:16px;
+ }
+ /* その他のアイテム*/
+  .item-bottom{
+    height:48px;
+    width:100%;
+    
+    border-top:1px solid #eee ;
+
+    
+  }
+.item-bottom{
+  margin-top:30px;
+  
+}
+.item-bottom-nav {
+  margin:0px 210px ;
+  width:1020px;
+  display:flex;
+  font-size:14px;
+  padding:16px 0px;
+  .product-details{
+    font-weight:bold;
+  }
+  li{
+    height:16px;
+    display:table;
+
+  }
+  a{
+    color:#333;
+  }
+  a::after{
+  font-family: "Font Awesome 5 Free";
+  content:"\f054";
+  font-weight:900;
+  margin-right:5px;
+  }
+}
+
