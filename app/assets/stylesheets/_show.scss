@@ -1,59 +1,68 @@
-a {
-  text-decoration: none;
-}
 *{  
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  a {
+    text-decoration: none;
+  }
 }
+
 .main-wrapper{
   color: rgb(51, 51, 51);
   background-color:#f5f5f5;
   padding-top:40px;
-}
-.main-top-wrapper{
-  background-color:white;
-  width:620px;
-  margin:auto;
-  padding: 24px 40px 40px 40px;
-  
-}
-.main-title{
-  text-align:center;
-  height:33px;
-  h2{
-    font-size:24px;
-    font-weight: bold;
+
+  .main-top-wrapper{
+    background-color:white;
+    width:620px;
+    margin:auto;
+    padding: 24px 40px 40px 40px;
+
+    .main-title{
+      text-align:center;
+      height:33px;
+      h2{
+        font-size:24px;
+        font-weight: bold;
+      }
+    }
+    .main-top{
+      display:flex;
+      width:620px;
+      margin-top:16px;
+
+      .main-image-box{
+        width:300px;
+        height:300px;
+      }
+    }
   }
+
 }
 
-.main-top{
-  display:flex;
-  width:620px;
-  margin-top:16px;
-}
-.main-image-box{
-width:300px;
-height:300px;
-}
-.item-main {
-  width:300px;
-  height:300px;
-  margin:auto;
-  object-fit: contain;
-}
+
+// .item-main {
+//   width:300px;
+//   height:300px;
+//   margin:auto;
+//   object-fit: contain;
+// }
 .main-images-sub{
   width:300px;
   height:120px;
+
+  .main-image-sub{
+    width:20%;
+    height:50%;
+    float:left;
+    object-fit: contain;
+
+    .sub-image{
+      width:100%;
+      height:100%;
+    }
+  }
 }
-.main-image-sub{
-  width:20%;
-  height:50%;
-  float:left;
-  object-fit: contain;
-}
-.sub-image{
-  width:100%;
-  height:100%;
-}
+
+
 .item-detail-table{
 margin-left:15px;
 font-size:14px;
@@ -72,8 +81,6 @@ border-collapse: collapse;
    border:solid 1px #f5f5f5;
  }
 }
-
-
 
 .item-detail-table th{
   width:115px;
@@ -266,7 +273,8 @@ border-collapse: collapse;
   margin-top:24px
 }  /* snsリンク*/
 
- .item-other{/* その他のアイテム*/
+.item-other{
+  .item-other{/* その他のアイテム*/
   margin:auto;
   width:700px;
 }
@@ -335,41 +343,115 @@ border-collapse: collapse;
  .item-box-detail{
    padding:16px;
  }
- /* その他のアイテム*/
-  .item-bottom{
-    height:48px;
-    width:100%;
-    
-    border-top:1px solid #eee ;
-
-    
-  }
-.item-bottom{
-  margin-top:30px;
+}
+.item-other{ /* その他のアイテム*/
+  margin:auto;
+  width:700px;
   
-}
-.item-bottom-nav {
-  margin:0px 210px ;
-  width:1020px;
-  display:flex;
-  font-size:14px;
-  padding:16px 0px;
-  .product-details{
+  .item-other-user{
+    margin-top:24px;
+    margin-bottom:0px;
+    font-size:22px;
+    font-weight: bold;
+    text-align:left;
+    padding:0px;
+
+    .item-other-user a{
+      color:#0099e8;
+    }
+  }
+  .item-box{
+    width:100%;
+    margin:auto;
+    display:flex;
+
+    .item-box-content{
+      display:flex;
+      height:330px;
+      margin-top:20px;
+     }
+
+   }
+   
+   .item-box-new{
+     width:33%;
+
+     .item-box-body{
+      width:90.65%;
+      margin-right:30px;
+      background-color:white;
+
+      .item-box-photo{
+        height:213px;
+        width:100%;
+        margin:0px;
+        .item-image{
+          width:100%;
+          height:100%;
+          object-fit: contain;
+        }
+      }
+    }
+   }
+   .item-box-detail{
+    padding:16px;
+  
+   .item-box-name{
+     font-size:15px;
+     font-weight:normal;
+     width:181px;
+     height:43px;
+     overflow: hidden; 
+     position:relative; 
+
+     .item-box-name:after{
+      content: "";
+      bottom:0;
+      position: absolute;
+      right:0;
+      width:50%;
+      height:24px;
+      background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+    }
+   }
+   .item-box-price{
     font-weight:bold;
+    font-size:15px;
+    margin-top:8px;
   }
-  li{
-    height:16px;
-    display:table;
+  }    
+}   /* その他のアイテム*/
+ 
+.item-bottom{
+  height:48px;
+  width:100%;
+  margin-top:30px;
+  border-top:1px solid #eee ;
+ 
 
+  .item-bottom-nav {
+    margin:0px 210px ;
+    width:1020px;
+    display:flex;
+    font-size:14px;
+    padding:16px 0px;
+    li{
+      height:16px;
+      display:table;
+    }
+    a{
+      color:#333;
+    }
+    a::after{
+      font-family: "Font Awesome 5 Free";
+      content:"\f054";
+      font-weight:900;
+      margin-right:5px;
+      }
+    .product-details{
+      font-weight:bold;
+    }
+    
   }
-  a{
-    color:#333;
-  }
-  a::after{
-  font-family: "Font Awesome 5 Free";
-  content:"\f054";
-  font-weight:900;
-  margin-right:5px;
-  }
+
 }
-
