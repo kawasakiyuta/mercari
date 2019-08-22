@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'items#index'
-  resources :mypages, only: :index
+  resources :products,only: [:index]
+  resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :mypage
