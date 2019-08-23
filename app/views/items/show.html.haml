@@ -38,13 +38,13 @@
             = link_to "user_name","#"
             .user-status
               .item-user-ratings
-                %i.fas.fa-grin
+                %i.fa.fa-smile-o{"aria-hidden" => "true"}
                 %span 100
               .item-user-ratings
-                %i.fas.fa-meh
+                %i.fa.fa-meh-o{"aria-hidden" => "true"}
                 %span 100
               .item-user-ratings
-                %i.fas.fa-frown-open
+                %i.fa.fa-frown-o{"aria-hidden" => "true"}
                 %span 100
         %tr
           %th.category カテゴリー
@@ -111,7 +111,14 @@
     = link_to "next-item","#",class: "item-nav-next"
   .item-sns
     / snsリンク
-    =image_tag "https://res.cloudinary.com/hapvr1azp/image/upload/v1538993336/kvulc377thq523iizqvj.png",height: "100%", width:"30%"
+    .sns-links
+      = link_to "#" do
+        %i.fa.fa-facebook-official{"aria-hidden" => "true"}
+      = link_to "#" do
+        %i.fa.fa-twitter-square{"aria-hidden" => "true"}
+      = link_to "#" do
+        %i.fa.fa-pinterest-square{"aria-hidden" => "true"}
+    -# =image_tag "https://res.cloudinary.com/hapvr1azp/image/upload/v1538993336/kvulc377thq523iizqvj.png",height: "100%", width:"30%"
   .item-other
     / その他のアイテム
     %h2.item-other-user

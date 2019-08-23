@@ -96,13 +96,14 @@ border-collapse: collapse;
   width:180px;
   padding:8px;
   font-size:16px;
-  .fa-grin{
+  .fa-smile-o{
     color:rgb(239, 81, 133);
+    
   }
-  .fa-meh{
+  .fa-meh-o{
     color:  rgb(251, 169, 51);
   }
-  .fa-frown-open{
+  .fa-frown-o{
     color:rgb(106, 181, 216)
   }
   span{
@@ -115,6 +116,7 @@ border-collapse: collapse;
 }
 .item-user-ratings{
   margin:auto;
+  font-weight:900px;
   
 }
 
@@ -253,15 +255,14 @@ border-collapse: collapse;
   }
 }
 .item-nav-previous::before{
-  font-family: "Font Awesome 5 Free";
-  content: "\f053";
-  font-weight: 900;
+  font-family: "FontAwesome";
+  content: "\f104 ";
+
   margin-right:5px;
 }
 .item-nav-next::after{
-  font-family: "Font Awesome 5 Free";
-  content: "\f054";
-  font-weight: 900;
+  font-family: "FontAwesome";
+  content: "\f105";
   margin-left:5px;
 }
 .item-nav a{
@@ -274,7 +275,25 @@ border-collapse: collapse;
   width:700px;
   height:138px;
   text-align: center;
-  margin-top:24px
+  margin-top:24px;
+  .sns-links{
+    font-size:55px;
+    height:40px;
+    .fa-facebook-official{     
+      color:rgb(22, 53, 104);
+    }
+    .fa-twitter-square{
+      color:rgb(61, 128, 235);
+    }
+    .fa-pinterest-square{
+      color:rgb(162, 24, 24);
+    }
+    i{
+      margin-top:50px;
+    }
+  }
+  
+  
 }  /* snsリンク*/
 
 .item-other{
@@ -447,10 +466,11 @@ border-collapse: collapse;
       color:#333;
     }
     a::after{
-      font-family: "Font Awesome 5 Free";
-      content:"\f054";
-      font-weight:900;
+      font-family: "FontAwesome";
+      content: "\f105";
       margin-right:5px;
+      
+
       }
     .product-details{
       font-weight:bold;
