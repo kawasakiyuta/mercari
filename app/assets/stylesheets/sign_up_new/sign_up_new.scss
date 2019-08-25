@@ -1,0 +1,56 @@
+//メイン部分
+@import "sign_up_new/_main.index";
+@import "sign_up_new/_main.telephone";
+@import "sign_up_new/_main.address";
+@import "sign_up_new/_main.pay";
+@import "sign_up_new/_main.create";
+
+
+//ヘッダー部分
+.header-box-registration a {
+  width: 200px;
+  display: inline-block;
+}
+.header-box-registration img{
+  width: 200px;
+  display: inline-block;
+}
+.side-header {
+  margin-left: 300px;
+  width: 500px;
+}
+
+.form {
+  text-align: center;
+  margin: 20px 120px 0;
+  &__index {
+    text-align: center;
+    margin: 20px 140px 0;
+  }
+}
+
+//フッター部分
+.footer-overview {
+  padding: 30px;
+  &--1 {
+    text-decoration: none;
+    font-size: 30px;
+  }
+  &--2 {
+    text-decoration: none;
+    margin: 20px;
+  }
+  &--3 {
+    text-decoration: none;
+  }
+}
+.footer__box img {
+  height: 75px;
+  width: 150px;
+}
+.footer__name {
+  font-size: 5px;
+}
+
+
+
