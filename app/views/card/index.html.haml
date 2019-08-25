@@ -1,0 +1,18 @@
+%main.container
+  =render '/layouts/side__nav'
+  .content-credit
+    %section.content-credit
+      %h2.content-credit-title 支払い方法
+      .content__inner
+        .content__inner-head
+          .content__inner-head--name
+            %h3.head-name クレジットカード一覧
+          %section.credit-cards__addition
+            .credit-cards__addition-btn
+              = link_to "", class: "add-btn", method: :get do
+                %i.fa.fa-credit-card
+                クレジットカードを追加する
+                
+        .content__inner-foot
+          = link_to "支払い方法について", "#", target: "_blank", class: "foot-name"
+          %i.fa.fa-angle-right

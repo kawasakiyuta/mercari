@@ -25,57 +25,56 @@ Things you may want to cover:
 
 ## productsテーブル
 
-|Column        |Type      |Options    |
-|--------------|----------|-----------|
-|product_name  |string    |null: false|  <!--商品名-->
-|images        |string    |null: false|       
-|product_state |integer   |null: false|  <!--商品の状態-->
-|price         |string    |null: false|　
-|sold          |boolean   |null: false|　　
-|saler_id      |references|null: false|　<!--出品したuser_id-->
-|buyer_id      |references|null: false|　<!--購入したuser_id-->
-
+|Column          |Type      |Options                  |
+|----------------|----------|-------------------------|
+|name            |string    |null: false              |  <!--商品名-->
+|state           |integer   |null: false              |  <!--商品の状態-->
+|price           |string    |null: false              |
+|sold            |boolean   |null: false              | <!--売れたかどうか-->　
+|user_id         |references|null: false,foreign_key:true| <!--出品したuser_id-->
+|buyer_id        |integer   |null: false              | <!--購入したuser_id-->
+|cost_bearer     |string    |null: false              | <!--送料をどっちが払うか-->
+|delivery_method |string    |null: false              |
+|delivery_souce  |string    |null: false              |
+|day_to_ship     |integer   |null: false              |
+|category_id     |references|null: false,foreign_key:true|
+|brand_id        |references|null: false,foreign_key:true|
 
 ### Association
 
 * belongs_to :user
-* has_many   :comments,dependent: :destroy
+* has_many   :comments   ,dependent: :destroy
 * belongs_to :brand
 * has_many   :likes,dependent: :destroy
-* belongs_to :delivery,dependent: :destroy
-* has_many   :thee_paths
+* has_many   :images   ,dependent: :destroy
+* belongs_to :category
 
-
-## thee_pathsテーブル
+## imagesテーブル
 
 |Column           |Type      |Options                     |
 |-----------------|----------|----------------------------|
 |product_id       |references|null: false,foreign_key:true|
-|category         |integer   |null: false                 |
-|path             |integer   |null: false                 |
+|image        |string    |null: false|
 
 ### Association
 
-* belongs_to :product
+* belongs_to :products
 
 
-## deliveryテーブル
 
-|Column          |Type      |Options                  |
-|----------------|----------|-------------------------|
-|product_id      |references|null: false              |
-|cost_bearer     |string    |null: false              |
-|delivery_method |string    |null: false              |
-|delivery_souce  |string    |null: false              |
-|day_to_ship     |integer   |null: false              |
+## categoriesテーブル
+
+|Column           |Type      |Options                     |
+|-----------------|----------|----------------------------|
+|name             |string    |null: false|
+|ancestry         |string    |                 |
 
 ### Association
 
-* has_many   :products
+* has_many :products
 
 
-
-## brandテーブル
+## brandsテーブル
 
 |Column        |Type      |Options                  |
 |--------------|----------|-------------------------|
@@ -83,15 +82,15 @@ Things you may want to cover:
 
 ### Association
 
-* has_many   :products
+* has_many :products
 
 
-## commentsテーブル
+## commentsテーブル//値下げのやりとり
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
 |user_id |references |null: false, foreign_key: true|
-|item_id |references |null: false, foreign_key: true|
+|product_id |references |null: false, foreign_key: true|
 |comment |text       |null: false                   |
 
 ### Association
@@ -100,16 +99,19 @@ Things you may want to cover:
 * belongs_to :product
 
 
-## messagesテーブル
+## messagesテーブル//購入後のやりとり
 
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
 |user_id |references |null: false, foreign_key: true|
+|product_id |references |null: false, foreign_key: true|
 |message |text       |null: false                   |
 
 ### Association
-
 * belongs_to :user
+* belongs_to :product
+
+
 
 
 ## usersテーブル
@@ -133,39 +135,31 @@ Things you may want to cover:
 |city               |string  |null: false                         |
 |block              |string  |null: false                         |
 |building           |string  |                                    |
+|profile_image      |string  |                                    |
+|profile_comment    |text    |                                    |
 
 ### Association
 
 * has_many   :comments,dependent: :destroy
 * has_many   :messages,dependent: :destroy
 * has_many   :products,dependent: :destroy
-* belongs_to :like
-* belongs_to :profile,dependent: :destroy
-* belongs_to :evaluation,dependent: :destroy
+* has_many   :evaluations,dependent: :destroy
+* has_many :likes
 
 
-## evaluationsテーブル
+## evaluationsテーブル//購入後の評価
 
 |Column             |Type       |Options                       |
 |-------------------|-----------|------------------------------|
 |user_id            |references |null: false, foreign_key: true|
+|evaluator_ id      |integer    |null: false                   |<!--評価された人 -->　
+|comment            |text       |null: false,                  |<!--評価した人-->　
 |satisfaction_level |string     |null: false,                  |
-|messages           |text       |null: false,                  |
+|seller_bit         |boolean    |null: false,                  |
+
 ### Association
 
-* belongs_to :user
-
-
-## profileテーブル
-
-|Column          |Type       |Options                       |
-|----------------|-----------|------------------------------|
-|user_id         |references |null: false, foreign_key: true|
-|profile_image   |string     |null: false,                  |
-|profile_comment |text       |null: false,                  |
-### Association
-
-* belongs_to :user
+* belongs_to: :user
 
 
 ## likesテーブル
@@ -173,9 +167,9 @@ Things you may want to cover:
 |Column  |Type       |Options                       |
 |--------|-----------|------------------------------|
 |user_id |references |null: false, foreign_key: true|
-|item_id |references |null: false, foreign_key: true|
+|product_id |references |null: false, foreign_key: true|
+
 ### Association
 
 * belongs_to :user
-* belongs_to :item
-
+* belongs_to :product

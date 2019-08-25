@@ -20,7 +20,7 @@
     padding: 0;
     overflow: hidden;
     box-sizing: border-box;
-        
+    
     &__head {
       display: flex;
       -webkit-box-align: center;
@@ -62,7 +62,7 @@
           right: 0;
           display: flex;
           -webkit-box-align: center;
-          align-items: center; 
+          align-items: center;
           -webkit-box-pack: center;
           justify-content: center;
           width: 40px;
@@ -94,7 +94,7 @@
       .mega-menu-left {
         float: left;
         padding-right: 15px;
-      
+
         .category-list-parent,
         .brand-list-parent {
           text-decoration: none;
@@ -113,7 +113,7 @@
           display: inline-block;
         }
       }
-      
+
       .mega-menu-right {
         display: inline-block;
         padding: 0 14px;
