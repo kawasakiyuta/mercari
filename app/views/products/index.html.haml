@@ -12,11 +12,12 @@
             .item-box-body
               %figure.item-box-photo
                 = link_to "products" do
-                  = image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-image"
+                  = image_tag @image,class: "item-image"
               .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 new itemItem NameItem Name アイテム詳細 new item アイテム詳細 new item
+                %h3.item-box-name 
+                  =@name
                 .item-box-price
-                  ¥1,0000
+                  =@price
           .item-box-new
             .item-box-body
               %figure.item-box-photo
