@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :sign_up, only: [:index, :new]
   resources :sign_up_new
   root 'products#index'
+  get 'products/error' => 'products#error'
   resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   get "card/create", to: "card#create"
   resources :card
   resources :purchase_confirmation
-  resources :items
   get 'mypage/indetification', to: 'mypage#identification'
 
 end
