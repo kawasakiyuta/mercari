@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :sign_up, only: [:index, :new]
   resources :sign_up_new
   root 'items#index'
-  resources :products,only: [:index]
+  resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
