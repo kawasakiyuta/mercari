@@ -1,0 +1,56 @@
+.progress-bar li.bar-name{ //完了
+  margin: 0 40px 0 0;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ea352d;
+}
+
+.progress-line--forth, // 支払い方法
+.progress-line--fifth--end { // 完了 ● 部分
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+  background: #ea352d;
+}
+
+.progress-line--forth::before {
+  right: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ea352d;
+}
+
+.progress-line--forth::after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ea352d;
+}
+
+.progress-line--fifth--end::before {
+  right: 60%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ea352d;
+}
+
