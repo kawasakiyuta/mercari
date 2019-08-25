@@ -1,121 +1,265 @@
-
-main.container {
+main.card-container {
   margin: 40px auto 0;
   width: 1020px;
   display: flex;
-}
-.content-credit {
-  width: 700px;
-  height: 364px;
-  background-color: #fff;
-}
-section.content-credit {
-  margin: 0;
-}
-h2.content-credit-title {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 8px 24px;
-  border-bottom: 2px solid #f5f5f5;
-  text-align: center;
-}
-.content__inner {
-  padding: 64px;
-  height: 185px;
-  &-head {
-    height: 129px;
+  .content-credit {
+    width: 700px;
+    height: 364px;
+    background-color: #fff;
   }
-}
-h3.head-name {
-  max-width: 320px;
-  margin: 0 auto;
-  font-weight: bold;
-}
-ul.credit-cards__list {
-  height: 113px;
-  li {
-    border-bottom: 1px solid #eee;
-    padding: 24px 0;
-  }
-}
-form.credit-cards {
-  position: relative;
-  max-width: 320px;
-  margin: 0 auto;
-  figure.credit-cards {
+  section.content-credit {
     margin: 0;
   }
-}
-.credit-card-num {
-  margin: 8px 0 0;
-  font-size: 14px;
-  letter-spacing:0.1em;
-}
-button.credit-card__remove {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px 6px;
-  background: #fff;
-  border-radius: 3px;
-  border: 1px solid #ea352d;
-  color: #ea352d;
-  font-size: 12px;
-  cursor: pointer;
-}
-.content__inner-foot {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 40px;
-  text-align: right;
-  vertical-align: middle;
-  .foot-name {
-    display: block;
-    text-decoration: none;
-    color: #0099e8;
-    font-size: 14px;
-    padding-top: 3px;
-  }
-  i {
-    vertical-align: middle;
-    color: #0099e8;
-    margin-left: 8px;
+  h2.content-credit-title {
     font-size: 24px;
-  }
-}
-.content__inner-foot:hover {
-  opacity: 0.7;
-  .foot-name:hover {
-    text-decoration: underline;
-  }
-}
-
-
-section.credit-cards__addition {
-  padding: 24px 0;
-  border-bottom: 1px solid #eee;
-}
-.credit-cards__addition-btn {
-  max-width: 320px;
-  margin: 0 auto;
-  .add-btn {
-    margin-bottom: 8px !important;
-    background: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-bottom: 2px solid #f5f5f5;
     text-align: center;
-    text-decoration: none;
-    i {
-      margin-right: 16px;
+    letter-spacing: 2px;
+  }
+  .content__inner {
+    padding: 64px;
+    height: 185px;
+    &-head {
+      height: 129px;
     }
   }
-  .add-btn:hover {
+  h3.head-name {
+    max-width: 320px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  ul.credit-cards__list {
+    height: 113px;
+    li {
+      border-bottom: 1px solid #eee;
+      padding: 24px 0;
+    }
+  }
+  form.credit-cards {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    figure.credit-cards {
+      margin: 0;
+    }
+  }
+  .credit-card-num {
+    margin: 8px 0 0;
+    font-size: 14px;
+    letter-spacing:0.1em;
+  }
+  button.credit-card__remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 6px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ea352d;
+    color: #ea352d;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .content__inner-foot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    text-align: right;
+    vertical-align: middle;
+    .foot-name {
+      display: block;
+      text-decoration: none;
+      color: #0099e8;
+      font-size: 14px;
+      padding-top: 3px;
+    }
+    i {
+      vertical-align: middle;
+      color: #0099e8;
+      margin-left: 8px;
+      font-size: 24px;
+    }
+  }
+  .content__inner-foot:hover {
     opacity: 0.7;
-    transition: all ease-out .3s;
+    .foot-name:hover {
+      text-decoration: underline;
+    }
+  }
+
+
+  section.credit-cards__addition {
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .credit-cards__addition-btn {
+    max-width: 320px;
+    margin: 0 auto;
+    .add-btn {
+      margin-bottom: 8px !important;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      i {
+        margin-right: 16px;
+      }
+    }
+    .add-btn:hover {
+      opacity: 0.7;
+      transition: all ease-out .3s;
+    }
+  }
+// *クレジットカード情報入力画面
+  .content__inner-body {
+    padding: 0 40px 94px;
+    height: 407px;
+    background-color: #fff;
+    &--form {
+      max-width: 343px;
+      margin: 0 auto;
+      .form-group {
+        margin: 0;
+        margin-top: 32px;
+        label {
+          font-weight: 600;
+          display: inline-block;
+          font-size: 14px;
+        }
+        span.form-require {
+          background: #ea352d;
+          margin-left: 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+        }
+        input.input-default {
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        .credit-card {
+          margin: 8px 0 0;
+          font-size: 0;
+          display: flex;
+          li {
+            display: inline-block;
+            margin: 0 8px 0 0;
+            vertical-align: middle;
+          }
+        }
+        .contents-form__expiration-date{
+          display: flex;
+          .expiration-date-select.select-month,
+          .expiration-date-select.select-year {
+            display: inline-block;
+            width: calc(50% - 2px);
+            margin: 8px 0 0;
+            select.select-default {
+              width: calc(100% - 38px);
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+              -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
+              appearance: none;	
+            }
+            i.fa.fa-chevron-down {
+              font-size: 10px;
+              margin: 0 6px 0 -15px;
+              position: relative;
+              top: 3px;
+              pointer-events: none;
+              outline: 0;
+              -webkit-appearance: none;
+              right: 16px;
+              z-index: 2;
+              color: #888;
+              transform: translate(0, -50%);
+            }
+            span.date {
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+        .description {
+          position: relative;
+          padding: 0;
+          margin: 8px 0 0;
+          .description-text {
+            color: #0099e8;
+            i.fa.fa-question-circle {
+              cursor: text;
+            }
+          }
+          .description-text .toggle-button {
+            font-weight: 400;
+            cursor: text;
+          }
+          .description-text .toggle-content,
+          .description-text > input[type="checkbox"] {
+            display: none;
+          }
+          .description-text > input[type="checkbox"]:checked ~ .toggle-content {
+            display: block;
+          }
+          .toggle-content {
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            top: 28px;
+            z-index: 1;
+            padding: 16px;
+            border-radius: 6px;
+            background: #eee;
+            color: #333;
+            line-height: 1.5;
+            text-align: center;
+            transition: all ease-out .3s;
+            font-size: 14px;
+            height: 134px;
+            width: 301px;
+          }
+          .toggle-content:before {
+            top: -8px;
+            right: 32px;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent #eee transparent;
+            display: block;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+          }
+        }
+        .credit-cards__addition-btn {
+          margin-top: 24px;
+          width: 340px;
+        }
+      }
+    }
   }
 }
-
