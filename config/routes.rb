@@ -7,12 +7,13 @@ Rails.application.routes.draw do
       get 'mypage'
     end
   end 
-
+  
   resources :login, only: :index
   resources :sign_up, only: [:index, :new]
   resources :sign_up_new
-  root 'items#index'
-  resources :products,only: [:index]
+  root 'products#index'
+  get 'products/error' => 'products#error'
+  resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   get "card/create", to: "card#create"
