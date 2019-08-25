@@ -12,12 +12,12 @@
             .item-box-body
               %figure.item-box-photo
                 = link_to "products" do
-                  = image_tag @image,class: "item-image"
+                  = image_tag @items[0][:image],class: "item-image"
               .item-box-detail
                 %h3.item-box-name 
-                  =@name
+                  =@items[0][:name]
                 .item-box-price
-                  =@price
+                  =@items[0][:price]
           .item-box-new
             .item-box-body
               %figure.item-box-photo
