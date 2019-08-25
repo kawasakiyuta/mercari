@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-
   resources :login, only: :index
   resources :sign_up, only: [:index, :new]
   resources :sign_up_new
-  root 'items#index'
+  root 'products#index'
   resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
