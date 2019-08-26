@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+  get 'cards/show'
+  get 'cards/create'
   devise_for :users
   resources :users do
     collection do
