@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
   resources :login, only: :index
+
   resources :sign_up, only: :index
   resources :sign_up_new, only: :index
 
@@ -25,11 +27,20 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'items#index'
   root 'tops#index'
+
+  resources :sign_up, only: [:index, :new]
+  resources :sign_up_new
+
   root 'items#index'
+  resources :products,only: [:index]
+  resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
-  resources :item
   resources :mypage
+  get "card/create", to: "card#create"
+  resources :card
+  resources :purchase_confirmation
+  resources :items
   get 'mypage/indetification', to: 'mypage#identification'
 
 end
