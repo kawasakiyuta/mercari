@@ -9,7 +9,6 @@ Rails.application.routes.draw do
       get 'telephone'
     end
   end
-
   root 'items#index'
   resources :products,only: [:index]
   resources :login, only: :index
@@ -21,7 +20,6 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
-  resources :mypage
   get "card/create", to: "card#create"
   resources :card
   resources :purchase_confirmation
