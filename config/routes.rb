@@ -9,12 +9,7 @@ Rails.application.routes.draw do
       get 'telephone'
     end
   end
-
-  root 'items#index'
-  resources :products,only: [:index]
-  resources :login, only: :index
-  resources :sign_up, only: [:index, :new]
-  resources :sign_up_new
+  
   root 'products#index'
   get 'products/error' => 'products#error'
   resources :products
