@@ -2,7 +2,7 @@
   %header
   .section
     .header
-      = link_to image_tag("logo.svg", width: '185')
+      = link_to  image_tag("logo.svg", width: '185'), root_path
     .main-section
       .main-section__heading
         %h2.main-section__heading-name 商品の情報を入力
@@ -159,8 +159,7 @@
               に同意したことになります。
           %button.red-submit-btn{type: "submit"}
             出品する
-          %button.glay-back-btn{type: "button"}
-            もどる
+          = link_to '戻る', :back, class:"glay-back-btn"
     .footer
       .footer__top
         %ul
