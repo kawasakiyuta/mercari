@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+  get 'cards/show'
+  get 'cards/create'
   devise_for :users
+
+  resources :users do
+    collection do
+      get 'logout'
+      get 'identification'
+      get 'mypage'
+    end
+  end 
+  
+
 
   resources :users do
     collection do
@@ -7,6 +20,9 @@ Rails.application.routes.draw do
       get 'address'
       get 'pay'
       get 'telephone'
+      get 'logout'
+      get 'identification'
+      get 'mypage'
     end
   end
   root 'items#index'
@@ -23,6 +39,6 @@ Rails.application.routes.draw do
   get "card/create", to: "card#create"
   resources :card
   resources :purchase_confirmation
-  get 'mypage/indetification', to: 'mypage#identification'
+  resources :items
 
 end

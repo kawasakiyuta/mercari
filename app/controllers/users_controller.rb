@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+
+  def logout
+  end
+
+  def identification
+    @addresses = Address.all
+  end
+
+  def mypage
+  end
+
    
 
   def index
@@ -29,6 +40,7 @@ class UsersController < ApplicationController
 
   def telephone
     render layout: 'index'
+
   end
 
 end
