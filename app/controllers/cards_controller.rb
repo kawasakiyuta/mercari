@@ -1,4 +1,4 @@
-class CardController < ApplicationController
+class CardsController < ApplicationController
   def index
   end
 
@@ -7,5 +7,4 @@ class CardController < ApplicationController
 
   def create
   end
-  
 end
