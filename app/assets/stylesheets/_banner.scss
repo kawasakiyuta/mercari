@@ -1,60 +1,61 @@
 .banner-section {
   display: block;
-  background-image: url(https://images.pexels.com/photos/2370724/pexels-photo-2370724.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-image: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?40435716);
   background-position: center;
   background-size: cover;
   height: 260px;
-}
 
-.banner__inner {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  width: 750px;
-  height: 260px;
-  margin: 0 auto;
-  color: #fff;
-  &--left {
-    width: 420px;
-    height: 166px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    h2 {
-      font-size: 24px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  .banner__inner {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    &--left {
+      width: 420px;
+      height: 166px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      h2 {
+        padding: 0;
+        text-align: left;
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      p {
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
     }
-    p {
-      font-size: 35px;
-      margin-top: 10px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    &--left-icon {
+      margin: 20px 0 0;
+      height: 68px;
     }
-  }
-  &--left-icon {
-    margin: 20px 0 0;
-    height: 68px;
-  }
-  figure {
-    float: left;
-    margin: 0px;
-  }
-  .app-icon {
-    display: inline-flex;
-    margin: 14px 0 0 24px;
-    line-height: 68px;
-    li {
-      margin-right: 16px;
+    figure {
+      float: left;
+      margin: 0px;
     }
-  }
-  &--right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 300px;
-    height: 100%;
-    img {
-      width: 100%;
+    .app-icon {
+      display: inline-flex;
+      margin: 14px 0 0 24px;
+      line-height: 68px;
+      li {
+        margin-right: 16px;
+      }
+    }
+    &--right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+      img {
+        width: 100%;
+      }
     }
   }
 }

@@ -25,7 +25,10 @@ Rails.application.routes.draw do
       get 'mypage'
     end
   end
-  root 'items#index'
+
+
+  root 'products#index'
+
   resources :products,only: [:index]
   resources :login, only: :index
   resources :sign_up, only: [:index, :new]
