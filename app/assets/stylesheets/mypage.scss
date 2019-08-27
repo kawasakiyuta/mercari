@@ -1,158 +1,160 @@
-body {
-  position: relative;
-  min-height: 100%;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  font-size: 14px;
-  color: rgb(51, 51, 51);
-  line-height: 1;
-  background: rgb(245, 245, 245);
-
-
-  .mypage__container {
-    margin: 40px auto 0;
-    width: 1020px;
-    height: 1290px;
-    &__top {
-      float: right;
-      width: 700px;
-      &--icon {
-        position: relative;
-        height: 200px;
-        padding: 20px;
-        background: url(user-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
-        a {
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          right: 0;
-          -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-          color: #333;
-          figure {
-            overflow: hidden;
-            width: 60px;
+.mypage__container{
+  margin: 40px auto 0;
+  width: 1020px;
+  height: 1290px;
+  &__top{
+    float: right;
+    width: 700px;
+    &--icon{
+      position: relative;
+      height: 200px;
+      padding: 20px;
+      background: url(user-bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      a{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        color: #333;
+        text-decoration: none;
+        figure{
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          text-decoration: none;
+          img{
+            vertical-align: middle;
             height: 60px;
-            margin: 0 auto;
-            border-radius: 50%;
-            img{
-              vertical-align: middle;
-              height: 60px;
-              width:  60px;
-            }
-          }
-        }
-        h2{
-          font-weight: bold;
-          text-align: center;
-          margin-top: 8px;
-          font-size: 14px;
-        }
-        &--value{
-          display: flex;
-          margin-top: 8px;
-          justify-content: center;
-          font-size: 14px;
-          span{
-              font-weight: bold;
-              margin-left: 8px;
-              line-height: 18px;
-          }
-          &--pro{
-              margin-left: 16px;
+            width:  60px;
           }
         }
       }
-    }
-    .mypage__container__tab {
-      margin: 0;
-      background: #fff;
-      ul{
-        display: flex;
-        li{
-          width: 50%;
-          display: inline-block;
-          text-align: center;
-          vertical-align: top;  
-          a {    
-            position: relative;
-            display: block;
-            color: #333;
-            font-size: 16px;
-            line-height: 72px;
-            font-weight: bold;
-            }
-          }
-        }
-      }  
-    }  
-    .mypage-content{
-      margin: 0;
-      background: #fff;
-      .mypage-content-not-found{
-        width: 100%;
-        height: 230px;
-        background-color: #ccc;
-        background: url(logo-gray-icon.svg);
-        background-repeat: no-repeat;
-        background-position: center 40px;
-        background-size: 78px 85px;
-        text-align: center;
-        font-size: 16px;
-        color: #ccc;
-      }
-    }
-    .mypage-purchased-product {
-      margin: 40px 0 0;
-      background: #fafafa;
-      h2 {
-        padding: 0 16px;
-        width: 100%;
-        line-height: 70px;
-        font-size: 16px;
+      h2{
         font-weight: bold;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
       }
-    }  
-    .mypage-purchased-product__tabs{
-      margin: 0;
-      background: #fafafa;
-      ul{
+      &--value{
         display: flex;
-        li{
-          width: 50%;
-          display: inline-block;
-          text-align: center;
-          vertical-align: top;  
-          a{
-            position: relative;
-            display: block;
-            color:#333;
-            font-size: 16px;
-            line-height: 72px;
-            font-weight: bold;
-          }
-          
+        margin-top: 8px;
+        justify-content: center;
+        font-size: 14px;
+        span{
+          font-weight: bold;
+          margin-left: 8px;
+          line-height: 18px;
+        }
+        &--pro{
+          margin-left: 16px;
         }
       }
     }
-    .mypage-purchased-product__foot{
-      margin: 0;
-      background: #fff;
-      &-not-found{
-        width: 100%;
-        height: 230px;
-        background: url(logo-gray-icon.svg);
-        background-repeat: no-repeat;
-        background-position: center 40px;
-        background-size: 78px 85px;
+  }
+
+  .mypage__container__tab{
+    margin: 0;
+    background: #fff;
+    ul{
+      display: flex;
+      li{
+        width: 50%;
+        display: inline-block;
         text-align: center;
-        font-size: 16px;
-        color: #ccc;
-        padding: top 40px;
-      
+        vertical-align: top;  
+        a{    
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .mypage-content{
+    margin: 0;
+    background: #fff;
+  }
+  .mypage-content-not-found{
+    width: 100%;
+    height: 230px;
+    background-color: #ccc;
+    background: url(logo-gray-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 78px 85px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    p{
+      padding: 150px;
+    }   
+  }
+
+  .mypage-purchased-product{
+    margin: 40px 0 0;
+    background: #fafafa;
+    h2 {
+      padding: 0 16px;
+      width: 100%;
+      line-height: 70px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .mypage-purchased-product__tabs{
+    margin: 0;
+    background: #fafafa;
+    ul{
+      display: flex;
+      li{
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;  
+        a{
+          position: relative;
+          display: block;
+          color:#333;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+  .mypage-purchased-product__foot{
+    margin: 0;
+    background: #fff;
+    &-not-found{
+      width: 100%;
+      height: 230px;
+      background: url(logo-gray-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center 40px;
+      background-size: 78px 85px;
+      text-align: center;
+      font-size: 16px;
+      color: #ccc;
+      padding: top 40px;
+      p{
+        padding: 150px;
+      }
     }
   }
 }
