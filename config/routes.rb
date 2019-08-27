@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'cards/show'
   get 'cards/create'
   devise_for :users
+
   resources :users do
     collection do
       get 'logout'
@@ -11,6 +12,21 @@ Rails.application.routes.draw do
     end
   end 
   
+
+
+  resources :users do
+    collection do
+      get 'login'
+      get 'address'
+      get 'pay'
+      get 'telephone'
+      get 'logout'
+      get 'identification'
+      get 'mypage'
+    end
+  end
+  root 'items#index'
+  resources :products,only: [:index]
   resources :login, only: :index
   resources :sign_up, only: [:index, :new]
   resources :sign_up_new
@@ -19,6 +35,7 @@ Rails.application.routes.draw do
   resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
+  resources :logout ,only: [:index]
   get "card/create", to: "card#create"
   resources :card
   resources :purchase_confirmation
