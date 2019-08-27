@@ -1,4 +1,8 @@
 @import "./reset";
+@import "font-awesome";
+@import "login/login";
+@import "sign_up/sign_up";
+@import "sign_up_new/sign_up_new";
 @import "config/colors";
 @import "font-awesome";
 @import "users/profile/index";
@@ -10,6 +14,8 @@
 @import "./header";
 @import "./banner";
 @import "./footer";
+@import "./show";
+@import "modules/cards";
 @import "modules/purchase_confirmation";
 @import "./new";
 @import "modules/identification.scss";
