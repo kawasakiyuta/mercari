@@ -2,12 +2,13 @@
 main.container {
   margin: 40px auto 0;
   width: 1020px;
-  // display: flex;
+  display: flex;
 }
 .content-credit {
   width: 700px;
   height: 364px;
   background-color: #fff;
+  float: right;
 }
 section.content-credit {
   margin: 0;
