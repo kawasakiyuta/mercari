@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
+  # get 'products/show'
+  # get 'products/new'
+  # get 'products/index'
+  # get 'products/error'
   devise_for :users
 
-  root 'items#index'
+  root 'products#index'
   resources :mypages, only: :index
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :purchase_confirmation
-  resources :items
+  resources :products
   get 'mypage/indetification', to: 'mypage#identification'
 
 end
