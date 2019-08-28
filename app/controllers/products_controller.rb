@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   # before_action :error , only:[:show]
 
   def show
+    @products = Product.select(:name,:price)
   end
 
   def new

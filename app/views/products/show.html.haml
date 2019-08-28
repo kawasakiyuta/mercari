@@ -3,7 +3,8 @@
   .main-top-wrapper
     / --main上段（商品説明等）--
     .main-title
-      %h2 Product Details
+      %h2 
+        = @products[0]['name']
     .main-top.clearfix
       .main-image
         .main-image-box
@@ -83,7 +84,8 @@
           %th 発送日の目安
           %td １〜２日で発送
     .item-price-box
-      %span.item-price ¥ 15,000
+      %span.item-price 
+        = @products[0]['price']
       %span.item-price-tax
         (税込)
         %span.item-price-postage
@@ -130,9 +132,10 @@
               %figure.item-box-photo
                 =link_to  image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-image"
               .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                %h3.item-box-name 
+                  = @products[0]['name']
                 .item-box-price
-                  ¥1,0000
+                  = @products[0]['price']
           .item-box-new
             .item-box-body
               %figure.item-box-photo
