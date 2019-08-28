@@ -98,6 +98,7 @@
         .category-list-parent,
         .brand-list-parent {
           text-decoration: none;
+          cursor: pointer;
         }
 
         i {
@@ -112,11 +113,16 @@
           text-decoration: none;
           display: inline-block;
         }
+        span:hover {
+          color: #0099e8;
+          text-decoration: none;
+        }
       }
 
       .mega-menu-right {
         display: inline-block;
         padding: 0 14px;
+        cursor: pointer;
         &__item {
           text-decoration: none;
         }
@@ -131,7 +137,7 @@
           vertical-align: middle;
         }
       }
-      span:hover {
+      li.mega-menu-right:hover {
         color: #0099e8;
         text-decoration: none;
       }
