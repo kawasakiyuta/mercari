@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
   # before_action :error , only:[:show]
+  
+  def index
+    
+  end
 
   def show
   end
@@ -8,10 +12,6 @@ class ProductsController < ApplicationController
     @addresses = Address.all
     render layout: 'index'
 
-  end
-  
-  def index
-    
   end
 
   def error  
