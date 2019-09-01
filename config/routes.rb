@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'address'
       get 'pay'
       get 'telephone'
+      get 'create'
     end
   end
 
