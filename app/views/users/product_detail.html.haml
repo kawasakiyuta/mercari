@@ -1,0 +1,102 @@
+%body
+  .main-edit-wrapper
+    .main-top-wrapper
+      / --main上段（商品説明等）--
+      .main-title
+        %h2 Product Details
+      .main-top.clearfix
+        .main-image
+          .main-image-box
+            =image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-main",alt: "商品画像" 
+          .main-images-sub
+            / --サブ画像一覧 images--
+            .main-image-sub
+              =image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "sub-image"
+            .main-image-sub
+              =image_tag "https://ranking.xgoo.jp/tool/images/talent/2000000845.jpg",class: "sub-image"
+            .main-image-sub
+              =image_tag  "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "sub-image"
+            .main-image-sub
+              =image_tag "https://actresspress.com/wp-content/uploads/2018/09/yui_aragaki-with20180928-718x479.jpg",class: "sub-image"
+            / --上段
+        %table.item-detail-table 
+          %tr
+            %th.user-name 出品者 
+            %td
+              = link_to "user_name","#"
+              .user-status
+                .item-user-ratings
+                  %i.fa.fa-smile-o{"aria-hidden" => "true"}
+                  %span 100
+                .item-user-ratings
+                  %i.fa.fa-meh-o{"aria-hidden" => "true"}
+                  %span 100
+                .item-user-ratings
+                  %i.fa.fa-frown-o{"aria-hidden" => "true"}
+                  %span 100
+          %tr
+            %th.category カテゴリー
+            %td
+              =link_to "#" do
+                %div  fashion
+              =link_to "#" do
+                %div  
+                  %i.fa.fa-angle-right
+                  genre
+              =link_to "#" do
+                %div 
+                  %i.fa.fa-angle-right
+                  item
+          %tr
+            %th ブランド
+            %td
+              = link_to "brand_name","#"
+          %tr
+            %th 商品のサイズ
+            %td item_size
+          %tr
+            %th 商品の状態
+            %td item_state
+          %tr
+            %th 配送料の負担
+            %td 送料込み
+          %tr
+            %th 配送料の方法
+            %td 楽々メルカリ便
+          %tr
+            %th 配送元地域
+            %td 
+              = link_to "大阪","#"
+          %tr
+            %th 発送日の目安
+            %td １〜２日で発送
+      .item-price-box
+        %span.item-price ¥ 15,000
+        %span.item-price-tax
+          (税込)
+          %span.item-price-postage
+            送料込み
+      .item-description
+        %p 吾輩わがはいは猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+    
+    .main-btn-wrapper
+      .main-btn-wrapper__addition-btn
+        = link_to "",class: "add-btn", method: :get do
+          商品の編集
+      %p.center-text or
+      %form{action: "", method: "POST", novalidate: "novalidate"}
+        %input{name: "__csrf_value", type: "hidden", value: ""}/
+        %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
+      %button.foot-btn-gray
+        =link_to "この商品を削除する", method: :delete
+        -# = link_to "この商品を削除する","/products/#{product.id}", method: :delete
+        
+
+    / --コメント欄
+    .comment-edit-wrappe
+      .comment-message
+        .comment-message-content
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = form_with model: @user do |form|
+            = form.text_area :text
+            = form.submit "コメントする" 
