@@ -17,9 +17,11 @@ class UsersController < ApplicationController
   end
 
   def new
+    render layout: 'index'
   end
 
   def login
+    render layout: 'index'
   end
 
   def edit
