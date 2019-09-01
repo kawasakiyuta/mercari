@@ -70,7 +70,7 @@ footer.footer-section {
     margin: 14px 14px 0 0;
     color: #fff;
   }
-
+}
   .btn {
     bottom: 32px;
     right: 32px;
@@ -83,33 +83,14 @@ footer.footer-section {
     color: #fff;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
     p {
-      margin-top: 32px;
+      margin-top: 26px;
     }
-    
-    .footer-bottom__copyright {
-      font-size: 14px;
-    }
-    .footer-sell-btn {
-      bottom: 32px;
-      right: 32px;
-      width: 160px;
-      height: 160px;
-      font-size: 22px;
-      position: fixed;
-      border-radius: 50%;
-      background: #ea352d;
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      p {
-        margin-top: 26px;
-      }
-      i {
-        margin-top: 6px;
-        font-size: 58px;
-      }
+    i {
+      margin-top: 6px;
+      font-size: 58px;
     }
   }
-}
+  .footer-bottom__copyright {
+    font-size: 14px;
+  }
