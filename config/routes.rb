@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   end
 
   root 'products#index'
-  get 'products/error' => 'products#error'
-  resources :products
+  resources :products do
+    collection do
+      get 'error'
+      get 'confirmation'
+    end
+  end
+  
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]

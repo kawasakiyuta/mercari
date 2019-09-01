@@ -19,5 +19,9 @@ class ProductsController < ApplicationController
     # サーバーサイド実装後修正
   end
 
+  def confirmation
+    
+  end
+
 
 end
