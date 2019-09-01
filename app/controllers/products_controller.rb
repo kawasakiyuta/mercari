@@ -11,8 +11,8 @@ class ProductsController < ApplicationController
   
   def index
     
-    @products_ladies = Product.where(category_id:1)
-    @products_mens = Product.where(category_id:212)
+    @products_ladies = Product.where(category_id:1).order("id DESC").limit(4)
+    @products_mens = Product.where(category_id:212).order("id DESC").limit(4)
 
   end
 
