@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'cards/index'
-  get 'cards/show'
-  get 'cards/create'
   devise_for :users
 
   resources :users do
@@ -22,9 +19,9 @@ Rails.application.routes.draw do
   resources :products
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
-  resources :logout ,only: [:index]
-  get "card/create", to: "card#create"
-  resources :card
+  get "cards/create", to: "cards#create"
+  resources :cards
+
   resources :purchase_confirmation
   resources :items
 
