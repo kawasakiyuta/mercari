@@ -60,7 +60,7 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :products
+* belongs_to :product
 
 
 

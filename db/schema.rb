@@ -99,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_112920) do
     t.integer "day_to_ship", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -122,4 +124,5 @@ ActiveRecord::Schema.define(version: 2019_08_26_112920) do
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "products"
   add_foreign_key "messages", "users"
+  add_foreign_key "products", "categories"
 end
