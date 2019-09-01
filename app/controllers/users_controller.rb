@@ -43,4 +43,8 @@ class UsersController < ApplicationController
 
   end
 
+  def product_detail
+  end
+
+
 end
