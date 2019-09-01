@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
 
   resources :users do
     collection do
@@ -15,14 +14,17 @@ Rails.application.routes.draw do
   end
 
   root 'products#index'
-  get 'products/error' => 'products#error'
-  resources :products
+  resources :login, only: [:index, :new, :create]
+  resources :sign_up, only: [:index, :new]
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
-  get "cards/create", to: "cards#create"
-  resources :cards
-
-  resources :purchase_confirmation
-  resources :items
+  resources :logout ,only: [:index]
+  resources :cards,only: [:index, :show, :create]
+  resources :purchase_confirmation ,only: [:index]
+  resources :products,only: [:index, :show, :new] do
+    collection do
+      get 'error'
+    end
+  end
 
 end
