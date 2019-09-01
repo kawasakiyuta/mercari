@@ -2,10 +2,40 @@ main.card-container {
   margin: 40px auto 0;
   width: 1020px;
   display: flex;
-  .content-credit {
-    width: 700px;
-    height: 364px;
-    background-color: #fff;
+}
+.content-credit {
+  width: 700px;
+  height: 364px;
+  background-color: #fff;
+  float: right;
+}
+section.content-credit {
+  margin: 0;
+}
+h2.content-credit-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 24px;
+  border-bottom: 2px solid #f5f5f5;
+  text-align: center;
+}
+.content__inner {
+  padding: 64px;
+  height: 185px;
+  &-head {
+    height: 129px;
+  }
+}
+h3.head-name {
+  max-width: 320px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+ul.credit-cards__list {
+  height: 113px;
+  li {
+    border-bottom: 1px solid #eee;
+    padding: 24px 0;
   }
   section.content-credit {
     margin: 0;

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users 
+
   resources :users do
     collection do
+      get 'sign_up'
       get 'login'
       get 'address'
       get 'pay'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       get 'mypage'
     end
   end
+
   root 'products#index'
   resources :login, only: [:index, :new, :create]
   resources :sign_up, only: [:index, :new]
