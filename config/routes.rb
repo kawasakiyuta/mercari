@@ -4,15 +4,6 @@ Rails.application.routes.draw do
   get 'cards/create'
   devise_for :users
 
-  resources :users do
-    collection do
-      get 'logout'
-      get 'identification'
-      get 'mypage'
-    end
-  end 
-  
-
 
   resources :users do
     collection do
@@ -23,12 +14,12 @@ Rails.application.routes.draw do
       get 'logout'
       get 'identification'
       get 'mypage'
+      get 'product_detail'
     end
   end
 
-
   root 'products#index'
-
+  
   resources :products,only: [:index]
   resources :login, only: :index
   resources :sign_up, only: [:index, :new]
