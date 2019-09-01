@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   # before_action :error , only:[:show]
   
   def index
-    
   end
 
   def show
@@ -11,7 +10,6 @@ class ProductsController < ApplicationController
   def new
     @addresses = Address.all
     render layout: 'index'
-
   end
 
   def error  
@@ -20,6 +18,5 @@ class ProductsController < ApplicationController
     # end
     # サーバーサイド実装後修正
   end
-
 
 end
