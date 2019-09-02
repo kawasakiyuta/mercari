@@ -51,7 +51,7 @@
           min-height: 162px;
           background: #f5f5f5;
           border: 1px dashed #ccc;
-          font-size: 0;
+          // font-size: 0;
           text-align: center;
           cursor: pointer;
         }
@@ -76,6 +76,7 @@
           font-size: 14px;
           font-weight: 600;
           width:100%;
+          text-align : left;
         }
         &-input-textfield {
           margin: 8px 0 0;
@@ -284,7 +285,7 @@ li.clearfix-profit {
     }
   }
 }
-button.red-submit-btn {
+.red-submit-btn {
   display: block;
   width: 100%;
   margin-top: 40px;
@@ -298,7 +299,7 @@ button.red-submit-btn {
   opacity: 0.95;
   color: #fff;
 }
-button.red-submit-btn:hover {
+.red-submit-btn:hover {
   background: #ea352d;
   opacity: 1;
 }
@@ -317,4 +318,12 @@ button.red-submit-btn:hover {
 }
 .glay-back-btn:hover {
   opacity: 0.8;
+}
+
+.main-section__form-image-file{
+  box-sizing: border-box;
+  width: 620px;
+  height: 205px;
+  padding: 5px;
+  display: none;
 }
