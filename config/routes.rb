@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   root 'products#index'
   get 'products/error' => 'products#error'
   resources :products
+  get 'products/:id' => 'products#show'
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
