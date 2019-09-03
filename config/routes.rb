@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       get 'mypage'
       get 'product_detail'
     end
+  
+    member do
+      get 'product_detail'
+    end
   end
 
   root 'products#index'
