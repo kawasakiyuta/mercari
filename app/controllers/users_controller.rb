@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     render layout: 'index'
   end
 
-  def create
+  def complete
     render layout: 'index'
   end
 
