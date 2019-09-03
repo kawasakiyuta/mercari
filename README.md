@@ -28,7 +28,7 @@ Things you may want to cover:
 |Column          |Type      |Options                     |
 |----------------|----------|----------------------------|
 |name            |string    |null: false                 |  <!--商品名-->
-|state           |integer   |null: false                 |  <!--商品の状態-->
+|state           |string    |null: false                 |  <!--商品の状態-->
 |price           |string    |null: false                 |
 |sold            |boolean   |null: false                 | <!--売れたかどうか-->　
 |user_id         |references|null: false,foreign_key:true| <!--出品したuser_id-->
