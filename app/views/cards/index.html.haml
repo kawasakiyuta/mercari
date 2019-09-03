@@ -1,5 +1,5 @@
+%main.container
 %main.card-container
-  =render '/layouts/side__nav'
   .content-credit
     %section.content-credit
       %h2.content-credit-title 支払い方法
@@ -16,3 +16,4 @@
         .content__inner-foot
           = link_to "支払い方法について", "#", target: "_blank", class: "foot-name"
           %i.fa.fa-angle-right
+  =render '/layouts/side__nav'

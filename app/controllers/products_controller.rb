@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  def show
+ def show
     @product = Product.find(params[:id])
 
     unless @product.sold 
@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def new
     @addresses = Address.all
+
   end
   
   def index
@@ -25,6 +26,5 @@ class ProductsController < ApplicationController
   def error  
 
   end
-
 
 end

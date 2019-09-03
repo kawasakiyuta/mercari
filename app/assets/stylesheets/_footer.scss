@@ -70,12 +70,8 @@ footer.footer-section {
     margin: 14px 14px 0 0;
     color: #fff;
   }
-
-  .footer-bottom__copyright {
-    font-size: 14px;
-  }
-
-  .footer-sell-btn {
+}
+  .btn {
     bottom: 32px;
     right: 32px;
     width: 160px;
@@ -95,4 +91,6 @@ footer.footer-section {
       font-size: 58px;
     }
   }
-}
+  .footer-bottom__copyright {
+    font-size: 14px;
+  }

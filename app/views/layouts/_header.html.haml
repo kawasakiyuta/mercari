@@ -2,7 +2,7 @@
   .content-inner
     .content__head
       %h1
-        =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", size: "134x36"),""
+        =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", size: "134x36"),url: new_product_path
       %form.content__head--form
         %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}/
         %i.icon-search
