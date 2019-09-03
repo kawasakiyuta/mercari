@@ -11,7 +11,7 @@
           - @products_ladies.each do |product_ladies|
             .item-box-new
               .item-box-body
-                %figure.item-box-photo
+                %prefix.item-box-photo
                   = link_to "products/#{product_ladies.id}" do
                     = image_tag product_ladies.images[0][:image],class: "item-image"
                 .item-box-detail
@@ -29,7 +29,7 @@
           - @products_mens.each do |product_men|
             .item-box-new
               .item-box-body
-                %figure.item-box-photo
+                %prefix.item-box-photo
                   = link_to "products/#{product_men.id}" do
                     = image_tag product_men.images[0][:image],class: "item-image"
                 .item-box-detail
@@ -47,7 +47,7 @@
           - @products_electricals.each do |products_electrical|
             .item-box-new
               .item-box-body
-                %figure.item-box-photo
+                %prefix.item-box-photo
                   = link_to "products/#{products_electrical.id}" do
                     = image_tag products_electrical.images[0][:image],class: "item-image"
                 .item-box-detail
@@ -65,7 +65,7 @@
           - @products_toys.each do |product_toy|
             .item-box-new
               .item-box-body
-                %figure.item-box-photo
+                %prefix.item-box-photo
                   = link_to "products/#{product_toy.id}" do
                     = image_tag product_toy.images[0][:image],class: "item-image"
                 .item-box-detail
