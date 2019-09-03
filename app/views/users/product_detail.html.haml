@@ -7,7 +7,7 @@
       .main-top.clearfix
         .main-image
           .main-image-box
-            =image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-main",alt: "商品画像" 
+            =image_tag "https://i.pinimg.com/564x/05/9b/b1/059bb1dd91e0012fd9200d55aff71ac0.jpg",class: "item-main",alt: "商品画像" 
           .main-images-sub
             / --サブ画像一覧 images--
             .main-image-sub
@@ -81,8 +81,7 @@
     
     .main-btn-wrapper
       .main-btn-wrapper__addition-btn
-        = link_to "",class: "add-btn", method: :get do
-          商品の編集
+        = link_to "商品の編集", method: :get
       %p.center-text or
       %form{action: "", method: "POST", novalidate: "novalidate"}
         %input{name: "__csrf_value", type: "hidden", value: ""}/
