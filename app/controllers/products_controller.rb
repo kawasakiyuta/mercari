@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @addresses = Address.all
+    @product = Product.new
     render layout: 'index'
   end
 

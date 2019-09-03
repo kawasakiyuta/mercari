@@ -1,13 +1,13 @@
 .wrapper
-= form_for :product,url: new_product_path do |f|
   %header
   .section
     .header
       = link_to  image_tag("logo.svg", width: '185'), root_path
+  = form_for :product,url: new_product_path do |f|
     .main-section
       .main-section__heading
-        %h2.main-section__heading-name 商品の情報を入力
-
+        %h2.main-section__heading-name 
+          商品の情報を入力
       .main-section__form
         .main-section__form-image-box
           %h3.main-section__form-image-box-name
@@ -16,9 +16,8 @@
           %p 最大10枚までアップロードできます
           .main-section__form-image-box-upload
             .main-section__form-image-box-upload--container
-            .main-section__form-image-box-upload--drop_box
-              %input.main-section__form-image-file
-                =f.file_field :image, type: "file"
+            %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
+              =f.file_field :image , class: "main-section__form-image-file"
               %pre.visible-pc
                 :preserve
                   ドラッグアンドドロップ
@@ -28,14 +27,12 @@
             %h3.form-lavel
               商品名
               %span.require-tag 必須
-            %input.form-input-textfield{placeholder: "商品名（必須 40文字まで)", value: ""}/
-            
+            = f.text_field :name,class: "form-input-textfield",placeholder: "商品名（必須 40文字まで)"
           .form
             %h3.form-lavel
               商品の説明
               %span.require-tag 必須
-            %textarea.form-input-textarea{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-
+            = f.text_area :name,class: "form-input-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
         .main-section__form-select-content
           %h3.select-content-title 商品の詳細
           .select-content__form-box
@@ -159,8 +156,7 @@
               また、出品をもちまして
               =link_to "加盟店規約"
               に同意したことになります。
-          %button.red-submit-btn{type: "submit"}
-            出品する
+          = f.button "出品する", class: "red-submit-btn" 
           = link_to '戻る', :back, class:"glay-back-btn"
     .footer
       .footer__top
@@ -171,6 +167,5 @@
             = link_to "メルカリ利用規約"
           %li 
             = link_to "特定商取引に関する表記"
-
-        = link_to image_tag("logo-gray.svg", width: '80')
+      = link_to image_tag("logo-gray.svg", width: '80') do
         %p © 2019 Mercari
