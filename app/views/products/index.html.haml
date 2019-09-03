@@ -12,7 +12,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to "products/#{product_ladies.id}" do
+                  = link_to product_path(product_ladies) do
                     = image_tag product_ladies.images[0][:image],class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
@@ -30,7 +30,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to "products/#{product_men.id}" do
+                  = link_to product_path(product_men) do
                     = image_tag product_men.images[0][:image],class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
@@ -44,17 +44,17 @@
         = link_to "家電・スマホ・カメラ新着アイテム" , ""
       .item-box
         .item-box-content
-          - @products_electricals.each do |products_electrical|
+          - @products_electricals.each do |product_electrical|
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to "products/#{products_electrical.id}" do
-                    = image_tag products_electrical.images[0][:image],class: "item-image"
+                  = link_to product_path(product_electrical) do
+                    = image_tag product_electrical.images[0][:image],class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
-                    = products_electrical[:name]
+                    = product_electrical[:name]
                   .item-box-price         
-                    = products_electrical[:price]
+                    = product_electrical[:price]
     .view-all
       = link_to "全ての商品をみる" , ""
     .main-picup-category
@@ -66,7 +66,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to "products/#{product_toy.id}" do
+                  = link_to product_path(product_toy) do
                     = image_tag product_toy.images[0][:image],class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
