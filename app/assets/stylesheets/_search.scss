@@ -1,0 +1,78 @@
+.search{
+  h2{
+    text-align: left
+  }
+  p{    
+    margin-bottom:16px;
+  }
+  .search-index{
+   width:700px;
+   margin:auto;
+   overflow: hidden;
+
+  .search-item-content{
+    height:300px;
+   }
+ 
+  .search_item-body{
+    height:300px;
+    float:left;
+    width:25%;
+    
+    .item-box-body{
+      width:90.65%;
+      height:235px;
+      margin:auto;
+      background-color:white;
+      .item-box-photo{
+        height:160px;
+        width:auto;
+        margin:0px;
+        .item-image{
+          width:160px;
+          height:160px;
+          object-fit: scale-down;
+        
+        }
+      }
+      .item-box-detail{
+        padding:8px 12px;
+        height:58px;
+        .item-box-name{
+          font-size:15px;
+          font-weight:normal;
+          width:100%;
+          height:44px;
+          overflow: hidden; 
+          position:relative; 
+        }
+        .item-box-price{
+          font-weight:bold;
+          font-size:15px;
+          margin-top:8px;
+          color: #333;
+        }
+      }
+    }
+  }
+  
+  
+  .item-box-name::after{
+    content: "";
+    bottom:0;
+    position: absolute;
+    right:0;
+    width:50%;
+    height:22px;
+    background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+  }
+    
+  .item-box-price::before{
+    font-family: "FontAwesome";
+    content: "\f157";
+    font-weight:lighter;
+    color: #333;
+  }
+  
+}
+}

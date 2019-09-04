@@ -1,0 +1,16 @@
+%body.search
+  .search-index
+    %h2.search-word 【〜】の検索結果 
+    %p.search-count 【1 - 132】件表示
+    .search-item-content
+      - @products_search.each do |product|
+        .search_item-body
+          .item-box-body
+            %prefix.item-box-photo
+              = link_to product_path(product) do
+                = image_tag product.images[0][:image],class: "item-image"
+            .item-box-detail
+              %h3.item-box-name
+                = product[:name]
+                                       
+  

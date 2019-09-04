@@ -23,6 +23,12 @@ class ProductsController < ApplicationController
 
   end
 
+  def search
+    @products_search =Product.all.order("id DESC")
+  end
+
+
+
   def error  
 
   end
