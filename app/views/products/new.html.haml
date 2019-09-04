@@ -3,21 +3,31 @@
   .section
     .header
       = link_to  image_tag("logo.svg", width: '185'), root_path
-  = form_for :product,url: new_product_path do |f|
     .main-section
       .main-section__heading
         %h2.main-section__heading-name 
           商品の情報を入力
       .main-section__form
+      = form_for @product, html: {class: "main-section dropzone", id: "item-dropzone"} do |f|
         .main-section__form-image-box
           %h3.main-section__form-image-box-name
             出品画像
             %span.require-tag 必須
           %p 最大10枚までアップロードできます
           .main-section__form-image-box-upload
+          = f.fields_for :images do |image| 
+            #preview
+            .dropzone-area
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                .input_area
+                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                %p ここをクリックしてください
+            #preview2
+            .dropzone-area2
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                %p ここをクリックしてください
             .main-section__form-image-box-upload--container
             %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
-              =f.file_field :image , class: "main-section__form-image-file"
               %pre.visible-pc
                 :preserve
                   ドラッグアンドドロップ
@@ -27,12 +37,12 @@
             %h3.form-lavel
               商品名
               %span.require-tag 必須
-            = f.text_field :name,class: "form-input-textfield",placeholder: "商品名（必須 40文字まで)"
+            = f.text_field :name,class: "form-input-textfield",placeholder: "商品名（必須 40文字まで)",maxlength: 40
           .form
             %h3.form-lavel
               商品の説明
               %span.require-tag 必須
-            = f.text_area :name,class: "form-input-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+            = f.text_area :name,class: "form-input-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5",maxlength: 1000
         .main-section__form-select-content
           %h3.select-content-title 商品の詳細
           .select-content__form-box

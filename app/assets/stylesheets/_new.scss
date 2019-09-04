@@ -39,7 +39,7 @@
       }
       &-upload {
         display: block;
-        height: 160px;
+        // height: 160px;
         width: 620px;
         margin: 16px auto 0;
         &--container {
@@ -326,4 +326,9 @@ li.clearfix-profit {
   height: 205px;
   padding: 5px;
   display: none;
+}
+
+#img{
+  max-width: 300px;
+  height: auto;
 }
