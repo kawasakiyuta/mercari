@@ -80,4 +80,4 @@ end
 
 
 gem 'ancestry'
-
+gem 'payjp'
