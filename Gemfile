@@ -82,4 +82,4 @@ end
 
 
 gem 'ancestry'
-
+gem 'kaminari'

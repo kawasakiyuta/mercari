@@ -24,7 +24,8 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products_search =Product.all.order("id DESC")
+    @products_search =Product.where("name LIKE ?" , "%#{params[:keyword]}%").page(params[:page]).per(8)
+
   end
 
 
