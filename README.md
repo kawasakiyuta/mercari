@@ -25,12 +25,14 @@ Things you may want to cover:
 
 ## productsテーブル
 
+
 |Column          |Type      |Options                     |
 |----------------|----------|----------------------------|
 |name            |string    |null: false                 |  <!--商品名-->
 |state           |string    |null: false                 |  <!--商品の状態-->
 |price           |string    |null: false                 |
-|sold            |boolean   |null: false                 | <!--売れたかどうか-->　
+|sold            |boolean   |null: false                 | <!--売れたかどうか-->
+
 |user_id         |references|null: false,foreign_key:true| <!--出品したuser_id-->
 |buyer_id        |integer   |null: false                 | <!--購入したuser_id-->
 |cost_bearer     |string    |null: false                 | <!--送料をどっちが払うか-->
@@ -58,7 +60,7 @@ Things you may want to cover:
 
 ### Association
 
-* belongs_to :products
+* belongs_to :product
 
 
 
