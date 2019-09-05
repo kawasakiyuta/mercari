@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   # before_action :error , only:[:show]
 
   def show
-    @product = Product.select(:name,:price,:state)
+    @product = Product.find(params[:id])
   end
 
   def new
