@@ -17,6 +17,8 @@
 //= require jquery
 //= require jquery_ujs
 
+"use strict";
+
 
 $(document).on('turbolinks:load', function(){
   var dropzone = $('.dropzone-area');
@@ -27,7 +29,7 @@ $(document).on('turbolinks:load', function(){
   var input_area = $('.input_area');
   var preview = $('#preview');
   var preview2 = $('#preview2');
-
+  
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
@@ -42,7 +44,7 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-
+    
     if(images.length >= 5) {
       dropzone2.css({
         'display': 'block'
@@ -61,18 +63,18 @@ $(document).on('turbolinks:load', function(){
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       }
     } else {
-        $('#preview').empty();
-        $.each(images, function(index, image) {
-          image.attr('data-image', index);
-          preview.append(image);
-        })
-        dropzone.css({
-          'width': `calc(100% - (135px * ${images.length}))`
-        })
-      }
-      if(images.length == 4) {
-        dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
-      }
+      $('#preview').empty();
+      $.each(images, function(index, image) {
+        image.attr('data-image', index);
+        preview.append(image);
+      })
+      dropzone.css({
+        'width': `calc(100% - (135px * ${images.length}))`
+      })
+    }
+    if(images.length == 4) {
+      dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
+    }
     if(images.length == 10) {
       dropzone2.css({
         'display': 'none'
