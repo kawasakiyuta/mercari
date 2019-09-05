@@ -1,216 +1,217 @@
 %body
-.main-wrapper
-  .main-top-wrapper
-    / --main上段（商品説明等）--
-    .main-title
-      %h2 Product Details
-    .main-top.clearfix
-      .main-image
-        .main-image-box
-          =image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-main",alt: "商品画像" 
-        .main-images-sub
-          / --サブ画像一覧 images--
-          .main-image-sub
-            =image_tag "https://shikasoku.com/wp-content/uploads/2018/02/img_0134.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://ranking.xgoo.jp/tool/images/talent/2000000845.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag  "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://actresspress.com/wp-content/uploads/2018/09/yui_aragaki-with20180928-718x479.jpg",class: "sub-image"
-          / --上段
-          .main-image-sub
-            =image_tag "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://cdn.locari.jp/upload/post_element/picture/660543/w621_3491eae9954dc.jpg",class: "sub-image"
-          .main-image-sub
-            =image_tag "https://img01.ti-da.net/usr/p/r/e/prettylady/a65iWzIV1lYkJldYBuxBZn%2C340x250.jpeg",class: "sub-image"
-      %table.item-detail-table 
-        %tr
-          %th.user-name 出品者 
-          %td
-            = link_to "user_name","#"
-            .user-status
-              .item-user-ratings
-                %i.fa.fa-smile-o{"aria-hidden" => "true"}
-                %span 100
-              .item-user-ratings
-                %i.fa.fa-meh-o{"aria-hidden" => "true"}
-                %span 100
-              .item-user-ratings
-                %i.fa.fa-frown-o{"aria-hidden" => "true"}
-                %span 100
-        %tr
-          %th.category カテゴリー
-          %td
-            =link_to "#" do
-              %div  fashion
-            =link_to "#" do
-              %div  
-                %i.fa.fa-angle-right
-                genre
-            =link_to "#" do
-              %div 
-                %i.fa.fa-angle-right
-                item
-        %tr
-          %th ブランド
-          %td
-            = link_to "brand_name","#"
-        %tr
-          %th 商品のサイズ
-          %td item_size
-        %tr
-          %th 商品の状態
-          %td item_state
-        %tr
-          %th 配送料の負担
-          %td 送料込み
-        %tr
-          %th 配送料の方法
-          %td 楽々メルカリ便
-        %tr
-          %th 配送元地域
-          %td 
-            = link_to "大阪","#"
-        %tr
-          %th 発送日の目安
-          %td １〜２日で発送
-    .item-price-box
-      %span.item-price ¥ 15,000
-      %span.item-price-tax
-        (税込)
-        %span.item-price-postage
-          送料込み
-    = link_to "購入画面に進む", "#", class: "item-buy-box"
-    .item-description
-      %p 吾輩わがはいは猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-      しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。この書生というのは時々我々を捕つかまえて煮にて食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌てのひらに載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始みはじめであろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶やかんだ。その後ご猫にもだいぶ逢あったがこんな片輪かたわには一度も出会でくわした事がない。のみならず顔の真中があまりに突起している。そうしてその穴の中から時々ぷうぷうと煙けむりを吹く。どうも咽むせぽくて実に弱った。これが人間の飲む煙草たばこというものである事はようやくこの頃知った。
-    .item-button-container.clearfix
-      %button.button-likes{:name => "aaa", :type => "button", :value => "aaa"} いいね!
-      = link_to "不適切な商品の報告", "#", class: "button-report"
-      = link_to "あんしん・あんぜんへの取り組み", "#", class: "button-safe"
-  .comment-wrappe
-    .comment-message
-      
-      .comment-message-content
-        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        = form_with model: @user do |form|
-          = form.text_area :text
-          = form.submit "コメントする" 
-  / --コメント欄
-  .item-nav
-    / 次のアイテム・前のアイテム
-    = link_to "previous-item", "#", class: "item-nav-previous"
-    = link_to "next-item","#",class: "item-nav-next"
-  .item-sns
-    / snsリンク
-    .sns-links
-      = link_to "#" do
-        %i.fa.fa-facebook-official{"aria-hidden" => "true"}
-      = link_to "#" do
-        %i.fa.fa-twitter-square{"aria-hidden" => "true"}
-      = link_to "#" do
-        %i.fa.fa-pinterest-square{"aria-hidden" => "true"}
-    -# =image_tag "https://res.cloudinary.com/hapvr1azp/image/upload/v1538993336/kvulc377thq523iizqvj.png",height: "100%", width:"30%"
-  .item-other
-    / その他のアイテム
-    %h2.item-other-user
-      =link_to "User-その他の出品","#"
-      .item-box
-        .item-box-content
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://www.grail.bz/media/catalog/product/cache/0a7c993427b70b9b444e96c72e5c540c/f/o/fo991_v12.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://drmur6qpaw907g.cdn.jp.idcfcloud.com/images/goods/3163900529-000554014/3163900529-000554014_8700_1_20190520134002.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-      / その他のアイテム一覧
-      .item-box
-        / その他のアイテム一覧
-        .item-box-content
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://shikasoku.com/wp-content/uploads/2018/02/img_0134.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-      / その他のアイテム一覧
-      .item-box
-        / その他のアイテム一覧
-        .item-box-content
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-          .item-box-new
-            .item-box-body
-              %figure.item-box-photo
-                =link_to  image_tag "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg",class: "item-image"
-              .item-box-detail
-                %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                .item-box-price
-                  ¥1,0000
-  .item-bottom
-    %ul.item-bottom-nav 
-      %li
-        = link_to "メルカリ " , ""
-      %li.product-details
-        Product Details
+  .products-show
+    .main-wrapper
+      .main-top-wrapper
+        / --main上段（商品説明等）--
+        .main-title
+          %h2 Product Details
+        .main-top.clearfix
+          .main-image
+            .main-image-box
+              =image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-main",alt: "商品画像" 
+            .main-images-sub
+              / --サブ画像一覧 images--
+              .main-image-sub
+                =image_tag "https://pics.prcm.jp/ce45326867fe5/81341796/jpeg/81341796_220x217.jpeg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://ranking.xgoo.jp/tool/images/talent/2000000845.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag  "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://actresspress.com/wp-content/uploads/2018/09/yui_aragaki-with20180928-718x479.jpg",class: "sub-image"
+              / --上段
+              .main-image-sub
+                =image_tag "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://cdn.locari.jp/upload/post_element/picture/660543/w621_3491eae9954dc.jpg",class: "sub-image"
+              .main-image-sub
+                =image_tag "https://img01.ti-da.net/usr/p/r/e/prettylady/a65iWzIV1lYkJldYBuxBZn%2C340x250.jpeg",class: "sub-image"
+          %table.item-detail-table 
+            %tr
+              %th.user-name 出品者 
+              %td
+                = link_to "user_name","#"
+                .user-status
+                  .item-user-ratings
+                    %i.fa.fa-smile-o{"aria-hidden" => "true"}
+                    %span 100
+                  .item-user-ratings
+                    %i.fa.fa-meh-o{"aria-hidden" => "true"}
+                    %span 100
+                  .item-user-ratings
+                    %i.fa.fa-frown-o{"aria-hidden" => "true"}
+                    %span 100
+            %tr
+              %th.category カテゴリー
+              %td
+                =link_to "#" do
+                  %div  fashion
+                =link_to "#" do
+                  %div  
+                    %i.fa.fa-angle-right
+                    genre
+                =link_to "#" do
+                  %div 
+                    %i.fa.fa-angle-right
+                    item
+            %tr
+              %th ブランド
+              %td
+                = link_to "brand_name","#"
+            %tr
+              %th 商品のサイズ
+              %td item_size
+            %tr
+              %th 商品の状態
+              %td item_state
+            %tr
+              %th 配送料の負担
+              %td 送料込み
+            %tr
+              %th 配送料の方法
+              %td 楽々メルカリ便
+            %tr
+              %th 配送元地域
+              %td 
+                = link_to "大阪","#"
+            %tr
+              %th 発送日の目安
+              %td １〜２日で発送
+        .item-price-box
+          %span.item-price ¥ 15,000
+          %span.item-price-tax
+            (税込)
+            %span.item-price-postage
+              送料込み
+        = link_to "購入画面に進む", "#", class: "item-buy-box"
+        .item-description
+          %p 吾輩わがはいは猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+          しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。この書生というのは時々我々を捕つかまえて煮にて食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌てのひらに載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始みはじめであろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶やかんだ。その後ご猫にもだいぶ逢あったがこんな片輪かたわには一度も出会でくわした事がない。のみならず顔の真中があまりに突起している。そうしてその穴の中から時々ぷうぷうと煙けむりを吹く。どうも咽むせぽくて実に弱った。これが人間の飲む煙草たばこというものである事はようやくこの頃知った。
+        .item-button-container.clearfix
+          %button.button-likes{:name => "aaa", :type => "button", :value => "aaa"} いいね!
+          = link_to "不適切な商品の報告", "#", class: "button-report"
+          = link_to "あんしん・あんぜんへの取り組み", "#", class: "button-safe"
+      .comment-wrappe
+        .comment-message
+          
+          .comment-message-content
+            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            = form_with model: @user do |form|
+              = form.text_area :text
+              = form.submit "コメントする" 
+      / --コメント欄
+      .item-nav
+        / 次のアイテム・前のアイテム
+        = link_to "previous-item", "#", class: "item-nav-previous"
+        = link_to "next-item","#",class: "item-nav-next"
+      .item-sns
+        / snsリンク
+        .sns-links
+          = link_to "#" do
+            %i.fa.fa-facebook-official{"aria-hidden" => "true"}
+          = link_to "#" do
+            %i.fa.fa-twitter-square{"aria-hidden" => "true"}
+          = link_to "#" do
+            %i.fa.fa-pinterest-square{"aria-hidden" => "true"}
+        -# =image_tag "https://res.cloudinary.com/hapvr1azp/image/upload/v1538993336/kvulc377thq523iizqvj.png",height: "100%", width:"30%"
+      .item-other
+        / その他のアイテム
+        %h2.item-other-user
+          =link_to "User-その他の出品","#"
+          .item-box
+            .item-box-content
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://www.grail.bz/media/catalog/product/cache/0a7c993427b70b9b444e96c72e5c540c/f/o/fo991_v12.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://drmur6qpaw907g.cdn.jp.idcfcloud.com/images/goods/3163900529-000554014/3163900529-000554014_8700_1_20190520134002.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+          / その他のアイテム一覧
+          .item-box
+            / その他のアイテム一覧
+            .item-box-content
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://shikasoku.com/wp-content/uploads/2018/02/img_0134.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+          / その他のアイテム一覧
+          .item-box
+            / その他のアイテム一覧
+            .item-box-content
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+              .item-box-new
+                .item-box-body
+                  %figure.item-box-photo
+                    =link_to  image_tag "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg",class: "item-image"
+                  .item-box-detail
+                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    .item-box-price
+                      ¥1,0000
+      .item-bottom
+        %ul.item-bottom-nav 
+          %li
+            = link_to "メルカリ " , ""
+          %li.product-details
+            Product Details
 
 
 

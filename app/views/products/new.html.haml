@@ -1,6 +1,9 @@
 .wrapper
+= form_for :product,url: new_product_path do |f|
   %header
   .section
+    .header
+      = link_to  image_tag("logo.svg", width: '185'), root_path
     .main-section
       .main-section__heading
         %h2.main-section__heading-name 商品の情報を入力
@@ -14,7 +17,8 @@
           .main-section__form-image-box-upload
             .main-section__form-image-box-upload--container
             .main-section__form-image-box-upload--drop_box
-              %input.main-section__form-image-file{multiple: "", name: "", style: "display: none;", type: "file"}/
+              %input.main-section__form-image-file
+                =f.file_field :image, type: "file"
               %pre.visible-pc
                 :preserve
                   ドラッグアンドドロップ
@@ -157,5 +161,16 @@
               に同意したことになります。
           %button.red-submit-btn{type: "submit"}
             出品する
-          %button.glay-back-btn{type: "button"}
-            もどる
+          = link_to '戻る', :back, class:"glay-back-btn"
+    .footer
+      .footer__top
+        %ul
+          %li 
+            = link_to "プライバシーポリシー"
+          %li 
+            = link_to "メルカリ利用規約"
+          %li 
+            = link_to "特定商取引に関する表記"
+
+        = link_to image_tag("logo-gray.svg", width: '80')
+        %p © 2019 Mercari

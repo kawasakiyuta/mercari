@@ -25,28 +25,30 @@ Things you may want to cover:
 
 ## productsテーブル
 
-|Column          |Type      |Options                  |
-|----------------|----------|-------------------------|
-|name            |string    |null: false              |  <!--商品名-->
-|state           |integer   |null: false              |  <!--商品の状態-->
-|price           |string    |null: false              |
-|sold            |boolean   |null: false              | <!--売れたかどうか-->　
+
+|Column          |Type      |Options                     |
+|----------------|----------|----------------------------|
+|name            |string    |null: false                 |  <!--商品名-->
+|state           |string    |null: false                 |  <!--商品の状態-->
+|price           |string    |null: false                 |
+|sold            |boolean   |null: false                 | <!--売れたかどうか-->
+
 |user_id         |references|null: false,foreign_key:true| <!--出品したuser_id-->
-|buyer_id        |integer   |null: false              | <!--購入したuser_id-->
-|cost_bearer     |string    |null: false              | <!--送料をどっちが払うか-->
-|delivery_method |string    |null: false              |
-|delivery_souce  |string    |null: false              |
-|day_to_ship     |integer   |null: false              |
+|buyer_id        |integer   |null: false                 | <!--購入したuser_id-->
+|cost_bearer     |string    |null: false                 | <!--送料をどっちが払うか-->
+|delivery_method |string    |null: false                 |
+|delivery_souce  |string    |null: false                 |
+|day_to_ship     |integer   |null: false                 |
 |category_id     |references|null: false,foreign_key:true|
 |brand_id        |references|null: false,foreign_key:true|
 
 ### Association
 
 * belongs_to :user
-* has_many   :comments   ,dependent: :destroy
+* has_many   :comments ,dependent: :destroy
 * belongs_to :brand
-* has_many   :likes,dependent: :destroy
-* has_many   :images   ,dependent: :destroy
+* has_many   :likes   ,dependent: :destroy
+* has_many   :images  ,dependent: :destroy
 * belongs_to :category
 
 ## imagesテーブル
@@ -54,11 +56,11 @@ Things you may want to cover:
 |Column           |Type      |Options                     |
 |-----------------|----------|----------------------------|
 |product_id       |references|null: false,foreign_key:true|
-|image        |string    |null: false|
+|image            |string    |null: false                 |
 
 ### Association
 
-* belongs_to :products
+* belongs_to :product
 
 
 
@@ -66,8 +68,8 @@ Things you may want to cover:
 
 |Column           |Type      |Options                     |
 |-----------------|----------|----------------------------|
-|name             |string    |null: false|
-|ancestry         |string    |                 |
+|name             |string    |null: false                 |
+|ancestry         |string    |                            |
 
 ### Association
 
@@ -87,11 +89,11 @@ Things you may want to cover:
 
 ## commentsテーブル//値下げのやりとり
 
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|user_id |references |null: false, foreign_key: true|
+|Column     |Type       |Options                       |
+|-----------|-----------|------------------------------|
+|user_id    |references |null: false, foreign_key: true|
 |product_id |references |null: false, foreign_key: true|
-|comment |text       |null: false                   |
+|comment    |text       |null: false                   |
 
 ### Association
 
@@ -101,11 +103,11 @@ Things you may want to cover:
 
 ## messagesテーブル//購入後のやりとり
 
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|user_id |references |null: false, foreign_key: true|
+|Column     |Type       |Options                       |
+|-----------|-----------|------------------------------|
+|user_id    |references |null: false, foreign_key: true|
 |product_id |references |null: false, foreign_key: true|
-|message |text       |null: false                   |
+|message    |text       |null: false                   |
 
 ### Association
 * belongs_to :user
@@ -129,7 +131,6 @@ Things you may want to cover:
 |phone_number       |integer |null: false                         |
 |created_at         |datetime|null: false                         |
 |updated_at         |datetime|null: false                         |
-|wallet             |integer |null: false                         |
 |postcode           |string  |null: false                         |
 |prefecture         |string  |null: false                         |
 |city               |string  |null: false                         |
@@ -144,7 +145,7 @@ Things you may want to cover:
 * has_many   :messages,dependent: :destroy
 * has_many   :products,dependent: :destroy
 * has_many   :evaluations,dependent: :destroy
-* has_many :likes
+* has_many   :likes
 
 
 ## evaluationsテーブル//購入後の評価
@@ -164,9 +165,9 @@ Things you may want to cover:
 
 ## likesテーブル
 
-|Column  |Type       |Options                       |
-|--------|-----------|------------------------------|
-|user_id |references |null: false, foreign_key: true|
+|Column     |Type       |Options                       |
+|-----------|-----------|------------------------------|
+|user_id    |references |null: false, foreign_key: true|
 |product_id |references |null: false, foreign_key: true|
 
 ### Association
