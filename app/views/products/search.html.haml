@@ -1,7 +1,13 @@
 %body.search
   .search-index
-    %h2.search-word 【〜】の検索結果 
-    %p.search-count 【1 - 132】件表示
+    %h2.search-word 
+      -if @searchword.present?
+        = "#{@searchword}の検索"
+      -else
+        = "新着商品"      
+    %p.search-count 
+      -if @searchword.present?
+        ="#{@products_search.count}件表示"
     .search-item-content
       - @products_search.each do |product|
         .search_item-body
