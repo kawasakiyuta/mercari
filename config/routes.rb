@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'sign_up'
       get 'login'
+      get 'new'
       get 'address'
       get 'pay'
       get 'telephone'

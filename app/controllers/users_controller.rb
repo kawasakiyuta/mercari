@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    # @user = User.new
   end
 
   def login
@@ -21,6 +22,9 @@ class UsersController < ApplicationController
 
   def complete
     render layout: 'index'
+    @users = User.new(user_params)
+    @users.save
+    redirect_to users_path
   end
 
   def pay
@@ -29,6 +33,11 @@ class UsersController < ApplicationController
 
   def telephone
     render layout: 'index'
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password)
   end
 
 end
