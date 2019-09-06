@@ -1,0 +1,2 @@
+PAYJP_PRIVATE_KEY = 'sk_test_03a51c03c04cc5b44bafa7cd' #テスト秘密鍵
+PAYJP_KEY = 'pk_test_8c9bf832da690b7c0102c484' #テスト公開鍵
