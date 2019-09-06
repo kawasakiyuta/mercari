@@ -1,10 +1,11 @@
-%body.search
+%body.product-search
   .search-index
-    %h2.search-word 
+    .search-word
       -if @searchword.present?
-        = "#{@searchword}の検索"
+        %h2!= "<em>#{@searchword}</em> <strong>の検索結果</strong>"
+        -# = "#{@searchword}の検索結果"
       -else
-        = "新着商品"      
+        %h2!= "新着商品"      
     %p.search-count 
       -if @searchword.present?
         ="#{@products_search.count}件表示"
@@ -18,5 +19,13 @@
             .item-box-detail
               %h3.item-box-name
                 = product[:name]
-                                       
-= paginate(@products_search)
+    -if @searchword.present?                                    
+      .search-paginate
+        =paginate(@products_search)
+  .item-bottom
+    %ul.item-bottom-nav 
+      %li
+        = link_to "メルカリ " , "/"
+      %li.product-details
+        =@searchword
+
