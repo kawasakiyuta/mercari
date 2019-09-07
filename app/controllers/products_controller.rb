@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
   end
 
+
   def search
     @searchword = params[:keyword]
       if @searchword.present?
@@ -32,8 +33,19 @@ class ProductsController < ApplicationController
       end
   end
 
+
+
+  def confirmation
+    render layout: 'index'
+  end
+
+
+
   def error  
 
   end
 
+
+
 end
+
