@@ -116,11 +116,6 @@
         float: right;
         width: 400px;
         margin: 0;
-      }
-      &--delivery {
-        padding: 40px;
-        border-top: 1px solid #eee;
-        height:290px;
         .select-form {
           height: 70px;
           width: 400px;
@@ -157,6 +152,11 @@
             }
           }
         }
+      }
+      &--delivery {
+        padding: 40px;
+        border-top: 1px solid #eee;
+        height:290px;
         .select-form-foot {
           height: 70px;
           width: 400px;
