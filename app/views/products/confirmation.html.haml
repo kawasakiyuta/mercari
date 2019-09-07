@@ -1,0 +1,52 @@
+.wrapper
+  .main-pcsection
+    .main-pcsection__heading
+      %h2.main-pcsection__heading-name 購入内容の確認
+    .main-pcsection__content
+      .main-pcsection__content--product
+        = image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "image"
+        %p.name [新品] Apple Tシャツ (紺) - Mサイズ
+        %form.buy_form
+          %p.price
+            ¥2,500
+            %span
+              送料込み
+          .point
+            ポイントはありません
+          .price-row
+            .price-cell
+              支払い金額
+            .price-cell
+              %span
+                ¥2,500
+          %button.red-submit-btn{type: "submit"}
+            購入する
+            
+
+    .main-pcsection__content
+      .main-pcsection__content--address
+        %h3
+          配送先
+        .address-detail
+          〒532-0003 
+          %br
+          大阪府 大阪市なんば なんば19-19-19 skyo 
+          %br
+          川崎 雄太
+          %br
+            = link_to '変更する ＞', "#", class: "blue-link"
+
+    .main-pcsection__content
+      .main-pcsection__content--payment
+        %h3
+          支払い方法
+        .payment-detail
+          ************1234
+          %br
+            10 / 22
+          =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2394192159",width: "49", height: "15"
+          %br
+            = link_to '変更する ＞', "#", class: "blue-link"
+          
+
+

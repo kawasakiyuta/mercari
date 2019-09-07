@@ -23,8 +23,15 @@ class ProductsController < ApplicationController
 
   end
 
+
+  def confirmation
+    render layout: 'index'
+  end
+
+
   def error  
 
   end
+
 
 end
