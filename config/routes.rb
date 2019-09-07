@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   root 'products#index'
+
   resources :login, only: [:index, :new, :create]
   resources :sign_up, only: [:index, :new]
   resources :mypages, only: [:index]
@@ -24,8 +25,11 @@ Rails.application.routes.draw do
   resources :products,only: [:index, :show, :new] do
     collection do
       get 'error'
+
       get 'search'
       post 'search'
+      get 'confirmation'
+
     end
   end
 
