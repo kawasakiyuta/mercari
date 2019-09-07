@@ -106,21 +106,21 @@
       padding: 40px;
       border-top: 1px solid #eee;
       height: 180px;
+      h3.select-content-title {
+        float: left;
+        color: #888;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .select-content__form-box {
+        float: right;
+        width: 400px;
+        margin: 0;
+      }
       &--delivery {
         padding: 40px;
         border-top: 1px solid #eee;
         height:290px;
-        h3.select-content-title {
-          float: left;
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-        }
-        .select-content__form-box {
-          float: right;
-          width: 400px;
-          margin: 0;
-        }
         .select-form {
           height: 70px;
           width: 400px;
@@ -131,6 +131,29 @@
               margin-top: 8px;
               position: relative;
               background: #fff;
+              i.fa.fa-chevron-down {
+                position: absolute;
+                right: 16px;
+                top: 40%;
+                z-index: 2;
+                color: #888;
+                font-size: 16px;
+              }
+              .list-menu__category {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                outline: 0;
+                -webkit-appearance: none;
+              }
             }
           }
         }
@@ -154,29 +177,6 @@
         border-top: 1px solid #eee;
         height: 248px;
       }
-    }
-    i.fa.fa-chevron-down {
-      position: absolute;
-      right: 16px;
-      top: 40%;
-      z-index: 2;
-      color: #888;
-      font-size: 16px;
-    }
-    .list-menu__category {
-      width: 100%;
-      position: relative;
-      z-index: 2;
-      height: 48px;
-      padding: 0 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      background: 0;
-      font-size: 16px;
-      line-height: 1.5;
-      cursor: pointer;
-      outline: 0;
-      -webkit-appearance: none;
     }
     
   }
