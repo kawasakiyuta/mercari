@@ -84,3 +84,4 @@ end
 gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
+gem 'pry-rails'
