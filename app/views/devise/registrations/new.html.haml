@@ -42,7 +42,6 @@
         %li
           完了
           .progress-line--fifth
-
   %main.contents
     %section.contents__panel
       %h2.contents-name 会員情報入力
@@ -288,8 +287,7 @@
               に
               同意したものとみなします
         .form__index
-          .next-enter
-            =link_to "sign_up_new#telephone", method: :get, class: "next-enter-btn" do
-              次へ進む
+          %button.next-enter-btn{type: "submit", value: ""}
+            次へ進む
           .description
             =link_to "本人情報の登録について＞", "https://www.mercari.com/jp/help_center/article/423/", class: "blue-link"
