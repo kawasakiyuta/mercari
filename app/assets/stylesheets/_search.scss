@@ -17,22 +17,22 @@
       font-size:11px;
       color: #888;
     }
-  .search-item-content{
+  .search__item{
     height:300px;
     margin-top:16px;
+    &__body{
+      height:300px;
+      float:left;
+      width:25%;
+    }
    }
  
-  .search_item-body{
-    height:300px;
-    float:left;
-    width:25%;
-    
-    .item-box-body{
+    .item__box{
       width:90.65%;
       height:235px;
       margin:auto;
       background-color:white;
-      .item-box-photo{
+      &--photo{
         height:160px;
         width:auto;
         margin:0px;
@@ -43,7 +43,7 @@
         
         }
       }
-      .item-box-detail{
+      &--detail{
         padding:8px 12px;
         height:58px;
         .item-box-name{
@@ -54,16 +54,8 @@
           overflow: hidden; 
           position:relative; 
         }
-        .item-box-price{
-          font-weight:bold;
-          font-size:15px;
-          margin-top:8px;
-          color: #333;
-        }
       }
     }
-  }
-  
   
   .item-box-name::after{
     content: "";

@@ -8,14 +8,14 @@
     %p.search-count 
       -if @searchword.present?
         ="#{@products_search.count}件表示"
-    .search-item-content
+    .search__item
       - @products_search.each do |product|
-        .search_item-body
-          .item-box-body
-            %prefix.item-box-photo
+        .search__item__body
+          .item__box
+            %prefix.item__box--photo
               = link_to product_path(product) do
                 = image_tag product.images[0][:image],class: "item-image"
-            .item-box-detail
+            .item__box--detail
               %h3.item-box-name
                 = product[:name]
     -if @searchword.present?                                    
