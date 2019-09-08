@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
-  resources :cards,only: [:index, :show, :create]
+  # resources :cards,only: [:index, :show, :create]
   resources :purchase_confirmation ,only: [:index]
   resources :products,only: [:index, :show, :new] do
     collection do
