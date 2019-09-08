@@ -1,4 +1,4 @@
-@import "progress-line/_progress-line-index";
+@import "progress-line/_progress-line-memberinformation";
 
 .contents-name {
   padding: 30px;
@@ -10,7 +10,7 @@
   font-family: monospace;
 }
 .contents-box {
-  height: 1150px;
+  height: 1100px;
 }
 
 .contents-form {
@@ -64,7 +64,7 @@
   font-size: 13px;
   text-align: center;
 }
-.next-enter a{
+button.next-enter-btn {
   display: block;
   width: 320px;
   line-height: 50px;
