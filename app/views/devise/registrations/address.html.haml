@@ -66,4 +66,5 @@
             %input.input-default.address{name: "telephone", type: "string", placeholder: "例) 090-1234-5678"}
           .form
             .next-enter
-              =link_to "次へ進む", class: "next-enter-btn"
+              =link_to users_pay_path, class: "enter-btn" do
+                次へ進む

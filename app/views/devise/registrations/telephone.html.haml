@@ -29,7 +29,8 @@
               本人確認の為、携帯電話のSNS(ショートメッセージサービス)を利用して認証を行います。
         .form__telephone
           .next-enter
-            =link_to "SNSを送信する", class: "next-enter"
+            =link_to users_address_path, class: "enter-btn" do
+              SNSを送信する
           .text-message
             ※電話番号は本人確認や不正利用防止の為に利用します。他のユーザーに公開されることはありません。
           .description

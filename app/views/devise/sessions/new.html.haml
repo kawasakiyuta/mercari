@@ -16,6 +16,7 @@
 -#     = f.submit "Log in"
 -# = render "devise/shared/links"
 
+
 .display
   %main.contents
     %section.contents__panel
@@ -38,10 +39,10 @@
             = f.email_field :email, class: "login-email", autofocus: true, autocomplete: "email", placeholder: "  メールアドレス"
           .login-pass
             = f.password_field :password, class: "login-pass", autocomplete: "current-password", placeholder: "  パスワード"
-        .login-captcha
-          ☑︎reCAPCHA(私はロボットではありません)
-        .login-enter
-          =link_to "ログイン", new_user_session_path, class: "enter-btn"
+          .login-captcha
+            ☑︎reCAPCHA(私はロボットではありません)
+          .login-enter
+            = f.submit 'ログイン'
         .forget-pass
           =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__btn" do
             パスワードをお忘れの方
