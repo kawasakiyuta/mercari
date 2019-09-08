@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'users/telephone', to: 'users/registrations#telephone'
     get 'users/address', to: 'users/registrations#address'
     get 'users/pay', to: 'users/registrations#pay'
-    get 'users/create', to: 'users/registrations#create'
+    get 'users/complete', to: 'users/registrations#complete'
   end
 
   resources :users do
