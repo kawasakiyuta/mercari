@@ -64,7 +64,7 @@
   font-size: 13px;
   text-align: center;
 }
-.next-enter a{
+button.next-enter-btn {
   display: block;
   width: 320px;
   line-height: 50px;
@@ -82,8 +82,8 @@
 .blue-link {
   color:#0099e8;
   text-decoration: none;
-  }
-  .blue-link:hover{
+}
+.blue-link:hover{
   color: #80c8f3;
   text-decoration: underline;
-  }
+}

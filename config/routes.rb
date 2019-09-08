@@ -4,9 +4,11 @@ Rails.application.routes.draw do
     collection do
       get 'sign_up'
       get 'login'
+      get 'new'
       get 'address'
       get 'pay'
       get 'telephone'
+      get 'complete'
       get 'logout'
       get 'identification'
       get 'mypage'
