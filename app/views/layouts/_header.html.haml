@@ -4,7 +4,7 @@
       %h1
         =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", size: "134x36"),"/"                 #/#url: new_product_path
       .content__head--form
-        = form_tag("/products/search")do
+        = form_tag("/products/search",method: :get)do
           %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: "#{@searchword}"}/          
           %button.icon-search{type: "submit"}
             %i.fa.fa-search

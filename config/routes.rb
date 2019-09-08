@@ -25,11 +25,8 @@ Rails.application.routes.draw do
   resources :products,only: [:index, :show, :new] do
     collection do
       get 'error'
-
       get 'search'
-      post 'search'
       get 'confirmation'
-
     end
   end
 
