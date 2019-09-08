@@ -25,16 +25,16 @@
       %h2.contents-name 会員情報入力
       .contents-box
         .contents-form
-          = form_for(@user) do |f|
+          = form_for :user, url: users_path do |f|
             -# = render "devise/shared/error_messages", resource: resource
             .form-group
               %label ニックネーム
               %span.form-require 必須
-              = f.text_field :nickname, class: "input-default", autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
+            = f.text_field :nickname, class: "input-default", autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
             .form-group
               %label メールアドレス
               %span.form-require 必須
-              = f.email_field :email, class: "input-default", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+            = f.email_field :email, class: "input-default", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
             .form-group
               %label パスワード
               %span.form-require 必須
@@ -43,7 +43,7 @@
             .form-group
               %label パスワード(確認)
               %span.form-require 必須
-              = f.password_field :password_confirmation, class: "input-default", autocomplete: "new-password", placeholder: "7文字以上", maxlength: "7"
+            = f.password_field :password_confirmation, class: "input-default", autocomplete: "new-password", placeholder: "7文字以上", maxlength: "7"
             .form-group
               %label 本人確認
               %p.confirmation-text
@@ -65,9 +65,9 @@
               %span.form-require 必須
               .contents-form__birthday
                 .birthday-select.select-year
-                  = f.select :birthday, [[2018, "2018"], [2017, "2017"]], prompt: "--"
-                  -# %option{:value => "2017"}2017
-                  -# %option{:value => "2016"}2016
+                  = f.select :birthday, prompt: "--"
+                  %option{:value => "2017"}2017
+                  %option{:value => "2016"}2016
                   -# %option{:value => "2015"}2015
                   -# %option{:value => "2014"}2014
                   -# %option{:value => "2013"}2013
@@ -261,9 +261,11 @@
               に
               同意したものとみなします
         .form__index
-          .next-enter
-            =link_to "sign_up_new#telephone", method: :get, class: "next-enter-btn" do
+          %button.next-enter-btn{type: "submit"}
+            次へ進む
+            -# =link_to "sign_up_new#telephone", method: :get, class: "next-enter-btn" do
               次へ進む
+            -# %button.next-enter-btn{type: "submit"}
           .description
             =link_to "本人情報の登録について＞", "https://www.mercari.com/jp/help_center/article/423/", class: "blue-link"
   %footer.footer-box

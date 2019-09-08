@@ -1,27 +1,27 @@
 
--# %h2 Sign up
+%h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :nickname
--#     = f.text_field :nickname, class: "input-default", autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
--#   .field
--#     = f.label :email
--#     = f.email_field :email, class: "input-default", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
--#   .field
--#     = f.label :password
--#     - if @minimum_password_length
--#       %em
--#         (#{@minimum_password_length} characters minimum)
--#     %br/
--#     = f.password_field :password, class: "input-default", autocomplete: "new-password", maxlength: "7"
--#   .field
--#     = f.label :password_confirmation
--#     %br/
--#     = f.password_field :password_confirmation, class: "input-default", autocomplete: "new-password", maxlength: "7"
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
+  .field
+    = f.label :nickname
+    = f.text_field :nickname, class: "input-default", autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
+  .field
+    = f.label :email
+    = f.email_field :email, class: "input-default", autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, class: "input-default", autocomplete: "new-password", maxlength: "7"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, class: "input-default", autocomplete: "new-password", maxlength: "7"
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
 
 
 .display

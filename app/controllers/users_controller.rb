@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
     render layout: 'index'
   end
 
@@ -34,6 +35,9 @@ class UsersController < ApplicationController
 
   def complete
     render layout: 'index'
+  end
+
+  def create
     @users = User.new(user_params)
     @users.save
     redirect_to users_path
