@@ -287,7 +287,7 @@
               に
               同意したものとみなします
         .form__index
-          = link_to "", 
+          =link_to users_telephone_path, user_nickname: @user.nickname, class: "next-enter-btn" do
             次へ進む
           .description
             =link_to "本人情報の登録について＞", "https://www.mercari.com/jp/help_center/article/423/", class: "blue-link"

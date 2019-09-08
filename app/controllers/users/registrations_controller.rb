@@ -7,8 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @user = User.new
+    @user = User.new(nickname: "ああ")
     super
+    binding.pry
   end
 
 
@@ -28,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def complete
   end
 
-  
+
   # POST /resource
   def create
     super
