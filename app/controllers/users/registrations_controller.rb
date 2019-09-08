@@ -11,6 +11,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def address
+    @addresses = Address.all
+  end
+
+  def create
+  end
+
+  def pay
+  end
+
+  def telephone
+  end
+
   # POST /resource
   def create
     super

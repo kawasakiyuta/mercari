@@ -4,15 +4,15 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
   }
   # devise_for :users
+  devise_scope :user do
+    get 'users/telephone', to: 'users/registrations#telephone'
+    get 'users/address', to: 'users/registrations#address'
+    get 'users/pay', to: 'users/registrations#pay'
+    get 'users/create', to: 'users/registrations#create'
+  end
 
   resources :users do
     collection do
-      get 'sign_up'
-      get 'login'
-      get 'address'
-      get 'pay'
-      get 'telephone'
-      get 'logout'
       get 'identification'
       get 'mypage'
     end
