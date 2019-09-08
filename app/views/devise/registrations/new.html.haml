@@ -48,7 +48,7 @@
       .contents-box
         .contents-form
           = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            -# = render "devise/shared/error_messages", resource: resource
+            = render "devise/shared/error_messages", resource: resource
             .form-group
               %label ニックネーム
               %span.form-require 必須
