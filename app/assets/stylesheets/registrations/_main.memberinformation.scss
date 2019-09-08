@@ -55,7 +55,7 @@
   background-color: #fff;
 }
 .contents-form__confirmation-text {
-  margin-right: 40px;
+  margin: 20px 120px 0;
   font-size: 13px;
   text-align: left;
   color: #888;
@@ -64,9 +64,10 @@
   font-size: 13px;
   text-align: center;
 }
-button.next-enter-btn {
+input.next-enter-btn {
   display: block;
   width: 320px;
+  margin: 20px 120px 0;
   line-height: 50px;
   border-radius: 10px; 
   text-align: center;
@@ -76,7 +77,7 @@ button.next-enter-btn {
 }
 .description {
   text-align: right;
-  padding: 20px 0;
+  padding: 20px 120px;
 }
 
 .blue-link {
