@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_095412) do
+ActiveRecord::Schema.define(version: 2019_09_01_074153) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2019_09_05_095412) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +59,12 @@ ActiveRecord::Schema.define(version: 2019_09_05_095412) do
     t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
+  create_table "first_name_to_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email"
+    t.string "encrypted_password"
+    t.string "last_name"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
@@ -81,18 +95,18 @@ ActiveRecord::Schema.define(version: 2019_09_05_095412) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "state", null: false
-    t.string "price", null: false
-    t.boolean "sold", null: false
-    t.bigint "user_id", null: false
-    t.integer "buyer_id", null: false
-    t.string "cost_bearer", null: false
+    t.string "price", default: "", null: false
+    t.boolean "sold"
+    t.bigint "user_id"
+    t.integer "buyer_id"
+    t.string "cost_bearer", default: ""
     t.string "delivery_method", null: false
     t.string "delivery_souce", null: false
     t.integer "day_to_ship", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "brand"
-    t.string "size"
+    t.string "size", default: "", null: false
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
@@ -106,6 +120,19 @@ ActiveRecord::Schema.define(version: 2019_09_05_095412) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname", null: false
+    t.date "birthday", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.integer "phone_number", null: false
+    t.string "postcode", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "block", null: false
+    t.string "building"
+    t.integer "wallet", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
