@@ -36,9 +36,11 @@
       .form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .login-mail
-            = f.email_field :email, class: "login-email", autofocus: true, autocomplete: "email", placeholder: "  メールアドレス"
+            -# = f.email_field :email, class: "login-email", autofocus: true, autocomplete: "email", placeholder: "  メールアドレス"
+            = f.email_field :email, class: "login-email", autofocus: true, autocomplete: "email", value: "gmail@gmail"
           .login-pass
-            = f.password_field :password, class: "login-pass", autocomplete: "current-password", placeholder: "  パスワード"
+            -# = f.password_field :password, class: "login-pass", autocomplete: "current-password", placeholder: "  パスワード"
+            = f.password_field :password, class: "login-pass", autocomplete: "current-password", value: "12345678"
           .login-captcha
             ☑︎reCAPCHA(私はロボットではありません)
           .login-enter
