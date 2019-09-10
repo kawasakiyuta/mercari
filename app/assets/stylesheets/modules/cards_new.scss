@@ -161,16 +161,18 @@ main.card-container {
         .credit-cards__addition-btn {
           margin-top: 24px;
           width: 340px;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
+          #token_submit {
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;   
+          }
         }
       }
     }
