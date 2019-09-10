@@ -51,6 +51,7 @@ $(document).on('turbolinks:load', function(){
       })
       dropzone.css({
         'display': 'none'
+        
       })
       $.each(images, function(index, image) {
         image.attr('data-image', index);
