@@ -125,7 +125,58 @@
         cursor: pointer;
         &__item {
           text-decoration: none;
+          .user_sign_up {
+            text-decoration: none;
+            background-color: rgb(234, 53, 45);
+            color: rgb(255, 255, 255);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(234, 53, 45);
+            border-radius: 4px;
+            padding: 8px 10px;
+            height: 14px;
+            line-height: 14px;
+            margin: 0;
+          }
+          .user_sign_in{
+            text-decoration: none;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 149, 238);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(0, 149, 238);
+            border-image: initial;
+            border-radius: 4px;
+            padding: 8px 10px;
+            transition: all 0.3s ease-out 0s;
+            height: 14px;
+            line-height: 14px;
+          }
+          .user_sign_in:hover{
+            color: white;
+            text-decoration: none;
+            background-color: #0099e8;
+          }
         }
+        i {
+          color: #ccc;
+          font-size: 18px;
+        }
+        span {
+          font-weight: normal;
+          margin-left: 10px;
+          font-size: 14px;
+          vertical-align: middle;
+        }
+      }
+      .mega-menu-right_sign {
+        display: inline-block;
+        margin-right: 11px;
+        cursor: pointer;
         i {
           color: #ccc;
           font-size: 18px;
