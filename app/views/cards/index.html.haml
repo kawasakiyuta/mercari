@@ -1,4 +1,5 @@
 %main.container
+  =render '/layouts/side__nav'
   .content-credit
     %section.content-credit
       %h2.content-credit-title 支払い方法
@@ -8,11 +9,10 @@
             %h3.head-name クレジットカード一覧
           %section.credit-cards__addition
             .credit-cards__addition-btn
-              = link_to "", class: "add-btn", method: :get do
+              = link_to new_card_path(current_user), class: "add-btn", data: {"turbolinks" => false} do
                 %i.fa.fa-credit-card
                 クレジットカードを追加する
                 
         .content__inner-foot
           = link_to "支払い方法について", "#", target: "_blank", class: "foot-name"
           %i.fa.fa-angle-right
-  =render '/layouts/side__nav'
