@@ -1525,3 +1525,4 @@ others_jimus.children.create([{name:"ラッピング/包装"}])
 others_jimus.children.create([{name:"その他"}])
 
 others_others = others.children.create(name: "その他")
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
