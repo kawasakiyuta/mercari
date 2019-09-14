@@ -55,15 +55,6 @@
           text-align: center;
           cursor: pointer;
         }
-        pre.visible-pc {
-          position: absolute;
-          top: 40%;
-          left: 16px;
-          right: 16px;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 1.5;
-        }
       }
     }
     &-content {
@@ -116,8 +107,8 @@
         float: right;
         width: 400px;
         margin: 0;
-          .list-menu__wrap {
-            margin-top: 8px;
+        .list-menu__wrap {
+          margin-top: 8px;
             position: relative;
             background: #fff;
             .list-menu__category {
@@ -134,10 +125,10 @@
               cursor: pointer;
               outline: 0;
               -webkit-appearance: none;
+            }
           }
-        }
-        .select-form-foot {
-          height: 70px;
+          .select-form-foot {
+            height: 70px;
           width: 400px;
           margin-top: 40px;
           &-lavel {
@@ -397,4 +388,13 @@ select {
 }
 .dropzone-area2{
   display: none;
+}
+.dropzone-box.main-section__form-image-box-upload--drop_box pre.visible-pc {
+  position: absolute;
+  top: 40%;
+  left: 16px;
+  right: 16px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
 }
