@@ -24,9 +24,21 @@ class ProductsController < ApplicationController
   end
 
 
+  def search
+    @searchword = params[:keyword]
+      if @searchword.present?
+        @products_search =Product.sorted.where("name LIKE ?" , "%#{params[:keyword]}%").page(params[:page]).per(4)
+      else
+        @products_search =Product.all.sorted.page(params[:page]).per(20)
+      end
+  end
+
+
+
   def confirmation
     render layout: 'index'
   end
+
 
 
   def error  
@@ -34,4 +46,6 @@ class ProductsController < ApplicationController
   end
 
 
+
 end
+
