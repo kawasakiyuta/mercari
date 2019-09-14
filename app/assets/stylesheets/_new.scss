@@ -353,7 +353,7 @@ li.clearfix-profit {
   display: none;
 }
 img{
-  max-width: 200px;
+  max-width: 135px;
   height: auto;
 }
 select { 
@@ -391,4 +391,10 @@ select {
   z-index: 2;
   color: #888;
   font-size: 16px;
+}
+.upload-image{
+  display:none;
+}
+.dropzone-area2{
+  display: none;
 }

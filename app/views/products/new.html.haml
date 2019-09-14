@@ -17,21 +17,30 @@
           .main-section__form-image-box-upload
           = f.fields_for :images do |image| 
             #preview
-            .dropzone-area
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                .input_area
-                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                %p ここをクリックしてください
+              .dropzone-area
+                .main-section__form-image-box-upload--container
+                  %label.main-section__form-image-box-upload--drop_box{for: "product_image",class: "dropzone-box", for: "upload-image"}
+                    %pre.visible-pc
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    .input_area
+                    =f.file_field :image , class: "main-section__form-image-file"
+                    =f.file_field :image, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
             #preview2
             .dropzone-area2
               = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %p ここをクリックしてください
-            .main-section__form-image-box-upload--container
-            %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
-              %pre.visible-pc
-                :preserve
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
+                .main-section__form-image-box-upload--container
+                  %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
+                    %pre.visible-pc
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+            -# %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
+            -#   %pre.visible-pc
+            -#     :preserve
+            -#       ドラッグアンドドロップ
+            -#       またはクリックしてファイルをアップロード
         .main-section__form-content
           .form
             %h3.form-lavel
