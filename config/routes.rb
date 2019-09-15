@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
+  # devise_for :users
+  devise_scope :user do
+    get 'users/telephone', to: 'users/registrations#telephone'
+    get 'users/address', to: 'users/registrations#address'
+    get 'users/pay', to: 'users/registrations#pay'
+    get 'users/complete', to: 'users/registrations#complete'
+  end
 
   resources :users do
     collection do
-      get 'sign_up'
-      get 'login'
-      get 'address'
-      get 'pay'
-      get 'telephone'
-      get 'logout'
       get 'identification'
       get 'mypage'
     end
@@ -24,6 +29,7 @@ Rails.application.routes.draw do
   resources :products,only: [:index, :show, :new] do
     collection do
       get 'error'
+      get 'search'
       get 'confirmation'
     end
   end

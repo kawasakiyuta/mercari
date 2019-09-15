@@ -1,14 +1,10 @@
 .display
-  %header.header-box
-    %h1
-      =link_to "https://www.mercari.com/jp/" do
-        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?863303983"
   %main.contents
     %section.contents__panel
       %h2.registration-name 新規会員登録
       .registration-box
         .registration-form
-          =link_to "sign_up_new#index", method: :get, class: "registration-form__btn registration-form__btn--email" do
+          =link_to new_user_registration_path, method: :get, class: "registration-form__btn registration-form__btn--email" do
             =fa_icon 'envelope', class: "registration-form__btn--icon"
             メールアドレスで登録する
           =link_to "https://www.facebook.com/login/", class: "registration-form__btn registration-form__btn--facebook" do
@@ -17,18 +13,3 @@
           =link_to "https://accounts.google.com/signin/", class: "registration-form__btn registration-form__btn--google" do
             =fa_icon 'google', class: "registration-form__btn--icon"
             Googleで登録する
-  %footer.footer-box
-    .footer__panel
-      .footer-overview
-        =link_to "https://www.mercari.com/jp/privacy/", class: "footer-overview__1" do
-          プライバシーポリシー
-        =link_to "https://www.mercari.com/jp/tos/", class: "footer-overview__2" do
-          メルカリ利用規約
-        =link_to "https://www.mercari.com/jp/tokutei/", class: "footer-overview__3" do
-          特定商取引に関する表記
-      .footer__box
-        =link_to "https://www.mercari.com/jp/", class: "footer__footer-logo" do
-          =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983"
-      .footer__name
-        ©︎2019 Mercari
-
