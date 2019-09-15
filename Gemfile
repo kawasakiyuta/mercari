@@ -84,4 +84,4 @@ end
 gem 'ancestry'
 gem 'kaminari'
 gem 'pry-rails'
-
+gem 'squasher'

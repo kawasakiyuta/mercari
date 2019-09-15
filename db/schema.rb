@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_144618) do
+ActiveRecord::Schema.define(version: 2019_09_15_204841) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -68,14 +68,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["product_id"], name: "index_images_on_product_id"
-  end
-
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
     t.string "state", null: false
     t.string "price", default: "", null: false
     t.boolean "sold"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.integer "buyer_id"
     t.string "cost_bearer", default: ""
     t.string "delivery_method", null: false
