@@ -1,0 +1,75 @@
+%main.card-container
+  =render '/layouts/side__nav'
+  .content-credit
+    %section.content-credit
+      %h2.content-credit-title クレジットカード情報入力
+      .content__inner-body
+        .content__inner-body--form
+          .form-group
+            %label カード番号
+            %span.form-require 必須
+            %input.input-default{name: "cardnumber", type: "string", placeholder: "  半角英数字のみ"}
+              .credit-card
+                %li
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_visa_b.gif"
+                %li
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_master_b.gif"
+                %li  
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_jcb_b.gif"
+                %li
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_amex_b.gif"
+                %li
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_diners_b.gif"
+                %li
+                  =image_tag "http://manual.estore.co.jp/shared/mg_sozai/card_nicos_b.gif"
+          .form-group
+            %label 有効期限
+            %span.form-require 必須
+            .contents-form__expiration-date
+              .expiration-date-select.select-month
+                %select.select-default{name: "month"}
+                  %option{value: "01"} 01
+                  %option{value: "02"} 02
+                  %option{value: "03"} 03
+                  %option{value: "04"} 04
+                  %option{value: "05"} 05
+                  %option{value: "06"} 06
+                  %option{value: "07"} 07
+                  %option{value: "08"} 08
+                  %option{value: "09"} 09
+                  %option{value: "10"} 10
+                  %option{value: "11"} 11
+                  %option{value: "12"} 12
+                %i.fa.fa-chevron-down
+                %span.date 月
+              .expiration-date-select.select-year
+                %select.select-default{name: "year"}
+                  %option{value: "19"} 19
+                  %option{value: "20"} 20
+                  %option{value: "21"} 21
+                  %option{value: "22"} 22
+                  %option{value: "23"} 23
+                  %option{value: "24"} 24
+                  %option{value: "25"} 25
+                  %option{value: "26"} 26
+                  %option{value: "27"} 27
+                  %option{value: "28"} 28
+                  %option{value: "29"} 29
+                %i.fa.fa-chevron-down
+                %span.date 年
+          .form-group
+            %label セキュリティコード
+            %span.form-require 必須
+            %input.input-default{name: "number", type: "string", placeholder: "  カード背面4桁もしくは3桁の番号"}
+            .description
+              .description-text
+                %input#toggle-checkbox{:type => "checkbox"}/
+                %i.fa.fa-question-circle
+                %label.toggle-button{:for => "toggle-checkbox"} カード裏面の番号とは？
+                .toggle-content
+                  カードの裏面をご参照ください。
+                  %br/
+                  = image_tag "seq-card.png", width: "240"
+            .credit-cards__addition-btn
+              = link_to "", class: "add-btn", method: :get do
+                追加する

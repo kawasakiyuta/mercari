@@ -1,6 +1,5 @@
 .wrapper
-  %header
-  .section
+  = form_for :product,url: new_product_path do |f|
     .main-section
       .main-section__heading
         %h2.main-section__heading-name 商品の情報を入力
@@ -14,7 +13,8 @@
           .main-section__form-image-box-upload
             .main-section__form-image-box-upload--container
             .main-section__form-image-box-upload--drop_box
-              %input.main-section__form-image-file{multiple: "", name: "", style: "display: none;", type: "file"}/
+              %input.main-section__form-image-file
+                =f.file_field :image, type: "file"
               %pre.visible-pc
                 :preserve
                   ドラッグアンドドロップ
@@ -157,5 +157,5 @@
               に同意したことになります。
           %button.red-submit-btn{type: "submit"}
             出品する
-          %button.glay-back-btn{type: "button"}
-            もどる
+          = link_to '戻る', :back, class:"glay-back-btn"
+    
