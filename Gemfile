@@ -82,7 +82,7 @@ end
 
 
 gem 'ancestry'
+gem 'jquery-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'pry-rails'
-gem 'jquery-rails'
