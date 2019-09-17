@@ -1,0 +1,193 @@
+.product-search{
+  h2{
+    text-align: left
+  }
+  p{    
+    padding-left:16px;
+  }
+  .search-index{
+   width:700px;
+   margin:auto;
+   overflow: hidden;
+    .search-word rb{
+      font-size:17px;  
+      font-weight:400px;
+        }
+    .search-count{
+      font-size:11px;
+      color: #888;
+    }
+  .search__item{
+    height:300px;
+    margin-top:16px;
+    &__body{
+      height:300px;
+      float:left;
+      width:25%;
+    }
+   }
+ 
+    .item__box{
+      width:90.65%;
+      height:235px;
+      margin:auto;
+      background-color:white;
+      &--photo{
+        height:160px;
+        width:auto;
+        margin:0px;
+        .item-image{
+          width:160px;
+          height:160px;
+          object-fit: scale-down;
+        
+        }
+      }
+      &--detail{
+        padding:8px 12px;
+        height:58px;
+        .item-box-name{
+          font-size:15px;
+          font-weight:normal;
+          width:100%;
+          height:44px;
+          overflow: hidden; 
+          position:relative; 
+        }
+      }
+    }
+  
+  .item-box-name::after{
+    content: "";
+    bottom:0;
+    position: absolute;
+    right:0;
+    width:50%;
+    height:22px;
+    background:-webkit-gradient(linear, left top, right top,from(rgba(255,255,255,0)), color-stop(72%, #fff));
+  }
+    
+  .item-box-price::before{
+    font-family: "FontAwesome";
+    content: "\f157";
+    font-weight:lighter;
+    color: #333;
+  }
+
+  // kaminari部分
+$baseColor:white;
+@mixin page-box{
+  float:left;
+  height:44px;
+  width:44px;
+  background-color:$baseColor;
+  border-radius:10px;
+  margin-left:2px;
+  position: relative;
+  border: 1px solid #ccc;
+  
+  a{
+    text-decoration: none;
+    color:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+  }
+}
+ 
+  .search-paginate{
+    width:100%;
+    height:50px;
+    
+  }
+  .pagination{
+    height:44px;
+    margin-bottom:50px;
+    justify-content: center;
+    display:flex;
+    text-align: center;
+
+    .page{
+      @include page-box;
+    }
+    .page:not(.current):hover{     
+      background-color: darken($baseColor, 10%); 
+    }
+    .next{
+      @include page-box;
+      position: absolute;
+      right: 29.3%;
+    }
+    .next:hover{     
+      background-color: darken($baseColor, 10%); 
+    }
+    .last{
+      @include page-box;
+      position: absolute;
+      right: 26%;
+    }
+    .last:hover{     
+      background-color: darken($baseColor, 10%); 
+    }
+    .first{
+      @include page-box;
+      position: absolute;
+      left: 26%;
+    }
+    .first:hover{     
+      background-color: darken($baseColor, 10%); 
+    }
+    .prev{
+      @include page-box;
+      justify-content: start; 
+      position: absolute;
+      left: 29.3%;
+    }
+    .prev:hover{     
+      background-color: darken($baseColor, 10%); 
+    }
+
+    .current{
+      display:block;
+      background-color:red;
+      border-radius:10px;
+      color:white;
+      padding-top:13px;
+      height:30px;
+    }
+  }
+  
+}
+.item-bottom{
+  height:48px;
+  width:100%;
+  margin-top:30px;
+  border-top:1px solid #eee ;
+  .item-bottom-nav {
+    margin:0px 210px ;
+    width:1020px;
+    display:flex;
+    font-size:14px;
+    padding:16px 0px;
+    li{
+      height:16px;
+      display:table;
+    }
+    a{
+      color:#333;
+      text-decoration: none;
+    }
+    a::after{
+      font-family: "FontAwesome";
+      content: "\f105";
+      margin-right:5px;
+    .product-details{
+      font-weight:bold;
+    }
+    
+    }
+  }
+ }
+}
