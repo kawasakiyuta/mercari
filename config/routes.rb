@@ -29,18 +29,27 @@ Rails.application.routes.draw do
   resources :products,only: [:index, :show, :new] do
     collection do
       get 'error'
+    end
+    member do
+      post 'buy'
       get 'confirmation'
     end
   end
 
   resources :cards do
-  # resources :cards, only: [:new, :show] do  
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
-      post 'buy', to: 'cards#buy'
     end
   end
+
+  # resources :purchase_confirmation, only: [:index] do
+  #   collection do
+  #     get 'index', to: 'purchase_confirmation#index'
+  #     post 'buy', to: 'purchase_confirmation#buy'
+      # get 'done', to: 'purchase_confirmation#done'
+    # end
+  # end
 
 end
