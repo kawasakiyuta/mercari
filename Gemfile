@@ -84,5 +84,6 @@ end
 gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
-gem 'pry-rails'
 gem 'jquery-rails'
+gem 'kaminari'
+gem 'pry-rails'

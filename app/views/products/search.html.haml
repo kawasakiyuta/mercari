@@ -1,0 +1,29 @@
+%body.product-search
+  .search-index
+    .search-word
+      -if @searchword.present?
+        %h2!= "#{@searchword}<rb>の検索結果</rb>"
+      -else
+        %h2!= "新着商品"      
+    %p.search-count 
+      -if @searchword.present?
+        ="#{@products_search.count}件表示"
+    .search__item
+      - @products_search.each do |product|
+        .search__item__body
+          .item__box
+            %prefix.item__box--photo
+              = link_to product_path(product) do
+                = image_tag product.images[0][:image],class: "item-image"
+            .item__box--detail
+              %h3.item-box-name
+                = product[:name]
+    -if @searchword.present?                                    
+      .search-paginate
+        =paginate @products_search, window:2
+  .item-bottom
+    %ul.item-bottom-nav 
+      %li
+        = link_to "メルカリ " , "/"
+      %li.product-details
+        =@searchword
