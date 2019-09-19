@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-    
+    console.log(images.length)
     if(images.length >= 5) {
       dropzone2.css({
         'display': 'block'
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function(){
       })
       $.each(images, function(index, image) {
         image.attr('data-image', index);
-        preview.append(image);                     
+        preview2.append(image);                     
         dropzone2.css({
           'width': `calc(100% - (128px * ${images.length - 5}))`
         })
@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
         dropzone2.find('pre').replaceWith('<i class="fa fa-camera"></i>')
       }
     } else {
-      $('#preview').empty();
+      // $('#preview').empty();
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview.append(image);
@@ -63,6 +63,7 @@ $(document).on('turbolinks:load', function(){
     var new_image = $(`<input multiple= "multiple" name="images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
   });
+
   $(document).on('click', '.delete', function() {
     var target_image = $(this).parent().parent();
     $.each(inputs, function(index, input){

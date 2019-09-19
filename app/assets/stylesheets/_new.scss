@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: o;
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
@@ -38,12 +43,11 @@
         line-height: 1.5;
       }
       &-upload {
-        display: block;
-        // height: 160px;
-        width: 620px;
-        margin: 16px auto 0;
         &--container {
-          display: inline;
+          display: inline-block;
+          width: 630px;
+          margin-left: 5px;
+          justify-content: space-between;
         }
         &--drop_box{
           display: block;
@@ -51,7 +55,6 @@
           min-height: 162px;
           background: #f5f5f5;
           border: 1px dashed #ccc;
-          // font-size: 0;
           text-align: center;
           cursor: pointer;
         }
@@ -96,7 +99,7 @@
     &-select-content {
       padding: 40px;
       border-top: 1px solid #eee;
-      height: 180px;
+      overflow: hidden;
       h3.select-content-title {
         float: left;
         color: #888;
@@ -128,7 +131,7 @@
             }
           }
           .select-form-foot {
-            height: 70px;
+          height: 70px;
           width: 400px;
           margin-top: 40px;
           &-lavel {
@@ -152,7 +155,7 @@
           width: 400px;
           margin: 0;
           .select-form {
-            height: 70px;
+            // height: 70px;
             width: 400px;
           }
         }
@@ -181,7 +184,7 @@
   }
 }
 .select-form {
-  height: 70px;
+  // height: 70px;
   width: 400px;
   &-lavel {
     font-weight: 600;
@@ -343,10 +346,6 @@ li.clearfix-profit {
   padding: 5px;
   display: none;
 }
-img{
-  max-width: 135px;
-  height: auto;
-}
 select { 
   width: 400px; 
   height: 40px;
@@ -386,15 +385,130 @@ select {
 .upload-image{
   display:none;
 }
-.dropzone-area2{
-  display: none;
-}
-.dropzone-box.main-section__form-image-box-upload--drop_box pre.visible-pc {
+// .dropzone-area2{
+  //   display: none;
+  // }
+pre.visible-pc {
+  // position: absolute;
+  // top: 40%;
+  // left: 16px;
+  // right: 16px;
+  // font-weight: bold;
+  // font-size: 14px;
+  // line-height: 1.5;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 16px;
   right: 16px;
+  text-align: center;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.5;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+// .dropzone_box{
+//   display: block;
+//   position: relative;
+//   min-height: 162px;
+//   background: #f5f5f5;
+//   border: 1px dashed #ccc;
+//   // font-size: 0;
+//   text-align: center;
+//   cursor: pointer;
+// }
+.img_view:first-child{
+  margin-left: 0;
+}
+.img_view{
+  position: relative;
+  display: inline-block;
+  // width: 18%;
+  background: #f5f5f5;
+  width: 100%;
+  // margin: 0 0 2% 2%;
+  // margin: 0 0 0 4px;
+
+  min-height: 162px;
+  border: 1px solid #eee;
+  vertical-align: top;
+  margin: 0 0 0 10px;
+}
+.img_view img{
+  max-width: 120px;
+  height: auto;
+}
+.btn_wrapper{
+  height: 40px;
+  display: inline-flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  .btn.edit{
+    display: inline-block;
+    width: 50%;
+    background: #f5f5f5;
+    line-height: 44px;
+    text-align: center;
+    border-right: 1px solid #eee;
+    color: rgb(24, 63, 194);
+  }
+  .btn.delete{
+    display: inline-block;
+    width: 50%;
+    background: #f5f5f5;
+    line-height: 44px;
+    text-align: center;
+    color: rgb(24, 63, 194);
+  }
+}
+i.fa.fa-camera {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+#preview{
+  // display:flex;
+  float: left;
+  justify-content: space-between;
+  display: inherit;
+  margin-left: 30px;
+}
+.main-section__form-image-box-upload{
+    // content: '';
+    display: inline-flex;
+    // clear: both;
+}
+#preview2{
+  float: left;
+  justify-content: space-between;
+  display: inherit;
+  margin-left: 30px;
+  clear: both;
+}
+.main-section__form-image-box-upload--container2{
+  display: inline-block;
+  width: 630px;
+  /* height: 50px; */
+  margin-left: 5px;
+  justify-content: space-between;
+}
+.main-section__form-image-box-upload--drop_box2{
+  display: none;
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+.main-section__form-image-box-upload2{
+  display: inline-flex;
 }

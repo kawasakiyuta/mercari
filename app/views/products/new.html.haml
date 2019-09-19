@@ -14,33 +14,27 @@
             出品画像
             %span.require-tag 必須
           %p 最大10枚までアップロードできます
+        = f.fields_for :images do |image| 
           .main-section__form-image-box-upload
-          = f.fields_for :images do |image| 
             #preview
-              .dropzone-area
-                .main-section__form-image-box-upload--container
-                  %label.main-section__form-image-box-upload--drop_box{for: "product_image",class: "dropzone-box", for: "upload-image"}
-                    %pre.visible-pc
-                    :preserve
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                    .input_area
-                    =f.file_field :image , class: "main-section__form-image-file"
-                    =f.file_field :image, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+            .main-section__form-image-box-upload--container 
+              %label.main-section__form-image-box-upload--drop_box{ for: "upload-image"}
+                .input_area
+                =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                %pre.visible-pc
+                  :preserve
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+          .main-section__form-image-box-upload2
             #preview2
-            .dropzone-area2
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                .main-section__form-image-box-upload--container
-                  %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
-                    %pre.visible-pc
-                    :preserve
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-            -# %label.main-section__form-image-box-upload--drop_box{for: "product_image"}
-            -#   %pre.visible-pc
-            -#     :preserve
-            -#       ドラッグアンドドロップ
-            -#       またはクリックしてファイルをアップロード
+            .main-section__form-image-box-upload--container2
+              %label.main-section__form-image-box-upload--drop_box2{ for: "upload-image"}
+                .input_area
+                =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                %pre.visible-pc
+                  :preserve
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
         .main-section__form-content
           .form
             %h3.form-lavel
@@ -56,26 +50,12 @@
           %h3.select-content-title 商品の詳細
           .select-content__form-box
             .select-form
-              .select-form-lavel
+              = f.label 'カテゴリー', class: 'select-form-lavel' do
                 カテゴリー
                 %span.require-tag 必須
               .list-menu__wrap
                 %i.fa.fa-chevron-down
-                %select.list-menu__category
-                  %option{value: ""} ---
-                  %option{value: "1"} レディース
-                  %option{value: "2"} メンズ
-                  %option{value: "3"} ベビー・キッズ
-                  %option{value: "4"} インテリア・住まい・小物
-                  %option{value: "5"} 本・音楽・ゲーム
-                  %option{value: "1328"} おもちゃ・ホビー・グッズ
-                  %option{value: "6"} コスメ・香水・美容
-                  %option{value: "7"} 家電・スマホ・カメラ
-                  %option{value: "8"} スポーツ・レジャー
-                  %option{value: "9"} ハンドメイド
-                  %option{value: "1027"} チケット
-                  %option{value: "1318"} 自動車・オートバイ
-                  %option{value: "10"} その他
+                = f.select :category, @category_parent_array, {}, {class: 'list-menu__category', id: 'parent_category'} 
             .select-form-foot
               .select-form-foot-lavel
                 商品の状態
@@ -97,7 +77,7 @@
             =link_to ""
             %i.fa.fa-question-circle
           .select-content__form-box
-            .select-form
+            .select-form-delivery
               .select-form-lavel
                 配送料の負担
                 %span.require-tag 必須
