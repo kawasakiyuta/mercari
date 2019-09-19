@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resources :purchase_confirmation ,only: [:index]
   resources :products,only: [:index, :show, :new] do
     collection do
+      get 'get_category_children', defaults:{ format: 'json'}
+      get 'get_category_grandchildren', defaults:{ format:'json'}
       get 'error'
     end
   end

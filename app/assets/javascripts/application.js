@@ -14,6 +14,5 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
-    if(images.length >= 5) {
 //= require turbolinks
 //= require_tree .
