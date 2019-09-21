@@ -1,24 +1,37 @@
 class ProductsController < ApplicationController
   # before_action :error , only:[:show]
 
-  def index
-  end
-
   def show
+    @product = Product.find(params[:id])
+    unless @product.sold 
+      redirect_to('/products/error')
+    end
   end
 
   def new
     @addresses = Address.all
+  end
+  
+  def index
+    @products_ladies = Product.adjust.active(1)
+    @products_mens = Product.adjust.active(212)
+    @products_electricals = Product.adjust.active(907)
+    @products_toys = Product.adjust.active(794)
+  end
+
+
+  def search
+    @searchword = params[:keyword]
+      if @searchword.present?
+        @products_search =Product.sorted.where("name LIKE ?" , "%#{params[:keyword]}%").page(params[:page]).per(4)
+      else
+        @products_search =Product.all.sorted.page(params[:page]).per(20)
+      end
+  end
+
+  def confirmation
     render layout: 'index'
   end
-
-  def error
-    # unless 商品があるか
-    #   redirect_to('products/error')
-    # end
-    # サーバーサイド実装後修正
-  end
-
 
   def destroy
     product = Product.find(params[:id])
@@ -27,5 +40,8 @@ class ProductsController < ApplicationController
       redirect_to action: :index
     end
   end
-  
+
+  def error  
+  end
+
 end

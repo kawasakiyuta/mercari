@@ -1,9 +1,5 @@
 .wrapper
-= form_for :product,url: new_product_path do |f|
-  %header
-  .section
-    .header
-      = link_to  image_tag("logo.svg", width: '185'), root_path
+  = form_for :product,url: new_product_path do |f|
     .main-section
       .main-section__heading
         %h2.main-section__heading-name 商品の情報を入力
@@ -162,15 +158,4 @@
           %button.red-submit-btn{type: "submit"}
             出品する
           = link_to '戻る', :back, class:"glay-back-btn"
-    .footer
-      .footer__top
-        %ul
-          %li 
-            = link_to "プライバシーポリシー"
-          %li 
-            = link_to "メルカリ利用規約"
-          %li 
-            = link_to "特定商取引に関する表記"
-
-        = link_to image_tag("logo-gray.svg", width: '80')
-        %p © 2019 Mercari
+    
