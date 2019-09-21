@@ -31,32 +31,35 @@ class ProductsController < ApplicationController
 
   def confirmation
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    customer = Payjp::Customer.retrieve(card.customer_id)
-    @default_card_information = customer.cards.retrieve(card.card_id)
-    render layout: 'index'
+    if  card.blank?
+      redirect_to new_card_path
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+      render layout: 'index'
+    end
   end
 
   def buy
     card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to action: "new"
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp::Charge.create(
+    amount: @product.price, #支払金額
+    customer: card.customer_id, #顧客ID
+    currency: 'jpy', #日本円
+    )
+    # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、jpyをcurrencyへ入れる
+    @product.state = 1
+    @product.buyer_id = current_user.id
+    if @product.save
+      flash[:notice] = '購入が完了しました。'
+      redirect_to controller: "products", action: 'show'
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      Payjp::Charge.create(
-      amount: @product.price, #支払金額
-      customer: card.customer_id, #顧客ID
-      currency: 'jpy', #日本円
-      )
-     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、jpyをcurrencyへ入れる
-      if @product.update(state: 1, buyer_id: current_user.id)
-        flash[:notice] = '購入が完了しました。'
-        redirect_to controller: "products", action: 'show'
-      else
-        flash[:alert] = '購入できませんでした。'
-        redirect_to controller: "products", action: 'show'
-      end
+      flash[:alert] = '購入できませんでした。'
+      redirect_to controller: "products", action: 'show'
     end
   end
 
