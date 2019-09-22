@@ -87,9 +87,8 @@
         %input{name: "__csrf_value", type: "hidden", value: ""}/
         %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
       %button.foot-btn-gray
-        =link_to "この商品を削除する", method: :delete
-        -# = link_to "この商品を削除する","/products/#{product.id}", method: :delete
-        
+        -# =link_to "この商品を削除する", method: :delete
+        = link_to "この商品を削除する","/products/#{@product.id}", method: :delete, data: {confirm: '削除すると二度と復活できません。本当に削除しますか？'}
 
     / --コメント欄
     .comment-edit-wrappe
