@@ -25,14 +25,32 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
-  resources :cards,only: [:index, :show, :create]
   resources :purchase_confirmation ,only: [:index]
   resources :products,only: [:index, :show, :new] do
     collection do
       get 'error'
       get 'search'
+    end
+    member do
+      post 'buy'
       get 'confirmation'
     end
   end
+
+  resources :cards do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
+
+  # resources :purchase_confirmation, only: [:index] do
+  #   collection do
+  #     get 'index', to: 'purchase_confirmation#index'
+  #     post 'buy', to: 'purchase_confirmation#buy'
+      # get 'done', to: 'purchase_confirmation#done'
+    # end
+  # end
 
 end
