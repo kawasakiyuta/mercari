@@ -85,8 +85,6 @@ class ProductsController < ApplicationController
     @category_parent_array = ["---"]
     @addresses = Address.all
 
-    # render plain: params[:product].inspect
-    # render plain: @product.errors.inspect
     respond_to do |format|
       if @product.save
         params[:images][:image].each do |image|
