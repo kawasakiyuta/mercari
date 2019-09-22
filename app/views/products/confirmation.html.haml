@@ -4,8 +4,8 @@
       %h2.main-pcsection__heading-name 購入内容の確認
     .main-pcsection__content
       .main-pcsection__content--product
-        - @product.images.each do |image|
-          = image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "image"
+        -# = @product.images[0][:image]
+        = image_tag @product.images[0][:image],class: "image"
         %p.name
           = @product.name
         %form.buy_form
