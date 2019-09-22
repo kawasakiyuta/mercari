@@ -4,7 +4,7 @@ lock "3.11.0"
 set :application, "mercari"
 set :repo_url,  'git@github.com:zukupan/mercari.git'
 set :linked_files, %w{ config/secrets.yml }
-# set :linked_files, %w{ .env }
+set :linked_files, %w{ .env }
 
 
 # バージョンが変わっても共通で参照するディレクトリを指定
@@ -32,14 +32,14 @@ namespace :deploy do
   end
 
   desc 'upload secrets.yml'
-  # desc 'upload .env'
+  desc 'upload .env'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
       upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
-      # upload!('.env', "#{shared_path}/.env")
+      upload!('.env', "#{shared_path}/.env")
     end
   end
   before :starting, 'deploy:upload'
