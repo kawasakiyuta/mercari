@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     #   get 'product_detail'
     # end
   end
-
   root 'products#index'
 
   resources :login, only: [:index, :new, :create]
