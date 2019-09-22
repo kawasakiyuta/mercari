@@ -4,7 +4,6 @@
       %h2.main-pcsection__heading-name 購入内容の確認
     .main-pcsection__content
       .main-pcsection__content--product
-        -# = @product.images[0][:image]
         = image_tag @product.images[0][:image],class: "image"
         %p.name
           = @product.name
@@ -21,11 +20,7 @@
             .price-cell
               %span
                 = "¥#{@product.price.to_i.to_s(:delimited)}"
-          = link_to "購入する", {controller: "products", action: "buy"}, {method: :post, class: "red-submit-btn"}
-          -# = form_with action: :buy, method: :post, class: "red-submit-btn" do |form|
-          -#   %button 購入する
-          -# %button.red-submit-btn{type: "submit"}
-          -#   購入する
+          = link_to "購入する", {controller: "products", action: "buy"}, {method: :post, class: "red-submit-btn"}          
             
     .main-pcsection__content
       .main-pcsection__content--address
