@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', function(){
   var dropzone = $('.main-section__form-image-box-upload--drop_box');
   var dropzone2 = $('.main-section__form-image-box-upload--drop_box2');
   var dropzone_box = $('.main-section__form-image-box-upload--container');
+  var dropzone_box2 = $('.main-section__form-image-box-upload--container2');
   var images = [];
   var inputs  =[];
   var input_area = $('.input_area');
@@ -22,7 +23,6 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-    console.log(images.length)
     if(images.length >= 5) {
       dropzone2.css({
         'display': 'block'
@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
         dropzone2.find('pre').replaceWith('<i class="fa fa-camera"></i>')
       }
     } else {
-      // $('#preview').empty();
+      $('#preview').empty();
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview.append(image);
@@ -95,7 +95,7 @@ $(document).on('turbolinks:load', function(){
         'display': 'block'
       })
       $.each(images, function(index, image) {
-        image.attr('data-image', index);
+        image2.attr('data-image', index);
         preview2.append(image);
       })
       dropzone2.css({

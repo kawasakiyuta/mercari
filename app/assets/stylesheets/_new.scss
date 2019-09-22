@@ -57,6 +57,7 @@
           border: 1px dashed #ccc;
           text-align: center;
           cursor: pointer;
+          margin-top: 10px;
         }
       }
     }
@@ -235,13 +236,13 @@ li.select-form-price {
 .clearfix {
   height: 48px;
   .select-form-lavel__left {
-    width: 50%;
+    width: 48%;
     line-height: 48px;
     font-weight: 600;
     float: left
   }
   .input-price__right {
-    width: 50%;
+    width: 52%;
     height: 48px;
     float: right;
     &-box {
@@ -426,16 +427,16 @@ pre.visible-pc {
 .img_view{
   position: relative;
   display: inline-block;
+  margin: 10px 10px 0 0;
   // width: 18%;
   background: #f5f5f5;
-  width: 100%;
+  // width: 100%;
   // margin: 0 0 2% 2%;
   // margin: 0 0 0 4px;
-
   min-height: 162px;
   border: 1px solid #eee;
   vertical-align: top;
-  margin: 0 0 0 10px;
+  // margin: 0 0 0 10px;
 }
 .img_view img{
   max-width: 120px;
@@ -466,13 +467,13 @@ pre.visible-pc {
     color: rgb(24, 63, 194);
   }
 }
-i.fa.fa-camera {
+.main-section__form-image-box-upload--drop_box i.fa.fa-camera {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-size: 14px;
+  font-size: 25px;
 }
 #preview{
   // display:flex;
@@ -481,24 +482,30 @@ i.fa.fa-camera {
   display: inherit;
   margin-left: 30px;
 }
+
 .main-section__form-image-box-upload{
     // content: '';
     display: inline-flex;
     // clear: both;
 }
+
 #preview2{
-  float: left;
-  justify-content: space-between;
+  // float: left;
+  // justify-content: space-between;
   display: inherit;
+  flex-wrap: wrap;
   margin-left: 30px;
-  clear: both;
+  // clear: both;
 }
 .main-section__form-image-box-upload--container2{
-  display: inline-block;
+  // display: inline-block;
   width: 630px;
   /* height: 50px; */
   margin-left: 5px;
-  justify-content: space-between;
+  // justify-content: space-between;
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
 }
 .main-section__form-image-box-upload--drop_box2{
   display: none;
@@ -508,7 +515,6 @@ i.fa.fa-camera {
   border: 1px dashed #ccc;
   text-align: center;
   cursor: pointer;
-}
-.main-section__form-image-box-upload2{
-  display: inline-flex;
+  margin-left: 30px;
+  margin-top: 15px;
 }
