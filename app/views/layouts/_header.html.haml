@@ -25,31 +25,46 @@
                 =link_to ""
                 %i.fa.fa-tag
                 %span ブランドから探す
-            
-      .content__foot--right
-        %ul
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-heart-o
-              %span いいね！一覧
+      - if user_signed_in?
+        .content__foot--right
+          %ul
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-heart-o
+                %span いいね！一覧
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-bell-o
-              %span お知らせ
-              .mega-menu-right_count
-            %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-bell-o
+                %span お知らせ
+                .mega-menu-right_count
+              %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-check
-              %span やることリスト
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-check
+                %span やることリスト
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              =image_tag ""
-              %span マイページ
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                =image_tag ""
+                %span マイページ
+      - else
+        .content__foot--right
+          %ul
+            %li.mega-menu-right_sign
+              .mega-menu-right__item
+                = link_to "新規会員登録", new_user_registration_path, method: :get, class: "user_sign_up"
+                
+
+            %li.mega-menu-right_sign
+              .mega-menu-right__item
+                = link_to "ログイン", new_user_session_path, method: :get, class: "user_sign_in"
+                
+
+
+                 
