@@ -9,4 +9,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      .section
+        .header
+          = link_to  image_tag("logo.svg", width: '185'), root_path
     = yield
+    .footer
+      .footer__top
+        %ul
+          %li 
+            = link_to "プライバシーポリシー"
+          %li 
+            = link_to "メルカリ利用規約"
+          %li 
+            = link_to "特定商取引に関する表記"
+
+        = link_to image_tag("logo-gray.svg", width: '80')
+        %p © 2019 Mercari

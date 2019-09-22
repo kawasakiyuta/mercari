@@ -2,12 +2,13 @@
   .content-inner
     .content__head
       %h1
-        =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", size: "134x36"),url: new_product_path
-      %form.content__head--form
-        %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: ""}/
-        %i.icon-search
-          %i.fa.fa-search
-
+        =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", size: "134x36"),"/"                 #/#url: new_product_path
+      .content__head--form
+        = form_tag("/products/search",method: :get)do
+          %input.content__head--form-search{name: "keyword",placeholder: "何かお探しですか？",type: "search",value: "#{@searchword}"}/          
+          %button.icon-search{type: "submit"}
+            %i.fa.fa-search
+    
     .content__foot
       .content__foot--left
         %ul
@@ -24,31 +25,46 @@
                 =link_to ""
                 %i.fa.fa-tag
                 %span ブランドから探す
-            
-      .content__foot--right
-        %ul
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-heart-o
-              %span いいね！一覧
+      - if user_signed_in?
+        .content__foot--right
+          %ul
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-heart-o
+                %span いいね！一覧
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-bell-o
-              %span お知らせ
-              .mega-menu-right_count
-            %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-bell-o
+                %span お知らせ
+                .mega-menu-right_count
+              %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"} 
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              %i.fa.fa-check
-              %span やることリスト
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                %i.fa.fa-check
+                %span やることリスト
 
-          %li.mega-menu-right
-            .mega-menu-right__item
-              =link_to ""
-              =image_tag ""
-              %span マイページ
+            %li.mega-menu-right
+              .mega-menu-right__item
+                =link_to ""
+                =image_tag ""
+                %span マイページ
+      - else
+        .content__foot--right
+          %ul
+            %li.mega-menu-right_sign
+              .mega-menu-right__item
+                = link_to "新規会員登録", new_user_registration_path, method: :get, class: "user_sign_up"
+                
+
+            %li.mega-menu-right_sign
+              .mega-menu-right__item
+                = link_to "ログイン", new_user_session_path, method: :get, class: "user_sign_in"
+                
+
+
+                 

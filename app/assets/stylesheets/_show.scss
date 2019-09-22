@@ -1,5 +1,5 @@
+.products-show{
 *{  
-  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
   a {
     text-decoration: none;
   }
@@ -34,6 +34,12 @@
       .main-image-box{
         width:300px;
         height:300px;
+        .item-main {
+          width:300px;
+          height:300px;
+          margin:auto;
+          object-fit: contain;
+        }
       }
     }
   }
@@ -41,12 +47,7 @@
 }
 
 
-// .item-main {
-//   width:300px;
-//   height:300px;
-//   margin:auto;
-//   object-fit: contain;
-// }
+
 .main-images-sub{
   width:300px;
   height:120px;
@@ -478,4 +479,5 @@ border-collapse: collapse;
     
   }
 
+}
 }
