@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # before_action :error , only:[:show]
   require "payjp"
-  before_action :specific_product, only: [:show, :confirmation, :buy]
+  before_action :specific_product, only: [:show, :confirmation, :buy, :destroy]
 
   def show
     unless @product.sold 
@@ -43,10 +43,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    if product.user_id == current_user.id
-      product.destroy
-      redirect_to action: :index
+    # if product.user_id == current_user.id
+    @product.destroy
+      # redirect_to action: :index
+    # end
+    redirect_to "mypage_users"
+  end
+
 
   def buy
     card = Card.where(user_id: current_user.id).first
