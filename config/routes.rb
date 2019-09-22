@@ -15,12 +15,12 @@ Rails.application.routes.draw do
     collection do
       get 'identification'
       get 'mypage'
-      get 'product_detail'
+      # get 'product_detail'
     end
 
-    member do
-      get 'product_detail'
-    end
+    # member do
+    #   get 'product_detail'
+    # end
   end
 
   root 'products#index'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :purchase_confirmation ,only: [:index]
-  resources :products,only: [:index, :show, :new] do
+  resources :products,only: [:index, :show, :new, :destroy] do
     collection do
       get 'error'
       get 'search'
