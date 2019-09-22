@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :specific_product, only: [:show, :confirmation, :buy]
 
   def show
+    @product = Product.find(params[:id])
     unless @product.sold 
       redirect_to('/products/error')
     end

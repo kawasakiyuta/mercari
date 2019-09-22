@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get 'mypage'
     end
   end
-
   root 'products#index'
 
   resources :login, only: [:index, :new, :create]
