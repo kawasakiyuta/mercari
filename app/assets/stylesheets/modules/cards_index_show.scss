@@ -1,0 +1,122 @@
+main.container {
+  margin: 40px auto 0;
+  width: 1020px;
+  display: flex;
+  
+  .content-credit {
+    width: 700px;
+    height: 364px;
+    background-color: #fff;
+    float: right;
+  }
+  section.content-credit {
+    margin: 0;
+  }
+  h2.content-credit-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-bottom: 2px solid #f5f5f5;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .content__inner {
+    padding: 64px;
+    height: 185px;
+    &-head {
+      height: 129px;
+    }
+  }
+
+  h3.head-name {
+    max-width: 320px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  ul.credit-cards__list {
+    height: 113px;
+    li {
+      border-bottom: 1px solid #eee;
+      padding: 24px 0;
+    }
+  }
+  form.credit-cards {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    figure.credit-cards {
+      margin: 0;
+    }
+  }
+  .credit-card-num {
+    margin: 8px 0 0;
+    font-size: 14px;
+    letter-spacing:0.1em;
+  }
+  button.credit-card__remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 6px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ea352d;
+    color: #ea352d;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .content__inner-foot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    text-align: right;
+    vertical-align: middle;
+    .foot-name {
+      display: block;
+      text-decoration: none;
+      color: #0099e8;
+      font-size: 14px;
+      padding-top: 3px;
+    }
+    i {
+      vertical-align: middle;
+      color: #0099e8;
+      margin-left: 8px;
+      font-size: 24px;
+    }
+  }
+  .content__inner-foot:hover {
+    opacity: 0.7;
+    .foot-name:hover {
+      text-decoration: underline;
+    }
+  }
+
+  section.credit-cards__addition {
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .credit-cards__addition-btn {
+    max-width: 320px;
+    margin: 0 auto;
+    .add-btn {
+      margin-bottom: 8px !important;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      i {
+        margin-right: 16px;
+      }
+    }
+    .add-btn:hover {
+      opacity: 0.7;
+      transition: all ease-out .3s;
+    }
+  }
+}
