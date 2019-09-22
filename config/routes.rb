@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :logout ,only: [:index]
   resources :cards,only: [:index, :show, :create]
   resources :purchase_confirmation ,only: [:index]
-  resources :products,only: [:index, :show, :new] do
+  resources :products,only: [:index, :show, :new, :create] do
     collection do
       get 'get_category_children', defaults:{ format: 'json'}
       get 'get_category_grandchildren', defaults:{ format:'json'}

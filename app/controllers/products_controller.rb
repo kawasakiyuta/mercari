@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+    
     render layout: 'index'
   end
 
@@ -30,11 +31,16 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_parameter)
+    @category_parent_array = ["---"]
+    @addresses = Address.all
+
+    # render plain: params[:product].inspect
+    # render plain: @product.errors.inspect
     respond_to do |format|
       if @product.save
-          params[:images][:image].each do |image|
-            @product.images.create(image: image, product_id: @product.id)
-          end
+        params[:images][:image].each do |image|
+          @product.images.create(image: image, product_id: @product.id)
+        end
         format.html{redirect_to root_path}
       else
         @product.images.build
@@ -51,7 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :description, :first_category_id, :second_category_id, :third_category_id, :size, :product_status, :delivery_fee, :prefecture_id, :lead_time, :price, :transaction_status, product_images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category, :day_to_ship)  #.merge(user_id: current_user.id)
   end
 
 end

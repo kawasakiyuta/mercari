@@ -56,13 +56,15 @@
               .list-menu__wrap
                 %i.fa.fa-chevron-down
                 = f.select :category, @category_parent_array, {}, {class: 'list-menu__category', id: 'parent_category'} 
+                -# = f.select :category_children, @category_children, {}, {class: 'list-menu__category', id: 'child_category', type:"hidden"} 
+                -# = f.select :category_grandchildren, @category_grandchildren, {}, {class: 'list-menu__category', id: 'grandchild_category', type:"hidden"}
             .select-form-foot
               .select-form-foot-lavel
                 商品の状態
                 %span.require-tag 必須
               .list-menu__wrap
                 %i.fa.fa-chevron-down
-                %select.list-menu__category
+                = f.select :state, @product , {class: 'list-menu__category'} do
                   %option{value: ""} ---
                   %option{value: "1"} 新品、未使用
                   %option{value: "2"} 未使用に近い
@@ -70,7 +72,7 @@
                   %option{value: "4"} やや傷や汚れあり
                   %option{value: "5"} 傷や汚れあり
                   %option{value: "6"} 全体的に状態が悪い
-
+                  -# %select.list-menu__category
         .main-section__form-select-content--delivery
           %h3.select-content-title 配送について
           .form-question
@@ -83,23 +85,24 @@
                 %span.require-tag 必須
               .list-menu__wrap
                 %i.fa.fa-chevron-down
-                %select.list-menu__category
+                = f.select :cost_bearer, @product , {class: 'list-menu__category'} do
                   %option{value: ""} ---
                   %option{value: "2"} 送料込み(出品者負担)
                   %option{value: "1"} 着払い(購入者負担)
-
+                -# %select.list-menu__category
             .select-form-foot
               .select-form-foot-lavel
                 発送元の地域
                 %span.require-tag 必須
               .list-menu__wrap
                 %i.fa.fa-chevron-down
-                %select.list-menu__category{name: "prefecture"}
+                = f.select :delivery_souce, @product , {class: 'list-menu__category'} do
                   %option ---
                   - @addresses.each do |address|
                     %option
                       = address.name
                   %option 未定
+                -# %select.list-menu__category{name: "prefecture"}
 
             .select-form-foot
               .select-form-foot-lavel
@@ -107,13 +110,14 @@
                 %span.require-tag 必須
               .list-menu__wrap
                 %i.fa.fa-chevron-down
-                %select.list-menu__category
+                = f.select :day_to_ship, @product , {class: 'list-menu__category'} do
                   %option{value: ""} ---
                   %option{value: "1"} 1~2日で発送
                   %option{value: "2"} 2~3日で発送
                   %option{value: "3"} 4~7日で発送
+                -# %select.list-menu__category
 
-        .main-section__form-select-content--price
+        .main-section__form-select-content
           %h3.select-content-title 販売価格(300〜9,999,999)
           .form-question
             =link_to ""
@@ -128,7 +132,13 @@
                   .input-price__right
                     ¥
                     .input-price__right-box
-                      %input.input-price__right-textfield{placeholder: "例）300", value: ""}/
+                    = f.text_field :price, placeholder: "例)  300",class:"input-price__right-textfield" , id: "selling-item-price" 
+                    = f.text_field :sold, value: true, type:"hidden"
+                    = f.text_field :user_id, value: 1, type:"hidden"
+                    = f.text_field :buyer_id, value: 1, type:"hidden"
+                    = f.text_field :delivery_method, value: "0000", type:"hidden"
+                    -# = f.text_field :user_id, value: "001", type:"hidden"
+                      -# %input.input-price__right-textfield{placeholder: "例）300", value: ""}/
               %li.clearfix-fee
                 .fee-left
                   販売手数料(10%)
@@ -139,7 +149,6 @@
                   販売利益
                 .profit-right
                   ー
-
         .main-section__form-select-content--btn-box
           .announce-text
             %p
