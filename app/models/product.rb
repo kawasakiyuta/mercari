@@ -5,7 +5,6 @@ class Product < ApplicationRecord
   scope :adjust, -> {sorted.limits }
   scope :active, -> (category){where(category_id:category)}
 
-  has_many :images
   belongs_to :user     ,optional: true
   has_many   :comments ,dependent: :destroy
   belongs_to :brand, optional: true
