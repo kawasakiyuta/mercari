@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_144618) do
+ActiveRecord::Schema.define(version: 2019_09_22_113149) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -73,11 +73,6 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
@@ -101,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
     t.string "name", null: false
     t.integer "state", null: false
     t.string "price", null: false
-    t.boolean "sold", null: false
+    t.boolean "sold"
     t.bigint "user_id", null: false
     t.integer "buyer_id", null: false
     t.string "cost_bearer", null: false
@@ -110,8 +105,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
     t.integer "day_to_ship", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category", default: "", null: false
     t.bigint "category_id", null: false
+    t.integer "child_category"
+    t.integer "grandchild_category"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -149,5 +145,4 @@ ActiveRecord::Schema.define(version: 2019_09_04_144618) do
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "products"
   add_foreign_key "messages", "users"
-  add_foreign_key "products", "categories"
 end
