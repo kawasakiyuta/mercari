@@ -1,14 +1,15 @@
 $(document).on('turbolinks:load',function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+  
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='list-menu__wrap' id= 'children_wrapper'>
-                          <select class="list-menu__category" id="child_category" name="category_id">
+                          <select class="list-menu__category" id="child_category" name="product[child_category]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
@@ -21,7 +22,7 @@ $(document).on('turbolinks:load',function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='list-menu__wrap' id= 'grandchildren_wrapper'>
                               <div class='list-menu__wrap'>
-                                <select class="list-menu__category" id="grandchild_category" name="category_id">
+                                <select class="list-menu__category" id="grandchild_category" name="product[grandchild_category]">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -31,13 +32,13 @@ $(document).on('turbolinks:load',function(){
     $('.select-form').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
-  $('#parent_category').on('change', function(){
-    var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
+  $('#product_category_id').on('change', function(){
+    var parentCategory = document.getElementById('product_category_id').value; //選択された親カテゴリーの名前を取得
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory },
+        data: { parent_id: parentCategory },
         dataType: 'json'
       })
       .done(function(children){
@@ -65,6 +66,7 @@ $(document).on('turbolinks:load',function(){
   $('.select-form').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "---"){ //子カテゴリーが初期値でないことを確認
+      
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'GET',
