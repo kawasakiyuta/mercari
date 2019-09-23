@@ -15,10 +15,14 @@ class ProductsController < ApplicationController
     @product.images.build
     @addresses = Address.all
 
-    @category_parent_array = ["---"]
+    @category_parent_array = []
+    parent_origin = [value: 0, name: "---"]
+    @category_parent_array << parent_origin
     Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+      parent = [value: parent.id, name: parent.name]
+      @category_parent_array << parent
     end
+    
     
     render layout: 'index'
   end
@@ -74,7 +78,7 @@ class ProductsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find("#{params[:parent_id]}").children
   end
 
   def get_category_grandchildren
@@ -83,7 +87,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_parameter)
-    @category_parent_array = ["---"]
+    
+    category = Category.find(product_parameter[:category_id])
+    @category_parent_array = []
+    parent_origin = [value: category.id, name:category.name]
+    @category_parent_array << parent_origin
     @addresses = Address.all
 
     respond_to do |format|
@@ -103,7 +111,7 @@ class ProductsController < ApplicationController
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category, :day_to_ship)  #.merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product
