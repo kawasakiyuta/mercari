@@ -13,7 +13,7 @@
               .item-box-body
                 %prefix.item-box-photo
                   = link_to product_path(product_ladies) do
-                    = image_tag product_ladies.images[0][:image],class: "item-image"
+                    = image_tag product_ladies.images[0].image.url ,class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
                     = product_ladies[:name]
@@ -31,7 +31,7 @@
               .item-box-body
                 %prefix.item-box-photo
                   = link_to product_path(product_men) do
-                    = image_tag product_men.images[0][:image],class: "item-image"
+                    = image_tag product_men.images[0].image.url, class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
                     = product_men[:name]
@@ -49,7 +49,7 @@
               .item-box-body
                 %prefix.item-box-photo
                   = link_to product_path(product_electrical) do
-                    = image_tag product_electrical.images[0][:image],class: "item-image"
+                    = image_tag product_electrical.images[0].image.url,  class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
                     = product_electrical[:name]
@@ -67,7 +67,7 @@
               .item-box-body
                 %prefix.item-box-photo
                   = link_to product_path(product_toy) do
-                    = image_tag product_toy.images[0][:image],class: "item-image"
+                    = image_tag product_toy.images[0].image.url, class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
                     = product_toy[:name]
