@@ -10,10 +10,15 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    
     = render 'layouts/notifications'
     = render partial: 'layouts/header'
+    .breadcrumbs
+      = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
     = yield
     = render partial: 'layouts/footer'
     = link_to destroy_user_session_path, method: :delete, class: "" do
       logout
+    
+
 

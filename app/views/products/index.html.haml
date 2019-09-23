@@ -1,4 +1,6 @@
 %body.index
+  - breadcrumb :root do
+    = breadcrumbs pretext: "You are here:",separator: " &rsaquo; "
   .main-top
     = link_to image_tag("https://kaoruya.org/blog/wp-content/uploads/2016/10/eye-catch-mercari-saishuppi.jpg", width: '100%', alt: "トップ画像"), ""
   .main-picup

@@ -88,3 +88,4 @@ gem 'dotenv-rails'
 gem 'kaminari'
 gem 'pry-rails'
 gem 'squasher'
+gem "gretel"
