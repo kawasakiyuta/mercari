@@ -50,7 +50,10 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :category, @category_parent_array, {}, {class: 'list-menu__category', id: 'parent_category'} 
+            = f.select :category_id ,{class: 'list-menu__category', id: 'parent_category'} do
+              - @category_parent_array.each do |parent|
+                %option{value: parent[0][:value]} 
+                  = parent[0][:name]
         .select-form-foot
           .select-form-foot-lavel
             商品の状態
