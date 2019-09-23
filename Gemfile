@@ -83,3 +83,11 @@ end
 
 gem 'ancestry'
 gem 'pry-rails'
+
+# SNSログイン用gem
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'activeadmin'
