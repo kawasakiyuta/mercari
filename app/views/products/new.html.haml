@@ -130,9 +130,9 @@
                 .input-price__right-box
                 = f.text_field :price, placeholder: "例)  300",class:"input-price__right-textfield" , id: "selling-item-price" 
                 = f.text_field :sold, value: true, type:"hidden"
-                = f.text_field :user_id, value: 1, type:"hidden"
-                = f.text_field :buyer_id, value: 1, type:"hidden"
-                = f.text_field :delivery_method, value: "0000", type:"hidden"
+                = f.text_field :user_id, value: current_user.id, type:"hidden"
+                = f.text_field :buyer_id, value: 0, type:"hidden"
+                = f.text_field :delivery_method, value: "クロネコヤマト", type:"hidden"
                 -# = f.text_field :user_id, value: "001", type:"hidden"
                   -# %input.input-price__right-textfield{placeholder: "例）300", value: ""}/
           %li.clearfix-fee
