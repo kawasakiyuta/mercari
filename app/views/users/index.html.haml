@@ -7,7 +7,7 @@
           =link_to new_user_registration_path, method: :get, class: "registration-form__btn registration-form__btn--email" do
             =fa_icon 'envelope', class: "registration-form__btn--icon"
             メールアドレスで登録する
-          =link_to "https://www.facebook.com/login/", class: "registration-form__btn registration-form__btn--facebook" do
+          =link_to "Facebookで登録",user_facebook_omniauth_authorize_path, class: "registration-form__btn registration-form__btn--facebook" do
             =fa_icon 'facebook', class: "registration-form__btn--icon"
             Facebookで登録する
           =link_to "https://accounts.google.com/signin/", class: "registration-form__btn registration-form__btn--google" do

@@ -1,30 +1,25 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
+  def all
+    admin_user = AdminUser.from_omniauth(auth_hash)
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+    if admin_user.persisted?
+      flash.notice = "Signed in!"
+      sign_in_and_redirect admin_user
+    else
+      flash.notice = "We couldn't sign you in because: " + admin_user.errors.full_messages.to_sentence
+      redirect_to new_admin_user_session_url
+    end
+  end
 
-  # More info at:
-  # https://github.com/plataformatec/devise#omniauth
+  # providerを追加したら、aliasも追加
+  # 追加予定ないなら、#all => #google_oauth2 に変更する感じ
+  alias_method :google_oauth2, :all
 
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
+  private
 
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+  def auth_hash
+    request.env["omniauth.auth"]
+  end
 end
