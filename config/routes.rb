@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :purchase_confirmation ,only: [:index]
-  resources :products,only: [:index, :show, :new, :destroy] do
+  resources :products do
     collection do
       get 'error'
       get 'search'
