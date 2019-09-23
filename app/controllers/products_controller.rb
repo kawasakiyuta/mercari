@@ -47,8 +47,7 @@ class ProductsController < ApplicationController
     # if product.user_id == current_user.id
     @product.destroy
       # redirect_to action: :index
-    # end
-    redirect_to "mypage_users"
+    redirect_to mypage_users_path
   end
 
 
