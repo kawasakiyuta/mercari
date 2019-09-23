@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2019_09_15_204841) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
@@ -95,19 +95,19 @@ ActiveRecord::Schema.define(version: 2019_09_15_204841) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "state", null: false
-    t.string "price", default: "", null: false
-    t.boolean "sold"
+    t.string "price", null: false
+    t.boolean "sold", null: false
     t.bigint "user_id", null: false
-    t.integer "buyer_id"
-    t.string "cost_bearer", default: ""
+    t.integer "buyer_id", null: false
+    t.string "cost_bearer", null: false
     t.string "delivery_method", null: false
     t.string "delivery_souce", null: false
     t.integer "day_to_ship", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "brand"
-    t.string "size", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
+    t.string "brand"
+    t.string "size"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
