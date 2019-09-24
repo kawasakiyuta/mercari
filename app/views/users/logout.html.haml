@@ -1,5 +1,5 @@
 %main.container
   .container__content
     .container__content__box
-      = link_to "ログアウト",destroy_user_session_path, method: :delete,class: "btn-logout", type: "submit"
+      %button.btn-logout{type: "submit", styl:"margin-top: 16px;"} ログアウト
   =render '/layouts/side__nav'
