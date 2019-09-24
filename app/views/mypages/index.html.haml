@@ -5,7 +5,7 @@
         = link_to "#" do
           %figure
             = image_tag'//static.mercdn.net/images/member_photo_noimage_thumb.png'
-          %h2 田村　竜弥
+          = current_user.nickname
           .mypage__container__top--icon--value
             .mypage__container__top--icon--value--eva 評価
             %span 0
@@ -39,3 +39,4 @@
       .mypage-purchased-product__foot
         .mypage-purchased-product__foot-not-found 
           %p 過去に取引した商品がありません
+    =render '/layouts/side__nav'
