@@ -108,6 +108,7 @@ class ProductsController < ApplicationController
   end
 
   def error  
+    render layout: 'index'
   end
 
   def product_parameter

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'identification'
       get 'mypage'
+      get 'logout'
     end
   end
   root 'products#index'
