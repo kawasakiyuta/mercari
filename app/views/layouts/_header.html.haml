@@ -49,15 +49,16 @@
                 %span やることリスト
 
             %li.mega-menu-right
-              =link_to mypages_path,class: "mega-menu-right__item" do
-                %span マイページ
+              .mega-menu-right__item
+                =link_to ""
                 =image_tag ""
+                %span マイページ
       - else
         .content__foot--right
           %ul
             %li.mega-menu-right_sign
               .mega-menu-right__item
-                = link_to "新規会員登録", users_path, method: :get, class: "user_sign_up"
+                = link_to "新規会員登録", new_user_registration_path, method: :get, class: "user_sign_up"
                 
 
             %li.mega-menu-right_sign
