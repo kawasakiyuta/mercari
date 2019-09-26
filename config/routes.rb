@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :user_googles
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'
+    :sessions => 'users/sessions',
+    :omniauth_callbacks => 'users/omniauth_callbacks',
+    # :omniauth_callbacks => 'users/omniauth_callbacks_google'
   }
+
+
+
   # devise_for :users
   devise_scope :user do
     get 'users/telephone', to: 'users/registrations#telephone'
@@ -35,9 +41,4 @@ Rails.application.routes.draw do
     end
   end
 
-  #Google認証
-  devise_config = ActiveAdmin::Devise.config
-  devise_config[:controllers][:omniauth_callbacks] = 'admin_users/omniauth_callbacks'
-  devise_for :admin_users, devise_config
-  ActiveAdmin.routes(self)
 end
