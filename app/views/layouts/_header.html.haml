@@ -47,12 +47,10 @@
                 =link_to ""
                 %i.fa.fa-check
                 %span やることリスト
-
             %li.mega-menu-right
-              .mega-menu-right__item
-                =link_to ""
-                =image_tag ""
+              =link_to mypages_path,class: "mega-menu-right__item" do
                 %span マイページ
+                =image_tag ""
       - else
         .content__foot--right
           %ul

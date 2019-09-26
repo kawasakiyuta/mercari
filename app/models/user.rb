@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many   :products,dependent: :destroy
   has_many   :evaluations,dependent: :destroy
   has_many   :likes
-  has_one :card
+  has_one    :card
 end

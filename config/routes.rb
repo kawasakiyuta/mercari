@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'identification'
       get 'mypage'
+      get 'logout'
     end
   end
   root 'products#index'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   resources :purchase_confirmation ,only: [:index]
   resources :products do
     collection do
+      get 'get_category_children', defaults:{ format: 'json'}
+      get 'get_category_grandchildren', defaults:{ format:'json'}
       get 'error'
       get 'search'
     end

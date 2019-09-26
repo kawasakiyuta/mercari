@@ -11,7 +11,20 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+    @product.images.build
     @addresses = Address.all
+
+    @category_parent_array = []
+    parent_origin = [value: 0, name: "---"]
+    @category_parent_array << parent_origin
+    Category.where(ancestry: nil).each do |parent|
+      parent = [value: parent.id, name: parent.name]
+      @category_parent_array << parent
+    end
+    
+    
+    render layout: 'index'
   end
   
   def index
@@ -72,7 +85,42 @@ class ProductsController < ApplicationController
     end
   end
 
+  def get_category_children
+    @category_children = Category.find("#{params[:parent_id]}").children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def create
+    @product = Product.new(product_parameter)
+    
+    category = Category.find(product_parameter[:category_id])
+    @category_parent_array = []
+    parent_origin = [value: category.id, name:category.name]
+    @category_parent_array << parent_origin
+    @addresses = Address.all
+
+    respond_to do |format|
+      if @product.save
+        params[:images][:image].each do |image|
+          @product.images.create(image: image, product_id: @product.id)
+        end
+        format.html{redirect_to root_path}
+      else
+        @product.images.build
+        format.html{render action: 'new'}
+      end
+    end
+  end
+
   def error  
+    render layout: 'index'
+  end
+
+  def product_parameter
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product

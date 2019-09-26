@@ -70,6 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem "jquery-rails"
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -80,6 +81,11 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end
 
 gem 'ancestry'
 gem 'jquery-rails'
