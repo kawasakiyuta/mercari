@@ -15,12 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'identification'
       get 'mypage'
-      # get 'product_detail'
     end
-
-    # member do
-    #   get 'product_detail'
-    # end
   end
   root 'products#index'
 
@@ -48,13 +43,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-
-  # resources :purchase_confirmation, only: [:index] do
-  #   collection do
-  #     get 'index', to: 'purchase_confirmation#index'
-  #     post 'buy', to: 'purchase_confirmation#buy'
-      # get 'done', to: 'purchase_confirmation#done'
-    # end
-  # end
-
+  
 end
