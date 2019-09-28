@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-console.log("Hello,World")
+'use strict';  
+console.log("hello,world")

@@ -20,11 +20,9 @@ class ProductsController < ApplicationController
       parent = [value: parent.id, name: parent.name]
       @category_parent_array << parent
     end
-    
-    
     render layout: 'index'
   end
-  
+
   def index
     @products_ladies = Product.adjust.active(1)
     @products_mens = Product.adjust.active(212)
@@ -115,7 +113,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def error  
+  def error
     render layout: 'index'
   end
 
@@ -126,5 +124,4 @@ class ProductsController < ApplicationController
   def specific_product
     @product = Product.find(params[:id])
   end
-
 end
