@@ -1,10 +1,8 @@
 class ProductsController < ApplicationController
-  # before_action :error , only:[:show]
   require "payjp"
   before_action :specific_product, only: [:show, :confirmation, :buy, :destroy]
 
   def show
-    # @product = Product.find(params[:id])
     unless @product.sold 
       redirect_to('/products/error')
     end
@@ -57,9 +55,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    # if product.user_id == current_user.id
     @product.destroy
-      # redirect_to action: :index
     redirect_to mypage_users_path
   end
 
