@@ -16,5 +16,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-'use strict';
+'use strict';  
 console.log("hello,world")
