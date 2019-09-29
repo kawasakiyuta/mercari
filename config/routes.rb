@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :purchase_confirmation ,only: [:index]
-  resources :products,only: [:index, :show, :new, :create] do
+  resources :products do
     collection do
       get 'get_category_children', defaults:{ format: 'json'}
       get 'get_category_grandchildren', defaults:{ format:'json'}
@@ -46,13 +46,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-
-  # resources :purchase_confirmation, only: [:index] do
-  #   collection do
-  #     get 'index', to: 'purchase_confirmation#index'
-  #     post 'buy', to: 'purchase_confirmation#buy'
-      # get 'done', to: 'purchase_confirmation#done'
-    # end
-  # end
-
+  
 end
