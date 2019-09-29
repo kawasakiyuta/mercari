@@ -2,6 +2,7 @@
   .mypage__container
     .mypage__container__top
       %section.mypage__container__top--icon
+        -# %div= image_tag asset_path('user-bg.jpg')
         = link_to "#" do
           %figure
             = image_tag'//static.mercdn.net/images/member_photo_noimage_thumb.png'
@@ -22,7 +23,7 @@
               = link_to "#" do
                 やることリスト
       .mypage-content
-        .mypage-content-not-found 
+        .mypage-content-not-found
           %p 現在やることリストはありません
       .mypage-purchased-product
         %h2 購入した商品
