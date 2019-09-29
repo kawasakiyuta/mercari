@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_101034) do
     t.integer "child_category"
     t.integer "grandchild_category"
     t.text "coment"
-    t.text "description"
+    t.text "description", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
