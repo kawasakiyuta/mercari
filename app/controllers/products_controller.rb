@@ -128,12 +128,27 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+    @product = Product.find(params[:id])
+    category = Category.find(product_parameter[:category_id])
+    @category_parent_array = []
+    parent_origin = [value: category.id, name:category.name]
+    @category_parent_array << parent_origin
+    @addresses = Address.all
+
+    if @product.update(product_parameter)
+      redirect_to product_path
+    else
+      render 'edit'
+    end
+  end
+
   def error
     render layout: 'index'
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product
