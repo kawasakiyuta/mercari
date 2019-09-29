@@ -1,13 +1,11 @@
 class ProductsController < ApplicationController
   require "payjp"
-  before_action :specific_product, only: [:show, :confirmation, :buy]
+  before_action :specific_product, only: [:show, :confirmation, :buy, :destroy]
 
   def show
-    @product = Product.find(params[:id])
     unless @product.sold 
       redirect_to('/products/error')
     end
-    
   end
 
   def new
@@ -22,11 +20,9 @@ class ProductsController < ApplicationController
       parent = [value: parent.id, name: parent.name]
       @category_parent_array << parent
     end
-    
-    
     render layout: 'index'
   end
-  
+
   def index
     @products_ladies = Product.adjust.active(1)
     @products_mens = Product.adjust.active(212)
@@ -55,6 +51,16 @@ class ProductsController < ApplicationController
       render layout: 'index'
     end
   end
+
+  def destroy
+    if product.user_id == current_user.id
+      @product.destroy
+      redirect_to mypage_users_path
+    else
+     redirect_to action: :index
+    end
+  end
+
 
   def buy
     card = Card.where(user_id: current_user.id).first
@@ -107,7 +113,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def error  
+  def error
     render layout: 'index'
   end
 
@@ -118,5 +124,4 @@ class ProductsController < ApplicationController
   def specific_product
     @product = Product.find(params[:id])
   end
-
 end
