@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_113149) do
+ActiveRecord::Schema.define(version: 2019_09_29_101034) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2019_09_22_113149) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
@@ -95,21 +95,23 @@ ActiveRecord::Schema.define(version: 2019_09_22_113149) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "state", null: false
-    t.string "price", default: "", null: false
+    t.string "price", null: false
     t.boolean "sold"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.integer "buyer_id"
-    t.string "cost_bearer", default: ""
-    t.string "delivery_method", null: false
+    t.string "cost_bearer", null: false
+    t.string "delivery_method"
     t.string "delivery_souce", null: false
     t.integer "day_to_ship", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "brand"
-    t.string "size", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
+    t.string "brand"
+    t.string "size"
     t.integer "child_category"
     t.integer "grandchild_category"
+    t.text "coment"
+    t.text "description"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
