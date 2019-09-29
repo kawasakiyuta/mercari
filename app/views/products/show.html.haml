@@ -8,11 +8,11 @@
       .main-top.clearfix
         .main-image
           .main-image-box
-            = image_tag @product.images[0][:image],class: "item-main",alt: "商品画像" 
+            = image_tag @product.images[0].image.url,class: "item-main",alt: "商品画像"
           .main-images-sub
-            - @product.images.each do |product|
+            - @product.images.each do |image|
               .main-image-sub
-                = image_tag product[:image],class:"sub-image",alt: "商品画像" 
+                = image_tag image.image.url,class:"sub-image",alt: "商品画像" 
         %table.item-detail-table 
           %tr
             %th.user-name 出品者 
