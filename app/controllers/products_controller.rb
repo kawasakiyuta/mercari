@@ -93,7 +93,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_parameter)
-    
     category = Category.find(product_parameter[:category_id])
     @category_parent_array = []
     parent_origin = [value: category.id, name:category.name]
