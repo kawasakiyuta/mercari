@@ -96,11 +96,11 @@ ActiveRecord::Schema.define(version: 2019_09_22_113149) do
     t.string "name", null: false
     t.string "state", null: false
     t.string "price", null: false
-    t.boolean "sold"
-    t.bigint "user_id"
-    t.integer "buyer_id"
+    t.boolean "sold", null: false
+    t.bigint "user_id", null: false
+    t.integer "buyer_id", null: false
     t.string "cost_bearer", null: false
-    t.string "delivery_method"
+    t.string "delivery_method", null: false
     t.string "delivery_souce", null: false
     t.integer "day_to_ship", null: false
     t.datetime "created_at", null: false
