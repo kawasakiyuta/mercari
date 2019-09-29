@@ -68,7 +68,6 @@
               %option{value: "4"} やや傷や汚れあり
               %option{value: "5"} 傷や汚れあり
               %option{value: "6"} 全体的に状態が悪い
-              -# %select.list-menu__category
     .main-section__form-select-content--delivery
       %h3.select-content-title 配送について
       .form-question
@@ -85,7 +84,6 @@
               %option{value: ""} ---
               %option{value: "2"} 送料込み(出品者負担)
               %option{value: "1"} 着払い(購入者負担)
-            -# %select.list-menu__category
         .select-form-foot
           .select-form-foot-lavel
             発送元の地域
@@ -98,7 +96,6 @@
                 %option
                   = address.name
               %option 未定
-            -# %select.list-menu__category{name: "prefecture"}
 
         .select-form-foot
           .select-form-foot-lavel
@@ -111,7 +108,6 @@
               %option{value: "1"} 1~2日で発送
               %option{value: "2"} 2~3日で発送
               %option{value: "3"} 4~7日で発送
-            -# %select.list-menu__category
 
     .main-section__form-select-content
       %h3.select-content-title 販売価格(300〜9,999,999)
@@ -133,8 +129,6 @@
                 = f.text_field :user_id, value: current_user.id, type:"hidden"
                 = f.text_field :buyer_id, value: 0, type:"hidden"
                 = f.text_field :delivery_method, value: "クロネコヤマト", type:"hidden"
-                -# = f.text_field :user_id, value: "001", type:"hidden"
-                  -# %input.input-price__right-textfield{placeholder: "例）300", value: ""}/
           %li.clearfix-fee
             .fee-left
               販売手数料(10%)
