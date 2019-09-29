@@ -1,13 +1,11 @@
 class ProductsController < ApplicationController
   require "payjp"
-  before_action :specific_product, only: [:show, :confirmation, :buy]
+  before_action :specific_product, only: [:show, :confirmation, :buy, :destroy]
 
   def show
-    @product = Product.find(params[:id])
     unless @product.sold 
       redirect_to('/products/error')
     end
-
   end
 
   def new
@@ -53,6 +51,16 @@ class ProductsController < ApplicationController
       render layout: 'index'
     end
   end
+
+  def destroy
+    if product.user_id == current_user.id
+      @product.destroy
+      redirect_to mypage_users_path
+    else
+     redirect_to action: :index
+    end
+  end
+
 
   def buy
     card = Card.where(user_id: current_user.id).first
