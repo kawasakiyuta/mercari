@@ -23,6 +23,22 @@ class ProductsController < ApplicationController
     render layout: 'index'
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    @product.images.build
+    @addresses = Address.all
+
+    @category_parent_array = []
+    parent_origin = [value: 0, name: "---"]
+    @category_parent_array << parent_origin
+    Category.where(ancestry: nil).each do |parent|
+      parent = [value: parent.id, name: parent.name]
+      @category_parent_array << parent
+    end
+    render layout: 'index'
+  end
+
+
   def index
     @products_ladies = Product.adjust.active(1)
     @products_mens = Product.adjust.active(212)
