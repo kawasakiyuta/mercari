@@ -60,8 +60,7 @@ class ProductsController < ApplicationController
      redirect_to action: :index
     end
   end
-
-
+  
   def buy
     card = Card.where(user_id: current_user.id).first
     customer = Payjp::Customer.retrieve(card.customer_id)
