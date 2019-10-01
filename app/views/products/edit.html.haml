@@ -3,7 +3,7 @@
     %h2.main-section__heading-name 
       商品の情報を入力
   .main-section__form
-  = form_for @product, html: {class: "main-section dropzone", id: "item-dropzone"} do |f|
+  = form_for @product, url:product_path(@product), html: {class: "main-section dropzone", id: "item-dropzone"} do |f|
     .main-section__form-image-box
       %h3.main-section__form-image-box-name
         出品画像
