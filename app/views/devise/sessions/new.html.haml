@@ -16,17 +16,14 @@
 -#     = f.submit "Log in"
 -# = render "devise/shared/links"
 
+
 .display
-  %header.header-box
-    %h1
-      =link_to "https://www.mercari.com/jp/" do
-        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?863303983"
   %main.contents
     %section.contents__panel
       .login-name
         %p アカウントをお持ちでない方はこちら
         .no-account
-          =link_to "https://www.mercari.com/jp/signup/", class: "no-account__btn no-account__btn--registration" do
+          =link_to users_path, class: "no-account__btn no-account__btn--registration" do
             新規会員登録
       .login-box
         .login-form
@@ -42,24 +39,10 @@
             = f.email_field :email, class: "login-email", autofocus: true, autocomplete: "email", placeholder: "  メールアドレス"
           .login-pass
             = f.password_field :password, class: "login-pass", autocomplete: "current-password", placeholder: "  パスワード"
-        .login-captcha
-          ☑︎reCAPCHA(私はロボットではありません)
-        .login-enter
-          =link_to "ログイン", new_user_session_path, class: "enter-btn"
+          .login-captcha
+            ☑︎reCAPCHA(私はロボットではありません)
+          .login-enter
+            = f.submit 'ログイン'
         .forget-pass
           =link_to "https://www.mercari.com/jp/password/reset/start/", class: "forget-pass__btn" do
             パスワードをお忘れの方
-  %footer.footer-box
-    .footer__panel
-      .footer__overview
-        =link_to "https://www.mercari.com/jp/privacy/", class: "footer-overview__1" do
-          プライバシーポリシー
-        =link_to "https://www.mercari.com/jp/tos/", class: "footer-overview__2" do
-          メルカリ利用規約
-        =link_to "https://www.mercari.com/jp/tokutei/", class: "footer-overview__3" do
-          特定商取引に関する表記
-      .footer__box
-        =link_to "https://www.mercari.com/jp/", class: "footer__footser-logo" do
-          =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?863303983"
-      .footer__name
-        ©2019 Mercari

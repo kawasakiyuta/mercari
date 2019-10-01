@@ -1,0 +1,23 @@
+.breadcrumbs {
+  height: 49px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  font-size: 14px;
+  line-height: 50px;
+  padding-left: 210px;
+  span{
+  font-weight:bold; 
+  }
+  hr{
+    font-size: 14px; 
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+   a:hover{ 
+    opacity: 0.5;
+    text-decoration: underline;
+  }
+  
+}

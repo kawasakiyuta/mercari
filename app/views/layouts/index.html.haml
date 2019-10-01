@@ -3,6 +3,8 @@
   %head
     %meta{content: "text/html; charset=UTF-8", http:{equiv: "Content-Type"}}/
     %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
+    %script{crossorigin: "anonymous", integrity: "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", src: "https://code.jquery.com/jquery-3.4.1.js"}
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     %title Mercari
     = csrf_meta_tags
     = csp_meta_tag
@@ -26,4 +28,3 @@
 
         = link_to image_tag("logo-gray.svg", width: '80')
         %p © 2019 Mercari
-    

@@ -1,0 +1,109 @@
+.main-edit-wrapper
+  .main-top-wrapper
+    / --main上段（商品説明等）--
+    .main-title
+      %h2
+        = @product.name
+    .main-top.clearfix
+      .main-image
+        .main-image-box
+          = image_tag @product.images[0].image.url,class: "item-main",alt: "商品画像"
+        .main-images-sub
+          / --サブ画像一覧 images--
+          - @product.images.each do |image|
+            .main-image-sub
+              = image_tag image.image.url,class:"sub-image",alt: "商品画像" 
+              / --上段
+      %table.item-detail-table 
+        %tr
+          %th.user-name 出品者 
+          %td
+            = link_to @product.user[:nickname],"#"
+            .user-status
+              .item-user-ratings
+                %i.fa.fa-smile-o{"aria-hidden" => "true"}
+                %span 100
+              .item-user-ratings
+                %i.fa.fa-meh-o{"aria-hidden" => "true"}
+                %span 100
+              .item-user-ratings
+                %i.fa.fa-frown-o{"aria-hidden" => "true"}
+                %span 100
+        %tr
+          %th.category カテゴリー
+          %td
+            =link_to "#" do
+              %div  fashion
+            =link_to "#" do
+              %div  
+                %i.fa.fa-angle-right
+                genre
+            =link_to "#" do
+              %div 
+                %i.fa.fa-angle-right
+                item
+        %tr
+          %th ブランド
+          %td
+            = link_to "brand_name","#"
+        %tr
+          %th 商品のサイズ
+          %td
+            = @product.size
+        %tr
+          %th 商品の状態
+          %td
+            = @product.state  
+        %tr
+          %th 配送料の負担
+          %td
+            = @product.cost_bearer
+        %tr
+          %th 配送料の方法
+          %td
+            = @product.delivery_method
+        %tr
+          %th 配送元地域
+          %td 
+            = link_to @product.delivery_souce,"#"
+        %tr
+          %th 発送日の目安
+          %td
+            = @product.day_to_ship
+    .item-price-box
+      %span.item-price
+        = "¥#{@product.price.to_i.to_s(:delimited)}"
+      %span.item-price-tax
+        (税込)
+        %span.item-price-postage
+          送料込み
+    .item-description
+      = @product.description
+  .main-btn-wrapper
+    -# .main-btn-wrapper__addition-btn
+    = link_to "商品の編集", edit_product_path(@product) ,class:"main-btn-wrapper__addition-btn"
+    %p.center-text or
+    %form{action: "", method: "POST", novalidate: "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: ""}/
+      %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
+    %button.foot-btn-gray#modal-open-btn この商品を削除する
+    -# = link_to "この商品を削除する",product_path(@product.id), method: :delete, data: {confirm: "削除すると二度と復活できません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか？"}
+    = link_to "", product_path(@product.id), method: :delete, id: "item-delete-btn"
+    #overlay
+      #modalWindow
+        .modal-message-box
+          %div.top-message 確認
+          %div 削除すると二度と復活できません。
+          %div 削除する代わりに停止することもできます。
+          %div 本当に削除しますか？
+        %button#modal-close-btn キャンセル
+        %button#delete-comformation-btn 削除する
+
+  / --コメント欄
+  .comment-edit-wrappe
+    .comment-message
+      .comment-message-content
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form_with model: @user do |form|
+          = form.text_area :text
+          = form.submit "コメントする" 

@@ -10,39 +10,11 @@ class UsersController < ApplicationController
   def mypage
   end
 
-   
-
-  def index
-    render layout: 'index'
-  end
-
-  def new
-    render layout: 'index'
-  end
-
-  def login
+  def index #新規会員登録画面
     render layout: 'index'
   end
 
   def edit
   end
   
-  def address
-    @addresses = Address.all
-    render layout: 'index'
-  end
-
-  def create
-    render layout: 'index'
-  end
-
-  def pay
-    render layout: 'index'
-  end
-
-  def telephone
-    render layout: 'index'
-
-  end
-
 end
