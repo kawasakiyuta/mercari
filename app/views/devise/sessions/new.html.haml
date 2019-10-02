@@ -27,7 +27,7 @@
             新規会員登録
       .login-box
         .login-form
-          =link_to "https://www.facebook.com/login/", class: "login-form__btn login-form__btn--facebook" do
+          =link_to user_facebook_omniauth_authorize_path, method: :post, class: "login-form__btn login-form__btn--facebook" do
             =fa_icon 'facebook', class: "login-form__btn--icon"
             Facebookでログイン
           =link_to "https://accounts.google.com/signin/", class: "login-form__btn login-form__btn--google" do
