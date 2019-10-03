@@ -88,6 +88,7 @@ end
 
 gem 'ancestry'
 gem 'dotenv-rails'
+gem 'enum_help'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'payjp'
