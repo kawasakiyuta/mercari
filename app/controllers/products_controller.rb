@@ -37,8 +37,7 @@ class ProductsController < ApplicationController
     end
     render layout: 'index'
   end
-
-
+  
   def index
     @products_ladies = Product.adjust.active(1)
     @products_mens = Product.adjust.active(212)

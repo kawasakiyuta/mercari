@@ -88,7 +88,7 @@
       %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
     %button.foot-btn-gray#modal-open-btn この商品を削除する
     -# = link_to "この商品を削除する",product_path(@product.id), method: :delete, data: {confirm: "削除すると二度と復活できません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか？"}
-    = link_to "", product_path(@product.id), method: :delete, id: "item-delete-btn"
+    = link_to "", product_path(@product.id), method: :delete, id: "item-delete-btn", data: {"turbolinks" => false}
     #overlay
       #modalWindow
         .modal-message-box
