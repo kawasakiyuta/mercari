@@ -102,9 +102,12 @@ class ProductsController < ApplicationController
       format.json
     end
   end
-
+  
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
+    @category_grandchildren = Category.find(params[:child_id]).children
+    respond_to do |format|
+      format.json
+    end
   end
 
   def create
