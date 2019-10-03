@@ -27,14 +27,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.images.build
     @addresses = Address.all
+    @root_category = @product.category
+    @child_category = Category.find(@product.child_category)
+    @grandchild_category = Category.find(@product.grandchild_category)
 
-    @category_parent_array = []
-    parent_origin = [value: 0, name: "---"]
-    @category_parent_array << parent_origin
-    Category.where(ancestry: nil).each do |parent|
-      parent = [value: parent.id, name: parent.name]
-      @category_parent_array << parent
-    end
     render layout: 'index'
   end
 
@@ -130,13 +126,14 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    category = Category.find(product_parameter[:category_id])
+    category = Category.find(update_product_parameter[:category_id])
     @category_parent_array = []
     parent_origin = [value: category.id, name:category.name]
     @category_parent_array << parent_origin
     @addresses = Address.all
 
-    if @product.update(product_parameter)
+    if @product.update(update_product_parameter)
+
       redirect_to product_path
     else
       render 'edit'
@@ -149,6 +146,10 @@ class ProductsController < ApplicationController
 
   def product_parameter
     params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+  end
+
+  def update_product_parameter
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product

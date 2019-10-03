@@ -13,23 +13,16 @@
       .main-section__form-image-box-upload
         #preview
         .main-section__form-image-box-upload--container 
-          %label.main-section__form-image-box-upload--drop_box{ for: "upload-image"}
+          %label.main-section__form-image-box-upload--drop_box{ for: "product_images_attributes_#{image.index}_image"} 
+            -# palavra chave product_images_attributes(product.rb linha 13)                   historico da terminal rails c no bloco de notas
+            -# #{image.index} e comando que accepts_nested_attributes_for produz o mesmo numero do ID gerado altomatico
             .input_area
-            =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+            =image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-      .main-section__form-image-box-upload2
-        #preview2
-        .main-section__form-image-box-upload--container2
-          %label.main-section__form-image-box-upload--drop_box2{ for: "upload-image"}
-            .input_area
-            =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-            %pre.visible-pc
-              :preserve
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+
     .main-section__form-content
       .form
         %h3.form-lavel
@@ -50,10 +43,22 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :category_id ,{class: 'list-menu__category', id: 'parent_category'} do
-              - @category_parent_array.each do |parent|
-                %option{value: parent[0][:value]} 
-                  = parent[0][:name]
+            = f.collection_select :category_id, Category.roots, :id, :name, {selected: @root_category.id, prompt: '---'}, class: 'list-menu__category', id: 'parent_category'
+          .list-menu__wrap
+            %i.fa.fa-chevron-down
+            = f.collection_select :child_category, @child_category.siblings, :id, :name, {selected: @child_category.id, prompt: '---'} #falta colocar a class
+          .list-menu__wrap
+            %i.fa.fa-chevron-down
+            = f.collection_select :grandchild_category, @grandchild_category.siblings, :id, :name, {selected: @grandchild_category.id, prompt: '---'} #falta colocar a class
+            -# historico do comando no bloco de notas
+            -# = f.collection_select :colomnOndeVaiSerSalvo, @child_category.siblings--(arry), :id --qual coluna do arry a ser salvo, :name--qual coluna do arry a ser mostrado apos ser selecionado,
+                     {selected: @child_category.id, prompt: '---'} selected: qual item salvo
+            -# Category.roots comando .roots (pega o arry)?   .roots e o comando para os dados do PAI
+            -# @child_category.siblings comando .siblings (arry child)   .siblings e o comando para os dados do filho
+            -# = f.select :category_id ,{class: '', id: 'parent_category'} do
+            -#   - @category_parent_array.each do |parent|
+            -#     %option{value: parent[0][:value]} 
+            -#       = parent[0][:name]
         .select-form-foot
           .select-form-foot-lavel
             商品の状態
@@ -68,6 +73,9 @@
               %option{value: "4"} やや傷や汚れあり
               %option{value: "5"} 傷や汚れあり
               %option{value: "6"} 全体的に状態が悪い
+            -# = f.select :state, Product.states.keys,{prompt: "---"}, class: "list-menu__categor" do
+              -# para facilitar e mais apropriado salvar os dados em formato numeral value mais para mostrar em palavras se usa enum e escrito no Model
+
     .main-section__form-select-content--delivery
       %h3.select-content-title 配送について
       .form-question
