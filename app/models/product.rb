@@ -14,6 +14,5 @@ class Product < ApplicationRecord
   has_many   :images  ,dependent: :destroy
   accepts_nested_attributes_for :images
 
-  # enum state: {新品、未使用: 1, 未使用に近い: 2, 目立った傷や汚れなし: 3, やや傷や汚れあり: 4, 傷や汚れあり: 5, 全体的に状態が悪い: 6 }
-  # enum state: {unused: 1, near_unused: 2, no_dirts: 3, some_dirts: 4, have_dirts:  5, bad_condition: 6}
+  enum day_to_ship: {"1~2日で発送": 1, "2~3日で発送": 2 ,"4~7日で発送": 3}
 end

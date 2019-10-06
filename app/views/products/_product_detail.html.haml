@@ -33,15 +33,15 @@
           %th.category カテゴリー
           %td
             =link_to "#" do
-              = @product.category_id
+              = @product.category.name
             =link_to "#" do
               %div  
                 %i.fa.fa-angle-right
-                = @product.child_category
+                = Category.find(@product.child_category).name
             =link_to "#" do
               %div 
                 %i.fa.fa-angle-right
-                = @product.grandchild_category
+                = Category.find(@product.grandchild_category).name
         %tr
           %th ブランド
           %td
@@ -62,10 +62,11 @@
           %th 配送料の方法
           %td
             = @product.delivery_method
+            -# = @product.delivery_method
         %tr
           %th 配送元地域
           %td 
-            = link_to @product.address_id,"#"
+            = link_to @product.address.name,"#"
         %tr
           %th 発送日の目安
           %td

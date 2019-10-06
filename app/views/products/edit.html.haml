@@ -53,7 +53,7 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :state, [["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4],["傷や汚れあり", 5],["全体的に状態が悪い", 6]],{selected: @product.state , prompt: '---'}, class: 'list-menu__category'
+            = f.select :state, [["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]],{selected: @product.state , prompt: '---'}, class: 'list-menu__category'
     .main-section__form-select-content--delivery
       %h3.select-content-title 配送について
       .form-question
@@ -66,21 +66,21 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :cost_bearer,[["---", 0],["送料込み(出品者負担)",2],["着払い(購入者負担)" ,1]] ,{selected: @product.cost_bearer}, class: 'list-menu__category'
+            = f.select :cost_bearer,[["送料込み(出品者負担)"],["着払い(購入者負担)"]] ,{selected: @product.cost_bearer, prompt: '---'}, class: 'list-menu__category'
         .select-form-foot
           .select-form-foot-lavel
             発送元の地域
             %span.require-tag 必須
-          .list-menu__wrapexit
+          .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.collection_select :address_id, Address.all, :id, :name, {selected: @product.address.id, prompt: '---'}, class: 'list-menu__category'
+            = f.collection_select :address_id, Address.all, :id, :name, {selected: @product.address_id, prompt: '---'}, class: 'list-menu__category'
         .select-form-foot
           .select-form-foot-lavel
             発送までの日数
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :day_to_ship, [["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]] , {selected: @product.day_to_ship, prompt: '---'}, class: 'list-menu__category'
+            = f.select :day_to_ship, [["1~2日で発送"],["2~3日で発送"],["4~7日で発送"]] , {selected: @product.day_to_ship, prompt: '---'}, class: 'list-menu__category'
     .main-section__form-select-content
       %h3.select-content-title 販売価格(300〜9,999,999)
       .form-question
