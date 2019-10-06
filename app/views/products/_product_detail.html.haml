@@ -33,15 +33,15 @@
           %th.category カテゴリー
           %td
             =link_to "#" do
-              %div  fashion
+              = @product.category_id
             =link_to "#" do
               %div  
                 %i.fa.fa-angle-right
-                genre
+                = @product.child_category
             =link_to "#" do
               %div 
                 %i.fa.fa-angle-right
-                item
+                = @product.grandchild_category
         %tr
           %th ブランド
           %td
@@ -65,7 +65,7 @@
         %tr
           %th 配送元地域
           %td 
-            = link_to @product.delivery_souce,"#"
+            = link_to @product.address_id,"#"
         %tr
           %th 発送日の目安
           %td

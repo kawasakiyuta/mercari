@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
     }).done(function(category){
       console.log(category)
       category.forEach(function(categories){
-        $("#product_grandchild_category").append(`<option>${categories.name}</option>`);
+        $("#product_grandchild_category").append(`<option value="${categories.id}" >${categories.name}</option>`);
       });
     })
     .fail(function(){

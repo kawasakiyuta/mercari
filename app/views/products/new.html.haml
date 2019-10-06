@@ -90,7 +90,7 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :delivery_souce, @product , {class: 'list-menu__category'} do
+            = f.select :address_id, @product , {class: 'list-menu__category'} do
               %option ---
               - @addresses.each do |address|
                 %option

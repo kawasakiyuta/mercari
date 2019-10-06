@@ -152,11 +152,11 @@ class ProductsController < ApplicationController
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def update_product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product
