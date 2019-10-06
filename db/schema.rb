@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_124732) do
+ActiveRecord::Schema.define(version: 2019_10_02_122722) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2019_10_05_124732) do
     t.string "size"
     t.integer "child_category"
     t.integer "grandchild_category"
-    t.text "description"
+    t.text "description", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -136,6 +136,8 @@ ActiveRecord::Schema.define(version: 2019_10_05_124732) do
     t.string "block", null: false
     t.string "building"
     t.integer "wallet", null: false
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
