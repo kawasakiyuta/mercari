@@ -35,15 +35,15 @@
               %th.category カテゴリー
               %td
                 =link_to "#" do
-                  = @product.category_id
+                  = @product.category.name
                 =link_to "#" do
                   %div  
                     %i.fa.fa-angle-right
-                    genre
+                    = Category.find(@product.child_category).name
                 =link_to "#" do
                   %div 
                     %i.fa.fa-angle-right
-                    item
+                    = Category.find(@product.grandchild_category).name
             %tr
               %th ブランド
               %td
