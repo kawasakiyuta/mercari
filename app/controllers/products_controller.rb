@@ -96,7 +96,6 @@ class ProductsController < ApplicationController
   end
 
   def get_category_children
-    # @category_children = Category.find("#{params[:parent_id]}").children
     @category_children = Category.find(params[:parent_id]).children
     respond_to do |format|
       format.json

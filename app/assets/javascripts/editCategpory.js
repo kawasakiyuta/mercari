@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', function(){
 
     // id取ってくる
     let id = $(this).val()
-    console.log(id)
     // ajaxでデータ送信する
     $.ajax({
       type: "get",
@@ -35,7 +34,6 @@ $(document).on('turbolinks:load', function(){
       data: { child_id : id},
       dataType: "json"
     }).done(function(category){
-      console.log(category)
       category.forEach(function(categories){
         $("#product_grandchild_category").append(`<option value="${categories.id}" >${categories.name}</option>`);
       });
