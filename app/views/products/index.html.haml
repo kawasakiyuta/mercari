@@ -12,7 +12,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to product_path(product_ladies) do
+                  = link_to product_path(product_ladies), data: {"turbolinks" => false} do
                     = image_tag product_ladies.images[0].image.url,class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
@@ -30,7 +30,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to product_path(product_men) do
+                  = link_to product_path(product_men), data: {"turbolinks" => false} do
                     = image_tag product_men.images[0].image.url,class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
@@ -48,7 +48,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to product_path(product_electrical) do
+                  = link_to product_path(product_electrical), data: {"turbolinks" => false} do
                     = image_tag product_electrical.images[0].image.url,class: "item-image"
                 .item-box-detail
                   %h3.item-box-name
@@ -66,7 +66,7 @@
             .item-box-new
               .item-box-body
                 %prefix.item-box-photo
-                  = link_to product_path(product_toy) do
+                  = link_to product_path(product_toy), data: {"turbolinks" => false} do
                     = image_tag product_toy.images[0].image.url,class: "item-image"
                 .item-box-detail
                   %h3.item-box-name

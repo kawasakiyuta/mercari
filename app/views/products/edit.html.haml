@@ -13,19 +13,9 @@
       .main-section__form-image-box-upload
         #preview
         .main-section__form-image-box-upload--container 
-          %label.main-section__form-image-box-upload--drop_box{ for: "upload-image"}
+          %label.main-section__form-image-box-upload--drop_box{ for: "product_images_attributes_#{image.index}_image"} 
             .input_area
-            =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-            %pre.visible-pc
-              :preserve
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
-      .main-section__form-image-box-upload2
-        #preview2
-        .main-section__form-image-box-upload--container2
-          %label.main-section__form-image-box-upload--drop_box2{ for: "upload-image"}
-            .input_area
-            =f.file_field :image,multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+            =image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
               :preserve
                 ドラッグアンドドロップ
@@ -50,24 +40,20 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :category_id ,{class: 'list-menu__category', id: 'parent_category'} do
-              - @category_parent_array.each do |parent|
-                %option{value: parent[0][:value]} 
-                  = parent[0][:name]
+            = f.collection_select :category_id, Category.roots, :id, :name, {selected: @root_category.id, prompt: '---'}, class: 'list-menu__category', id: 'parent_category'
+          .list-menu__wrap
+            %i.fa.fa-chevron-down
+            = f.collection_select :child_category, @child_category.siblings, :id, :name, {selected: @child_category.id, prompt: '---'}
+          .list-menu__wrap{id: "displayNoneCategory"}
+            %i.fa.fa-chevron-down
+            = f.collection_select :grandchild_category, @grandchild_category.siblings, :id, :name, {selected: @grandchild_category.id, prompt: '---'}
         .select-form-foot
           .select-form-foot-lavel
             商品の状態
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :state, @product , {class: 'list-menu__category'} do
-              %option{value: ""} ---
-              %option{value: "1"} 新品、未使用
-              %option{value: "2"} 未使用に近い
-              %option{value: "3"} 目立った傷や汚れなし
-              %option{value: "4"} やや傷や汚れあり
-              %option{value: "5"} 傷や汚れあり
-              %option{value: "6"} 全体的に状態が悪い
+            = f.select :state, [["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]],{selected: @product.state , prompt: '---'}, class: 'list-menu__category'
     .main-section__form-select-content--delivery
       %h3.select-content-title 配送について
       .form-question
@@ -80,35 +66,21 @@
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :cost_bearer, @product , {class: 'list-menu__category'} do
-              %option{value: ""} ---
-              %option{value: "2"} 送料込み(出品者負担)
-              %option{value: "1"} 着払い(購入者負担)
+            = f.select :cost_bearer,[["送料込み(出品者負担)"],["着払い(購入者負担)"]] ,{selected: @product.cost_bearer, prompt: '---'}, class: 'list-menu__category'
         .select-form-foot
           .select-form-foot-lavel
             発送元の地域
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :delivery_souce, @product , {class: 'list-menu__category'} do
-              %option ---
-              - @addresses.each do |address|
-                %option
-                  = address.name
-              %option 未定
-
+            = f.collection_select :address_id, Address.all, :id, :name, {selected: @product.address_id, prompt: '---'}, class: 'list-menu__category'
         .select-form-foot
           .select-form-foot-lavel
             発送までの日数
             %span.require-tag 必須
           .list-menu__wrap
             %i.fa.fa-chevron-down
-            = f.select :day_to_ship, @product , {class: 'list-menu__category'} do
-              %option{value: ""} ---
-              %option{value: "1"} 1~2日で発送
-              %option{value: "2"} 2~3日で発送
-              %option{value: "3"} 4~7日で発送
-
+            = f.select :day_to_ship, [["1~2日で発送"],["2~3日で発送"],["4~7日で発送"]] , {selected: @product.day_to_ship, prompt: '---'}, class: 'list-menu__category'
     .main-section__form-select-content
       %h3.select-content-title 販売価格(300〜9,999,999)
       .form-question

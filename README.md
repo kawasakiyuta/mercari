@@ -35,7 +35,7 @@ Things you may want to cover:
 |buyer_id        |integer   |null: false              | <!--購入したuser_id-->
 |cost_bearer     |string    |null: false              | <!--送料をどっちが払うか-->
 |delivery_method |string    |null: false              |<!--配送方法>
-|delivery_souce  |string    |null: false              |<!--配送元地域-->
+|address_id  |string    |null: false              |<!--配送元地域-->
 |day_to_ship     |integer   |null: false              |<!--配送日の目安-->
 |category_id     |references|null: false,foreign_key:true|<>
 |brand        |string|                                |<!--ブランドの名前-->
