@@ -33,19 +33,19 @@
           %th.category カテゴリー
           %td
             =link_to "#" do
-              %div  fashion
+              = @product.category.name
             =link_to "#" do
               %div  
                 %i.fa.fa-angle-right
-                genre
+                = Category.find(@product.child_category).name
             =link_to "#" do
               %div 
                 %i.fa.fa-angle-right
-                item
+                = Category.find(@product.grandchild_category).name
         %tr
           %th ブランド
           %td
-            = link_to "brand_name","#"
+            = link_to " ","#"
         %tr
           %th 商品のサイズ
           %td
@@ -65,7 +65,7 @@
         %tr
           %th 配送元地域
           %td 
-            = link_to @product.delivery_souce,"#"
+            = link_to @product.address.name,"#"
         %tr
           %th 発送日の目安
           %td
