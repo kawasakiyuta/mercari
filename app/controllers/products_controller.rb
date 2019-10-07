@@ -34,7 +34,6 @@ class ProductsController < ApplicationController
     render layout: 'index'
   end
 
-
   def index
     @products_ladies = Product.adjust.active(1)
     @products_mens = Product.adjust.active(212)
@@ -52,6 +51,9 @@ class ProductsController < ApplicationController
   end
 
   def confirmation
+    if @product.user_id == current_user.id || @product.buyer_id != 0
+      redirect_to products_path and return
+    end
     card = Card.where(user_id: current_user.id).first
     if  card.blank?
       redirect_to new_card_path
