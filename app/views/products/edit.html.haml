@@ -8,10 +8,17 @@
       %h3.main-section__form-image-box-name
         出品画像
         %span.require-tag 必須
-      %p 最大10枚までアップロードできます
-    = f.fields_for :images do |image| 
+      %p 最大10枚までアップロードできます 
       .main-section__form-image-box-upload
         #preview
+          - @product.images.each do |image, index|
+            -if index ==
+              .img_view
+                = image_tag image.image.url, class: "item-image"
+                .btn_wrapper
+                  .btn.edit 編集
+                  .btn.delete 削除
+
         .main-section__form-image-box-upload--container 
           %label.main-section__form-image-box-upload--drop_box{ for: "upload-image"}
             .input_area
@@ -20,8 +27,15 @@
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
+                
       .main-section__form-image-box-upload2
         #preview2
+          - @product.images.each do |image|
+            .img_view
+              = image_tag image.image.url,class: "item-image"
+              .btn_wrapper
+                .btn.edit 編集
+                .btn.delete 削除
         .main-section__form-image-box-upload--container2
           %label.main-section__form-image-box-upload--drop_box2{ for: "upload-image"}
             .input_area

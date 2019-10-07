@@ -56,6 +56,9 @@
           display: inline-block;
           width: 660px;
           justify-content: space-between;
+          // .upload-image{
+          //   display: none;
+          // }
           .main-section__form-image-box-upload--drop_box{
             display: block;
             position: relative;
@@ -74,6 +77,7 @@
               transform: translate(-50%, -50%);
               font-size: 25px;
             }
+            
           }
         }
       }
@@ -432,9 +436,7 @@ select {
   color: #888;
   font-size: 16px;
 }
-.upload-image{
-  display:none;
-}
+
 pre.visible-pc {
   position: absolute;
   top: 50%;

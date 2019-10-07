@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.build
+    # 10.times{@product.images.build}
     @addresses = Address.all
 
     @category_parent_array = []
@@ -25,7 +26,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.images.build
+    # @product.images.build
     @addresses = Address.all
 
     @category_parent_array = []
@@ -108,29 +109,19 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_parameter)
+    Product.create(product_parameter)
     category = Category.find(product_parameter[:category_id])
     @category_parent_array = []
     parent_origin = [value: category.id, name:category.name]
     @category_parent_array << parent_origin
     @addresses = Address.all
-
-    respond_to do |format|
-      if @product.save
-        params[:images][:image].each do |image|
-          @product.images.create(image: image, product_id: @product.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        @product.images.build
-        format.html{render action: 'new'}
-      end
-    end
+    redirect_to root_path
   end
 
   def update
     @product = Product.find(params[:id])
     category = Category.find(product_parameter[:category_id])
+
     @category_parent_array = []
     parent_origin = [value: category.id, name:category.name]
     @category_parent_array << parent_origin
@@ -147,8 +138,11 @@ class ProductsController < ApplicationController
     render layout: 'index'
   end
 
+  private
+
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    # params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image])
   end
 
   def specific_product
