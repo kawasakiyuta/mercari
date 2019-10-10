@@ -9,18 +9,22 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-    @product.images.build
-    @addresses = Address.all
+    if current_user 
+      @product = Product.new
+      @product.images.build
+      @addresses = Address.all
 
-    @category_parent_array = []
-    parent_origin = [value: 0, name: "---"]
-    @category_parent_array << parent_origin
-    Category.where(ancestry: nil).each do |parent|
-      parent = [value: parent.id, name: parent.name]
-      @category_parent_array << parent
+      @category_parent_array = []
+      parent_origin = [value: 0, name: "---"]
+      @category_parent_array << parent_origin
+      Category.where(ancestry: nil).each do |parent|
+        parent = [value: parent.id, name: parent.name]
+        @category_parent_array << parent
+      end
+      render layout: 'index'
+    else
+      redirect_to  new_user_session_path and return
     end
-    render layout: 'index'
   end
 
   def edit
