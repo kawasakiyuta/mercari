@@ -55,6 +55,9 @@ class ProductsController < ApplicationController
   end
 
   def confirmation
+    if current_user == nil
+      redirect_to  new_user_session_path and return
+    end
     if @product.user_id == current_user.id || @product.buyer_id != 0
       redirect_to products_path and return
     end
