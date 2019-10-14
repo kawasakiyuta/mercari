@@ -4,7 +4,7 @@
       %h2.main-pcsection__heading-name 購入内容の確認
     .main-pcsection__content
       .main-pcsection__content--product
-        = image_tag @product.images[0][:image],class: "image"
+        = image_tag @product.images[0].image.url,class: "image"
         %p.name
           = @product.name
         %form.buy_form

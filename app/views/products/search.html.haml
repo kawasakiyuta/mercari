@@ -14,7 +14,7 @@
           .item__box
             %prefix.item__box--photo
               = link_to product_path(product) do
-                = image_tag product.images[0][:image],class: "item-image"
+                = image_tag product.images[0].image.url,class: "item-image"
             .item__box--detail
               %h3.item-box-name
                 = product[:name]
