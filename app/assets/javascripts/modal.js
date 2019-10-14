@@ -13,5 +13,5 @@ document.addEventListener(
       };
     };
   },
-  false
+  false 
 );
