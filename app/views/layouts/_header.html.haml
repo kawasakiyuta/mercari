@@ -11,20 +11,7 @@
     
     .content__foot
       .content__foot--left
-        %ul
-          %li.mega-menu-left
-            .category-list
-              .category-list-parent
-                =link_to ""
-                %i.fa.fa-list-ul
-                %span カテゴリーから探す
-
-          %li.mega-menu-left
-            .brand-list
-              .brand-list-parent
-                =link_to ""
-                %i.fa.fa-tag
-                %span ブランドから探す
+        = render 'layouts/category'
       - if user_signed_in?
         .content__foot--right
           %ul

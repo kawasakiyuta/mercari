@@ -108,33 +108,6 @@
         height: 44px;
       }
 
-      .mega-menu-left {
-        float: left;
-        padding-right: 15px;
-
-        .category-list-parent,
-        .brand-list-parent {
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        i {
-          color: #ea352d;
-          font-size: 12px;
-          margin-right: 4px;
-        }
-        span {
-          font-weight: bold;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-          display: inline-block;
-        }
-        span:hover {
-          color: #0099e8;
-          text-decoration: none;
-        }
-      }
 
       .mega-menu-right {
         display: inline-block;

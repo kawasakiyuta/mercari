@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   resources :profile ,only: [:index]
   resources :logout ,only: [:index]
   resources :purchase_confirmation ,only: [:index]
+  resources :categorysearch ,only: [:index]
+
   resources :products do
     collection do
       get 'get_category_children', defaults:{ format: 'json'}

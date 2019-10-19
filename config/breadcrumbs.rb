@@ -7,6 +7,12 @@ crumb :mypage do
   parent :root
 end
 
+
+crumb :categorysearch do
+  link "カテゴリー一覧", categorysearch_index_path
+  parent :root
+end
+
  crumb :card do
    link "支払い方法", new_card_path
    parent :mypage

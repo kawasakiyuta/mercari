@@ -1,0 +1,118 @@
+.category-list-parent {
+  display: none;
+}
+
+
+.fa-list-ul:before {
+  float: left;
+  color: red;
+}
+
+.fa.fa-tag:before {
+  float: left;
+  color: red;
+}
+
+.mega-menu-left {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  float: left;
+  padding-right: 15px;
+}
+
+.category-list-parent {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.mega-menu-left:hover {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+
+
+.category-list-parent {
+  width: auto;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+}
+.category-list-parent li {
+  position: relative;
+  list-style: none;
+}
+.category-list-parent li .category-name {
+  display: block;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  line-height: 2.8;
+  background: #fff;
+  text-decoration: none;
+  border-right: 1px solid #eee;
+  box-sizing: border-box;
+}
+.category-list-parent > li:hover > .category-name {/*layer-1*/
+  color: orange;
+  background: #888;
+}
+.category-list-parent > li li:hover > .category-name {/*layer-2*/
+  font-weight: bold;
+  color: #fff;
+  background: rgb(234, 53, 45);
+}
+.category-list-parent li ul {
+  top: 40px;
+  position: absolute;
+}
+.category-list-parent li ul li {
+  overflow: hidden;
+  height: 0;
+}
+.category-list-parent li:hover > ul > li {
+  overflow: visible;
+  height: 40px;
+}
+  .category-list-parent li ul li ul {
+    top: 0;
+    left: 250px;
+  }
+  .category-list-parent li ul li ul:before {/*layer-2▷*/
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    border: 5px solid transparent;
+    border-left: 5px solid #333;
+  }
+  .category-list-parent li ul li ul li:hover > .category-name {/*layer-3*/
+    color: black;
+    background: #f5f5f5;
+  }
+  .category-list-parent li ul li ul.left {
+    top: 0;
+    left: -190px;
+  }
+  .category-list-parent li ul li ul.left:before,/*layer-2-left▷*/
+  .category-list-parent li ul li ul li ul.left:before {/*layer-3-left▷*/
+    position: absolute;
+    top: 15px;
+    left: 190px;
+    border: 5px solid transparent;
+    border-right: 5px solid #fff;
+  }
+  .category-list-parent li ul li ul.left li:hover > .category-name {/*layer-2-left*/
+    color: pink;
+    background: #fff;
+  }
+  .category-list-parent li ul li ul li ul.left li:hover > .category-name {/*layer-3-left*/
+    color: purple;
+    background: #fff;
+  }
