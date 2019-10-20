@@ -79,16 +79,21 @@
           送料込み
     .item-description
       = @product.description
-  .main-btn-wrapper
-    -# .main-btn-wrapper__addition-btn
-    = link_to "商品の編集", edit_product_path(@product) ,class:"main-btn-wrapper__addition-btn"
-    %p.center-text or
-    %form{action: "", method: "POST", novalidate: "novalidate"}
-      %input{name: "__csrf_value", type: "hidden", value: ""}/
-      %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
-    %button.foot-btn-gray#modal-open-btn この商品を削除する
-    -# = link_to "この商品を削除する",product_path(@product.id), method: :delete, data: {confirm: "削除すると二度と復活できません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか？"}
-    = link_to "", product_path(@product.id), method: :delete, id: "item-delete-btn"
+  - if  @product.buyer_id != 0
+    .main-btn-wrapper
+      .main-btn-wrapper__addition-btn__gray
+        売り切れ
+  - else
+    .main-btn-wrapper
+      -# .main-btn-wrapper__addition-btn
+      = link_to "商品の編集", edit_product_path(@product) ,class:"main-btn-wrapper__addition-btn"
+      %p.center-text or
+      %form{action: "", method: "POST", novalidate: "novalidate"}
+        %input{name: "__csrf_value", type: "hidden", value: ""}/
+        %button.foot-btn-gray{type: "submit"} 出品を一旦停止する
+      %button.foot-btn-gray#modal-open-btn この商品を削除する
+      -# = link_to "この商品を削除する",product_path(@product.id), method: :delete, data: {confirm: "削除すると二度と復活できません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか？"}
+      = link_to "", product_path(@product.id), method: :delete, id: "item-delete-btn"
     #overlay
       #modalWindow
         .modal-message-box
@@ -98,7 +103,6 @@
           %div 本当に削除しますか？
         %button#modal-close-btn キャンセル
         %button#delete-comformation-btn 削除する
-
   / --コメント欄
   .comment-edit-wrappe
     .comment-message

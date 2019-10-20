@@ -9,18 +9,22 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-    @product.images.build
-    @addresses = Address.all
+    if current_user 
+      @product = Product.new
+      @product.images.build
+      @addresses = Address.all
 
-    @category_parent_array = []
-    parent_origin = [value: 0, name: "---"]
-    @category_parent_array << parent_origin
-    Category.where(ancestry: nil).each do |parent|
-      parent = [value: parent.id, name: parent.name]
-      @category_parent_array << parent
+      @category_parent_array = []
+      parent_origin = [value: 0, name: "---"]
+      @category_parent_array << parent_origin
+      Category.where(ancestry: nil).each do |parent|
+        parent = [value: parent.id, name: parent.name]
+        @category_parent_array << parent
+      end
+      render layout: 'index'
+    else
+      redirect_to  new_user_session_path and return
     end
-    render layout: 'index'
   end
 
   def edit
@@ -33,7 +37,6 @@ class ProductsController < ApplicationController
 
     render layout: 'index'
   end
-
 
   def index
     @products_ladies = Product.adjust.active(1)
@@ -52,6 +55,12 @@ class ProductsController < ApplicationController
   end
 
   def confirmation
+    if current_user == nil
+      redirect_to  new_user_session_path and return
+    end
+    if @product.user_id == current_user.id || @product.buyer_id != 0
+      redirect_to products_path and return
+    end
     card = Card.where(user_id: current_user.id).first
     if  card.blank?
       redirect_to new_card_path

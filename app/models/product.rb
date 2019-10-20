@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  validates :images, presence: true
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   scope :sorted, -> {order("id DESC")}
   scope :limits, -> {limit(4)}
