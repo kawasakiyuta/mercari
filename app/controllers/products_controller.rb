@@ -119,22 +119,16 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_parameter)
-    category = Category.find(product_parameter[:category_id])
-    @category_parent_array = []
-    parent_origin = [value: category.id, name:category.name]
-    @category_parent_array << parent_origin
-    @addresses = Address.all
-
-    respond_to do |format|
-      if @product.save
-        params[:images][:image].each do |image|
-          @product.images.create(image: image, product_id: @product.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        @product.images.build
-        format.html{render action: 'new'}
-      end
+    if @product.save
+      redirect_to root_path
+    else
+      category = Category.find(product_parameter[:category_id])
+      @category_parent_array = []
+      parent_origin = [value: category.id, name:category.name]
+      @category_parent_array << parent_origin
+      @addresses = Address.all
+      @product.images.build
+      render action: 'new'
     end
   end
 
@@ -159,7 +153,7 @@ class ProductsController < ApplicationController
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def update_product_parameter
