@@ -13,7 +13,7 @@
       .main-section__form-image-box-upload
         #preview
         .main-section__form-image-box-upload--container 
-          %label.main-section__form-image-box-upload--drop_box{ for: "product_images_attributes_#{image.index}_image"} 
+          =image.label :image, class: "main-section__form-image-box-upload--drop_box" do
             .input_area
             =image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
