@@ -7,12 +7,12 @@
         =link_to "#{parent.name}","#"
   .category_list_box
     - @parents.each do |parent|
-      .category_list_box_title
-        %h3 #{parent.name}
+      %h3.category_list_box_title #{parent.name}
+      .category_list_box_title_category
         %a{href: '#'} すべて
-      - @children.each do |child|
-        %h4 #{child.name}
-        %a{href: '#'} すべて
-        -child.children.each do |grandchild|
-          .category_list_box_title_sub_category
-            %a{href: '#'} #{grandchild.name}
+        - @children.each do |child|
+          %h4.category_list_box_title_sub_category #{child.name}
+          .category_list_box_title_sub_sub_category
+            %a{href: '#'} すべて
+            -child.children.each do |grandchild|
+              %a{href: '#'} #{grandchild.name}
