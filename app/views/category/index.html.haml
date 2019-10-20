@@ -1,14 +1,18 @@
-//emmet .category_list>.category_index>h2{カテゴリー一覧}^.category_list_nav+.category_list_box
 .category_list
   .category_index
     %h2 カテゴリー一覧
   .category_list_nav
     - @parents.each do |parent|
-      -# .category_list_nav_link_name
-      =link_to "#{parent.name}",category_show_path,class: "category_list_nav_link_name"
-       
+      .category_list_nav_link_name
+        =link_to "#{parent.name}","#"
   .category_list_box
-    - @parents.ladies.each do |parent|
-      =parent.name
-      -# -parent.children.each do |child|
-      -#   =child.name 
+    - @parents.each do |parent|
+      .category_list_box_title
+        %h3 #{parent.name}
+        %a{href: '#'} すべて
+      - @children.each do |child|
+        %h4 #{child.name}
+        %a{href: '#'} すべて
+        -child.children.each do |grandchild|
+          .category_list_box_title_sub_category
+            %a{href: '#'} #{grandchild.name}
