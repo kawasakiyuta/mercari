@@ -12,7 +12,7 @@
             = @product.name
         .main-top.clearfix
           .main-image
-            .main-image-box
+            .main-image-box 
               = image_tag @product.images[0].image.url,class: "item-main",alt: "商品画像"
             .main-images-sub
               - @product.images.each do |image|
@@ -120,28 +120,27 @@
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://im.belluna.jp/belluna/ph/O/6759/1006566759/DMIDDLE.JPG",class: "item-image"
+                    =link_to image_tag "https://c.imgz.jp/168/7697168/7697168_16_D_215.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name 
-                      = @product.name
+                    %h3.item-box-name [美品]コンバース スニーカー グレー23cm
                     .item-box-price
-                      = @product.price
+                      ¥3,000
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://www.grail.bz/media/catalog/product/cache/0a7c993427b70b9b444e96c72e5c540c/f/o/fo991_v12.jpg",class: "item-image"
+                    =link_to  image_tag "https://item-shopping.c.yimg.jp/i/l/esports_9980380291489",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name ラコステ スニーカー
                     .item-box-price
-                      ¥10,000
+                      ¥4,000
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://drmur6qpaw907g.cdn.jp.idcfcloud.com/images/goods/3163900529-000554014/3163900529-000554014_8700_1_20190520134002.jpg",class: "item-image"
+                    =link_to  image_tag "https://image.t-fashion.jp/urbanresearch/images/goods/1807-CWSN123-UL86/z-1807-CWSN123-UL86_01.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name URBAN RESEARCHパーカー
                     .item-box-price
-                      ¥10,000
+                      ¥6,000
           / その他のアイテム一覧
           .item-box
             / その他のアイテム一覧
@@ -149,25 +148,25 @@
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://shikasoku.com/wp-content/uploads/2018/02/img_0134.jpg",class: "item-image"
+                    =link_to  image_tag "https://www.plst.com/img/item/129950300/129950300_c030_a001_mzx.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name フェイクレザー エナメルパンプス ラクチンきれいパンプス
                     .item-box-price
-                      ¥10,000
+                      ¥5,000
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://imgbp.hotp.jp/CSP/IMG_SRC/28/45/B045572845/B045572845_271-361.jpg",class: "item-image"
+                    =link_to  image_tag "https://www.nacinc.jp/wp-content/uploads/2014/12/Mac-Book-Pro-.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name Mac-Book-Pro 15インチ
                     .item-box-price
-                      ¥10,000
+                      ¥70,000
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
                     =link_to  image_tag "https://i.pinimg.com/736x/e3/61/5f/e3615fdbb77d77c0b3020ce252d5944e.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name プリーツスカート
                     .item-box-price
                       ¥10,000
           / その他のアイテム一覧
@@ -177,27 +176,19 @@
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://cdn.keyakizaka46.com/images/14/745/f458226d743ae4b89529ac7be087c.jpg",class: "item-image"
+                    =link_to  image_tag "https://image1.shopserve.jp/sweet-mommy.com/pic-labo/llimg/sb0343-s1.jpg?t=20190904185026",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name ベビー服 マシュマロボア＆オーガニックコットン
                     .item-box-price
-                      ¥10,000
+                      ¥2,000
               .item-box-new
                 .item-box-body
                   %figure.item-box-photo
-                    =link_to  image_tag "https://www.instagram.com/p/Bqn2PPtnVoC/media/?size=l",class: "item-image"
+                    =link_to  image_tag "http://www.babygoose.jp/media/wp-content/uploads/2017/08/mikihouse.jpg",class: "item-image"
                   .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
+                    %h3.item-box-name くま耳ベビー服
                     .item-box-price
-                      ¥10,000
-              .item-box-new
-                .item-box-body
-                  %figure.item-box-photo
-                    =link_to  image_tag "https://prof.prepics-cdn.com/image/upload/c_fit,w_480/v1445398859/prcm_news-gazo-25533-1.jpg",class: "item-image"
-                  .item-box-detail
-                    %h3.item-box-name Item Name アイテム詳細 途中から消える途中から消える
-                    .item-box-price
-                      ¥10,000
+                      ¥5,000
       .item-bottom
         %ul.item-bottom-nav 
           %li
