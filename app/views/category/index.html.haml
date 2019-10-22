@@ -4,10 +4,10 @@
   .category_list_nav
     - @parents.each do |parent|
       .category_list_nav_link_name
-        =link_to "#{parent.name}","#"
+        %a{href:"#category#{parent.id}"} #{parent.name}
   .category_list_box
     - @parents.each do |parent|
-      %h3.category_list_box_title #{parent.name}
+      %h3.category_list_box_title{id:"category#{parent.id}"} #{parent.name}
       .category_list_box_title_category
         %a{href: '#'} すべて
         - @children.each do |child|
@@ -16,3 +16,4 @@
             %a{href: '#'} すべて
             -child.children.each do |grandchild|
               %a{href: '#'} #{grandchild.name}
+  = render partial: 'layouts/footer-sell-btn'
