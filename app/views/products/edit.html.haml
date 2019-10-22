@@ -9,13 +9,19 @@
         出品画像
         %span.require-tag 必須
       %p 最大10枚までアップロードできます
-    = f.fields_for :images do |image| 
+    - @product.images.each do |image|
+      .img_view{"data-image" => "0"}
+        = image_tag image.image.url
+        .btn_wrapper
+          .btn.edit 編集
+          .btn.delete 削除
+    = f.fields_for :images do |image|
       .main-section__form-image-box-upload
         #preview
         .main-section__form-image-box-upload--container 
-          =image.label :image, class: "main-section__form-image-box-upload--drop_box" do
+          = image.label :image, class: "main-section__form-image-box-upload--drop_box" do
             .input_area
-            =image.file_field :image, class: "upload-image", 'data-image': 0
+            = image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
               :preserve
                 ドラッグアンドドロップ

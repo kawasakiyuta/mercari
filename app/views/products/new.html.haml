@@ -13,9 +13,9 @@
       .main-section__form-image-box-upload
         #preview
         .main-section__form-image-box-upload--container 
-          =image.label :image, class: "main-section__form-image-box-upload--drop_box" do
+          = image.label :image, class: "main-section__form-image-box-upload--drop_box" do
             .input_area
-            =image.file_field :image, class: "upload-image", 'data-image': 0
+            = image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
               :preserve
                 ドラッグアンドドロップ
