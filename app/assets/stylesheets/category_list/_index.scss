@@ -9,13 +9,33 @@
     display: block;
   };
   &_nav{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
     &_link_name{
-      display: block;
+      border-radius: 4px;
+      min-width: 80px;
+      height: 40px;
+      background-color: #fff;
+      box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+      margin: 5px;
+      color: #333;
+      font-size: 16px;
+      line-height: 40px;
+      a{
+        padding: 0 30px;
+        color: #333;
+      }
+    }
+    &_link_name:hover {
+      background-color: #ea352d;
+      a{
+        color:white;
+      }
     }
   }
   &_box{
     display: block;
+    margin:30px 0;
     a{
       display: block;
       color:#0099e8;
@@ -40,11 +60,12 @@
         padding-bottom: 5px;
       }
       &_sub_sub_category{
-        // float: left;
-        // width: 50%;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 20px 10px 20px;
+        a{
+          width: 50%;
+        }
       }
     };
   };
