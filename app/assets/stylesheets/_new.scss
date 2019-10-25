@@ -43,20 +43,20 @@
         line-height: 1.5;
       }
       &-upload {
+        display: flex;
+        width: 650px;
         &--container {
-          display: inline-block;
-          width: 630px;
-          margin-left: 5px;
-          justify-content: space-between;
+          // display: flex;で親要素取得flex-grow: 1;で残りの子要素を決める
+          flex-grow: 1;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          text-align: center;
+          cursor: pointer;
         }
         &--drop_box{
           display: block;
           position: relative;
           min-height: 162px;
-          background: #f5f5f5;
-          border: 1px dashed #ccc;
-          text-align: center;
-          cursor: pointer;
           margin-top: 10px;
         }
       }
@@ -430,7 +430,9 @@ pre.visible-pc {
     text-align: center;
     border-right: 1px solid #eee;
     color: rgb(24, 63, 194);
+    cursor: pointer;
   }
+  
   .btn.delete{
     display: inline-block;
     width: 50%;
@@ -438,6 +440,7 @@ pre.visible-pc {
     line-height: 44px;
     text-align: center;
     color: rgb(24, 63, 194);
+    cursor: pointer;
   }
 }
 .main-section__form-image-box-upload--drop_box i.fa.fa-camera {
