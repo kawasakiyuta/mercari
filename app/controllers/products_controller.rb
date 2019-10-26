@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   def new
     if current_user 
       @product = Product.new
-      # @product.images.build
       10.times{@product.images.build}
       @addresses = Address.all
 
@@ -26,6 +25,16 @@ class ProductsController < ApplicationController
     else
       redirect_to  new_user_session_path and return
     end
+  end
+
+  def create
+    Product.create(product_parameter)
+    category = Category.find(product_parameter[:category_id])
+    @category_parent_array = []
+    parent_origin = [value: category.id, name:category.name]
+    @category_parent_array << parent_origin
+    @addresses = Address.all
+    redirect_to root_path
   end
 
   def edit
@@ -119,16 +128,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create
-    Product.create(product_parameter)
-    category = Category.find(product_parameter[:category_id])
-    @category_parent_array = []
-    parent_origin = [value: category.id, name:category.name]
-    @category_parent_array << parent_origin
-    @addresses = Address.all
-    redirect_to root_path
 
-  end
 
   def update
     @product = Product.find(params[:id])
