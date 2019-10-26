@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
   def new
     if current_user 
       @product = Product.new
-      @product.images.build
+      # @product.images.build
+      10.times{@product.images.build}
       @addresses = Address.all
 
       @category_parent_array = []
@@ -152,7 +153,7 @@ class ProductsController < ApplicationController
   private
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image])
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :delivery_souce, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image])
   end
 
   def update_product_parameter
