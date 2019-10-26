@@ -19,7 +19,8 @@
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-          = image.file_field :image, class: "upload-image", 'data-image': 0 #あとでclassでdisplay noneしてあげる
+          = image.file_field :image, class: "upload-image", 'data-image': image.index #あとでclassでdisplay noneしてあげる
+
 
     .main-section__form-content
       .form
