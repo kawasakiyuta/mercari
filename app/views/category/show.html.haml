@@ -1,2 +1,46 @@
-%h1 Category#show
-%p Find me in app/views/category/show.html.haml
+%body.index
+  .main-picup
+    .main-picup__category
+      .main-picup-title
+      - @category.children.limit(9).shuffle.each do |child|
+        = link_to "#{child.name}",category_path("#{child.id}")
+      .main-picup-category
+        %h3.main-picup-category-name
+          = @category.name
+          の商品一覧
+    .item-box__category
+      .item-box-content
+        - @products.each do |product_men|
+          .item-box-new
+            .item-box-body
+              %prefix.item-box-photo
+                = link_to product_path(product_men), data: {"turbolinks" => false} do
+                  = image_tag product_men.images[0].image.url,class: "item-image"
+              .item-box-detail
+                %h3.item-box-name
+                  = product_men[:name]
+                .item-box-price
+                  = product_men[:price]
+        - @child_category.each do |child|
+          .item-box-new
+            .item-box-body
+              %prefix.item-box-photo
+                = link_to product_path(child), data: {"turbolinks" => false} do
+                  = image_tag child.images[0].image.url,class: "item-image"
+              .item-box-detail
+                %h3.item-box-name
+                  = child[:name]
+                .item-box-price
+                  = child[:price]
+        - @grandchild_category.each do |grandchild|
+          .item-box-new
+            .item-box-body
+              %prefix.item-box-photo
+                = link_to product_path(grandchild), data: {"turbolinks" => false} do
+                  = image_tag grandchild.images[0].image.url,class: "item-image"
+              .item-box-detail
+                %h3.item-box-name
+                  = grandchild[:name]
+                .item-box-price
+                  = grandchild[:price]
+  = render partial: 'layouts/footer-sell-btn'
