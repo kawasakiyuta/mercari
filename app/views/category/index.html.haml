@@ -1,0 +1,21 @@
+- breadcrumb :category
+= breadcrumbs separator: " &gt; "
+.category_list
+  .category_index
+    %h2 カテゴリー一覧
+  .category_list_nav
+    - @parents.each do |parent|
+      .category_list_nav_link_name 
+        = link_to "#{parent.name}","#category#{parent.id}"
+  .category_list_box
+    - @parents.each do |parent|
+      %h3.category_list_box_title{id:"category#{parent.id}"} #{parent.name}
+      .category_list_box_title_category
+        = link_to "すべて","#"
+        - parent.children.each do |child|
+          %h4.category_list_box_title_sub_category #{child.name}
+          .category_list_box_title_sub_sub_category
+            = link_to "すべて","#"
+            -child.children.each do |grandchild|
+              = link_to "#{grandchild.name}","#"
+  = render partial: 'layouts/footer-sell-btn'

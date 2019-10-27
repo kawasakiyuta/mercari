@@ -14,10 +14,10 @@
         %ul
           %li.mega-menu-left
             .category-list
-              .category-list-parent
-                =link_to ""
-                %i.fa.fa-list-ul
-                %span カテゴリーから探す
+              .category-list-parent{id:"categoryNav"}
+                %a{href: category_index_path} 
+                  %i.fa.fa-list-ul
+                  %span カテゴリーから探す
 
           %li.mega-menu-left
             .brand-list
