@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.images.build
     @addresses = Address.all
     @root_category = @product.category
     @child_category = Category.find(@product.child_category)

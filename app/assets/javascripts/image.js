@@ -1,12 +1,13 @@
 $(document).on('turbolinks:load', function(){
-  var dropzone = $('.main-section__form-image-box-upload--drop_box');
-  var dropzone2 = $('.main-section__form-image-box-upload--drop_box2');
-  var dropzone_box = $('.main-section__form-image-box-upload--container');
-  var dropzone_box2 = $('.main-section__form-image-box-upload--container2');
+  var dropzone = $('.main-section__form-image-box-upload--container');
   var images = [];
-  var input_area = $('.input_area');
   var preview = $('#preview');
-  var preview2 = $('#preview2');
+
+  if($('.input-box').length == 6) {
+    dropzone.css({
+      'display': 'none'
+    })
+  }
   
   // 画像ファイルを変更したら発火
   $(document).on('change', 'input[type= "file"].upload-image',function(e) {
@@ -36,6 +37,13 @@ $(document).on('turbolinks:load', function(){
                 </div>`
     // #preview に追加する
     $('#preview').append(img);
+    console.log($(this).parent().data('image'))
+
+    if($(this).parent().data('image') == 4) {
+      dropzone.css({
+        'display': 'none'
+      })
+    }
 
     // var reader = new FileReader();
     // var img = $(`<div class="img_view"><img></div>`);
