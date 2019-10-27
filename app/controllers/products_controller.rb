@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   require "payjp"
-  before_action :specific_product, only: [:show, :confirmation, :buy, :destroy]
+  before_action :specific_product, only: [:show, :update, :edit, :confirmation, :buy, :destroy]
 
   def show
     unless @product.sold 
@@ -28,8 +28,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
-    @product.images.build
+    # @product = Product.find(params[:id])
+    # @product.images.build
     @addresses = Address.all
     @root_category = @product.category
     @child_category = Category.find(@product.child_category)
@@ -81,8 +81,7 @@ class ProductsController < ApplicationController
      redirect_to action: :index
     end
   end
-
-
+  
   def buy
     card = Card.where(user_id: current_user.id).first
     customer = Payjp::Customer.retrieve(card.customer_id)
@@ -120,35 +119,26 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_parameter)
-    category = Category.find(product_parameter[:category_id])
-    @category_parent_array = []
-    parent_origin = [value: category.id, name:category.name]
-    @category_parent_array << parent_origin
-    @addresses = Address.all
-
-    respond_to do |format|
-      if @product.save
-        params[:images][:image].each do |image|
-          @product.images.create(image: image, product_id: @product.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        @product.images.build
-        format.html{render action: 'new'}
-      end
+    if @product.save
+      redirect_to root_path
+    else
+      category = Category.find(product_parameter[:category_id])
+      @category_parent_array = []
+      parent_origin = [value: category.id, name:category.name]
+      @category_parent_array << parent_origin
+      @addresses = Address.all
+      @product.images.build
+      render action: 'new'
     end
   end
 
   def update
-    @product = Product.find(params[:id])
-    category = Category.find(update_product_parameter[:category_id])
-    @category_parent_array = []
-    parent_origin = [value: category.id, name:category.name]
-    @category_parent_array << parent_origin
-    @addresses = Address.all
-
     if @product.update(update_product_parameter)
-
+      category = Category.find(update_product_parameter[:category_id])
+      @category_parent_array = []
+      parent_origin = [value: category.id, name:category.name]
+      @category_parent_array << parent_origin
+      @addresses = Address.all
       redirect_to product_path
     else
       render 'edit'
@@ -160,11 +150,11 @@ class ProductsController < ApplicationController
   end
 
   def product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description)   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def update_product_parameter
-    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
+    params.require(:product).permit(:name, :state, :price, :sold, :user_id, :buyer_id, :cost_bearer, :delivery_method, :address_id, :category_id, :day_to_ship, :child_category, :grandchild_category, :description, images_attributes: [:image, :id, :_destroy])   #.merge(user_id: current_user.id)#後で使い為のメモ書きです。
   end
 
   def specific_product
