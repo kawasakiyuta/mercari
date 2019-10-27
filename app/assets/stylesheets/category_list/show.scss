@@ -1,0 +1,28 @@
+.main-picup{
+  &__category{
+    text-align:left;
+    margin: auto;
+    width: 940px;
+    a{
+      padding: 10px 10px;
+      color: #0099e8;
+    }
+  }
+}
+
+.main-picup-category-name{
+  text-align:left;
+  font-size: 24px;
+  font-weight:bold;
+  margin: 15px auto 0;
+  padding: 0 10px;
+}
+.item-box__category {
+  width: 940px;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.index .item-box-body {
+  margin-top: 10px;
+}

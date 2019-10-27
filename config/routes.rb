@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'category/index'
-  get 'category/show'
   devise_for :users, controllers: {
     registrations:'users/registrations',
     sessions: 'users/sessions',
@@ -24,6 +22,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :login, only: [:index, :new, :create]
+  resources :category, only: [:index, :show]
   resources :sign_up, only: [:index, :new]
   resources :mypages, only: [:index]
   resources :profile ,only: [:index]

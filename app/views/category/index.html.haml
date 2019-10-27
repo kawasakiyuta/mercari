@@ -11,11 +11,11 @@
     - @parents.each do |parent|
       %h3.category_list_box_title{id:"category#{parent.id}"} #{parent.name}
       .category_list_box_title_category
-        = link_to "すべて","#"
+        = link_to  "すべて", category_path("#{parent.id}")
         - parent.children.each do |child|
           %h4.category_list_box_title_sub_category #{child.name}
           .category_list_box_title_sub_sub_category
-            = link_to "すべて","#"
+            = link_to "すべて",category_path("#{child.id}")
             -child.children.each do |grandchild|
-              = link_to "#{grandchild.name}","#"
+              = link_to "#{grandchild.name}",category_path("#{grandchild.id}"),{id:"category#{grandchild.id}"}
   = render partial: 'layouts/footer-sell-btn'
