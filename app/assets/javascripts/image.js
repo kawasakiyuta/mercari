@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function(){
     $('#preview').append(img);
     console.log($(this).parent().data('image'))
 
-    if($(this).parent().data('image') == 4) {
+    if($(this).parent().data('image') ==  '4') {
       dropzone.css({
         'display': 'none'
       })
