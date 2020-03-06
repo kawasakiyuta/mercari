@@ -39,6 +39,9 @@
         height:300px;
         .item-main {
           width:300px;
+          height:300px;
+          margin:auto;
+          object-fit: contain;
         }
       }
     }

@@ -13,7 +13,7 @@ class Product < ApplicationRecord
   has_many   :comments ,dependent: :destroy
   has_many   :likes   ,dependent: :destroy
   has_many   :images  ,dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   enum day_to_ship: {"1~2日で発送": 1, "2~3日で発送": 2 ,"4~7日で発送": 3}
 end

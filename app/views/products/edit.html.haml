@@ -9,17 +9,32 @@
         出品画像
         %span.require-tag 必須
       %p 最大10枚までアップロードできます
-    = f.fields_for :images do |image| 
       .main-section__form-image-box-upload
         #preview
+          - @product.images.each.with_index do |image, i|
+            - if image.persisted?
+              .img_view{"data-image": i}
+                = image_tag image.image.url
+                .btn_wrapper
+                  -# ラベルをつける。for: 'product_images_attributes_#{}_image'
+                  %label.btn.edit{for: "product_images_attributes_#{ i }_image"}
+                    編集
+                  .btn.delete 削除
         .main-section__form-image-box-upload--container 
-          %label.main-section__form-image-box-upload--drop_box{ for: "product_images_attributes_#{image.index}_image"} 
+          %label.main-section__form-image-box-upload--drop_box{ for: "product_images_attributes_#{@product.images.length}_image"} 
             .input_area
-            =image.file_field :image, class: "upload-image", 'data-image': 0
             %pre.visible-pc
               :preserve
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
+        = f.fields_for :images do |image|
+          .input-box{data: {image: image.index}}
+            = image.file_field :image, class: "upload-image"
+            = image.hidden_field :id
+        .input-box{data: {image: @product.images.length}}
+          = file_field_tag  :image, class: "upload-image", name: "product[images_attributes][#{@product.images.length}][image]", id: "product_images_attributes_#{@product.images.length}_image"
+
+
     .main-section__form-content
       .form
         %h3.form-lavel
